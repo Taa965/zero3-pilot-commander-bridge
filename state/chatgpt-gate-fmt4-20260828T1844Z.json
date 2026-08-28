@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-gate-fmt4-20260828T1844Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.fmt",
+  "state": "running",
+  "task_id": "pilot-task-51fec33acc0b4d05",
+  "terminal": false,
+  "updated_at": "2026-08-28T18:41:40Z"
+}
