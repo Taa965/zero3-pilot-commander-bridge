@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-format-refresh-20260828T1759Z",
+      "progress": 0.0,
+      "stage": "repo.checkout",
+      "state": "running",
+      "task_id": "pilot-task-77fa21252e9f4055",
+      "updated_at": "2026-08-28T17:56:16Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-complete-pushfix-20260828T1758Z",
       "progress": 100.0,
@@ -364,5 +373,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T17:55:37Z"
+  "updated_at": "2026-08-28T17:56:16Z"
 }
