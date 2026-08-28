@@ -1,0 +1,12 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-installer-weixin-clippy-final-20260828T2124Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T21:24:00Z",
+  "payload": {
+    "capability": "test.clippy",
+    "args": {},
+    "execution_id": "chatgpt-installer-weixin-clippy-final-20260828T2124Z"
+  }
+}
