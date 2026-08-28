@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-contract-test-20260828T2011Z",
+  "occurred_at": "2026-08-28T20:02:10Z",
+  "recorded_at": "2026-08-28T20:02:23Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-6f989f089a6b4b46"
+}
