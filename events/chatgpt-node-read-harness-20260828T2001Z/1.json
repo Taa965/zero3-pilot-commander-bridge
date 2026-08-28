@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.read"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-node-read-harness-20260828T2001Z",
+  "occurred_at": "2026-08-28T19:54:58Z",
+  "recorded_at": "2026-08-28T19:54:58Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-51fd113061e94d47"
+}

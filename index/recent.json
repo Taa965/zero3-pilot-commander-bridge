@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-node-read-harness-20260828T2001Z",
+      "progress": 100.0,
+      "stage": "file.read",
+      "state": "succeeded",
+      "task_id": "pilot-task-51fd113061e94d47",
+      "updated_at": "2026-08-28T19:54:58Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-node-status1-20260828T2000Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-2e3cce3914af4f94",
       "updated_at": "2026-08-28T16:37:16Z"
-    },
-    {
-      "event_sequence": 2,
-      "execution_id": "chatgpt-autonomy-commit-20260828T1637Z",
-      "progress": 100.0,
-      "stage": "git.commit",
-      "state": "succeeded",
-      "task_id": "pilot-task-1817992e85c54061",
-      "updated_at": "2026-08-28T16:36:18Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T19:54:39Z"
+  "updated_at": "2026-08-28T19:54:58Z"
 }
