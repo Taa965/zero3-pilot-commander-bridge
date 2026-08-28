@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-final-repo-fetch-20260828T2038Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "repo.fetch",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-f5ab8d11eb6e47b5",
-  "terminal": false,
-  "updated_at": "2026-08-28T20:38:39Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T20:38:58Z"
 }

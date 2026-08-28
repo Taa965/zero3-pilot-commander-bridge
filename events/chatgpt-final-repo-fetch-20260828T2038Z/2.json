@@ -1,0 +1,21 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "fetch",
+        "origin"
+      ],
+      "returncode": 0,
+      "stderr": "From github.com:Taa965/zero3-pilot\n   6cc01fd..17d638f  main       -> origin/main\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-final-repo-fetch-20260828T2038Z",
+  "occurred_at": "2026-08-28T20:38:40Z",
+  "recorded_at": "2026-08-28T20:38:58Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-f5ab8d11eb6e47b5"
+}
