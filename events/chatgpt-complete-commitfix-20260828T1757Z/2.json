@@ -1,0 +1,26 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "-c",
+        "user.name=Zero3 Pilot Dev Executor",
+        "-c",
+        "user.email=zero3-pilot-dev-executor@localhost",
+        "commit",
+        "-m",
+        "fix: align real browser backend with chromiumoxide API"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[pilot-dev-complete-runtime-20260829 884f9e0] fix: align real browser backend with chromiumoxide API\n 3 files changed, 937 insertions(+), 34 deletions(-)\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-complete-commitfix-20260828T1757Z",
+  "occurred_at": "2026-08-28T17:54:41Z",
+  "recorded_at": "2026-08-28T17:54:59Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-911a0077de8d49fa"
+}
