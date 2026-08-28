@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "## pilot-dev-node-desktop-20260829...origin/pilot-dev-node-desktop-20260829\n M .github/workflows/ci.yml\n M apps/node/static/index.html\n M crates/zero3-providers/src/computer.rs\n M docs/ARCHITECTURE.md\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-final-status-20260828T2025Z",
+  "occurred_at": "2026-08-28T20:25:04Z",
+  "recorded_at": "2026-08-28T20:25:04Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-39bdf96d3d104816"
+}

@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-final-status-20260828T2025Z",
+      "progress": 100.0,
+      "stage": "repo.status",
+      "state": "succeeded",
+      "task_id": "pilot-task-39bdf96d3d104816",
+      "updated_at": "2026-08-28T20:25:04Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-final-test-20260828T2024Z",
       "progress": 100.0,
       "stage": "test.run",
@@ -441,18 +450,9 @@
       "state": "failed",
       "task_id": "pilot-task-0fd01052069a43e0",
       "updated_at": "2026-08-28T18:27:16Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-final-push-20260828T1821Z",
-      "progress": 100.0,
-      "stage": "git.push_branch",
-      "state": "succeeded",
-      "task_id": "pilot-task-b643bf0075ee40ce",
-      "updated_at": "2026-08-28T18:19:39Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T20:24:06Z"
+  "updated_at": "2026-08-28T20:25:04Z"
 }
