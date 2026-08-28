@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-unused-error-fix-20260828T2123Z",
+  "occurred_at": "2026-08-28T21:22:49Z",
+  "recorded_at": "2026-08-28T21:22:49Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-ff066db335864414"
+}
