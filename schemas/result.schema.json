@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zero3.commander.result/2.0",
+  "title": "Zero3 Commander terminal result",
+  "description": "A genuine terminal outcome. The EXISTENCE of a result file never implies validity: it must parse, match this schema, carry the expected execution_id and task_id, set terminal true, and name a legal terminal state.",
+  "type": "object",
+  "required": ["schema", "execution_id", "task_id", "state", "terminal", "completed_at"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "zero3.commander.result/2.0" },
+    "execution_id": { "$ref": "#/$defs/identifier" },
+    "task_id": { "type": "string", "minLength": 1 },
+    "state": {
+      "type": "string",
+      "enum": ["succeeded", "failed", "cancelled", "outcome_unknown", "quarantined"],
+      "description": "Mirrors Zero3 Core terminal task states exactly. outcome_unknown is an honest terminal state and must never be rewritten to failed or succeeded."
+    },
+    "terminal": { "const": true },
+    "event_sequence": { "type": "integer", "minimum": 0 },
+    "completed_at": { "type": "string", "format": "date-time" },
+    "recorded_at": { "type": "string", "format": "date-time" },
+    "error": {
+      "type": ["object", "null"],
+      "description": "Opaque failure detail relayed from Zero3, when present."
+    },
+    "summary": {
+      "type": "object",
+      "description": "Opaque transport-safe task snapshot relayed from Zero3. Artifact authority remains with Zero3 Central."
+    }
+  },
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" }
+  }
+}

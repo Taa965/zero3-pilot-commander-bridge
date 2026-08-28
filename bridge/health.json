@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.bridge-health/1.0",
+  "bridge_version": "0.1.0",
+  "commander_protocol": "zero3-pilot-commander-v1/1.0",
+  "github_ingress": "unknown",
+  "github_egress": "unknown",
+  "zero3_commander": "unknown",
+  "zero3_central": "unknown",
+  "last_command_received_at": null,
+  "last_event_published_at": null,
+  "outbox_backlog": 0,
+  "publish_lag_seconds": 0,
+  "updated_at": "2026-08-28T00:00:00Z"
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zero3.commander.command-rejected/1.0",
+  "title": "Commander Gateway refused a command",
+  "description": "A terminal verdict for this envelope. Only a deliberate refusal belongs here: a transport fault, an authentication failure, or a rate limit is NOT a rejection and must leave the command pending.",
+  "type": "object",
+  "required": ["schema", "execution_id", "reason_code", "reason", "rejected_at"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "zero3.commander.command-rejected/1.0" },
+    "execution_id": { "$ref": "#/$defs/identifier" },
+    "command": { "type": ["string", "null"], "maxLength": 64 },
+    "commander_id": { "type": ["string", "null"], "maxLength": 128 },
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "corrupt-envelope",
+        "invalid-envelope",
+        "identifier-mismatch",
+        "capability-disabled",
+        "commander-rejected",
+        "acceptance-uncorrelated"
+      ]
+    },
+    "reason": { "type": "string", "maxLength": 8192 },
+    "commander_status": { "type": "integer", "minimum": 100, "maximum": 599 },
+    "rejected_at": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" }
+  }
+}

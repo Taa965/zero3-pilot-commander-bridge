@@ -1,0 +1,24 @@
+{
+  "schema": "zero3.commander.capabilities/1.0",
+  "bridge_version": "0.1.0",
+  "commander_protocol": "zero3-pilot-commander-v1/1.0",
+  "commands": {
+    "execution.submit": true,
+    "execution.status": true,
+    "task.cancel": false,
+    "task.retry": false,
+    "task.pause": false,
+    "task.resume": false
+  },
+  "endpoints": {
+    "health": "GET /api/commander/v1/health",
+    "execution.submit": "POST /api/commander/v1/execution-packages",
+    "execution.status": "GET /api/commander/v1/execution-packages/tasks/{task_id}"
+  },
+  "limits": {
+    "max_command_bytes": 4194304,
+    "recent_index_size": 50,
+    "terminal_states": ["succeeded", "failed", "cancelled", "outcome_unknown", "quarantined"]
+  },
+  "updated_at": "2026-08-28T00:00:00Z"
+}

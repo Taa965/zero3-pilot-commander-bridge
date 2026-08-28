@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zero3.commander.bridge-health/1.0",
+  "title": "Zero3 Pilot Commander Bridge health",
+  "description": "Transport health. zero3_central is an OBSERVATION reported by the Zero3 Commander API. The bridge never queries PostgreSQL or any Zero3 database directly.",
+  "type": "object",
+  "required": ["schema", "bridge_version", "commander_protocol", "github_ingress", "github_egress", "zero3_commander", "zero3_central", "updated_at"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "zero3.commander.bridge-health/1.0" },
+    "bridge_version": { "type": "string" },
+    "commander_protocol": { "type": "string" },
+    "github_ingress": { "$ref": "#/$defs/status" },
+    "github_egress": { "$ref": "#/$defs/status" },
+    "zero3_commander": { "$ref": "#/$defs/status" },
+    "zero3_central": { "$ref": "#/$defs/status" },
+    "last_command_received_at": { "type": ["string", "null"], "format": "date-time" },
+    "last_event_published_at": { "type": ["string", "null"], "format": "date-time" },
+    "outbox_backlog": { "type": "integer", "minimum": 0 },
+    "publish_lag_seconds": { "type": "number", "minimum": 0 },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "status": { "type": "string", "enum": ["healthy", "degraded", "unhealthy", "unknown"] }
+  }
+}

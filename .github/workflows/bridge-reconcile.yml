@@ -1,0 +1,122 @@
+# Slow drift-repair fallback.
+#
+# The primary production path is the long-running zero3-pilot-bridge.service beside
+# Zero3. Commander Gateway v1.5 does not expose a native outbound event stream,
+# so that service observes accepted work on a short bounded interval and writes
+# validated state/results immediately. This scheduled job is intentionally much
+# slower and exists only to repair drift if the service or a Git push was down.
+#
+# This workflow must never become the scheduler, business authority, or sole
+# production path. It only revisits accepted/non-terminal work and every value
+# still comes from the Commander Gateway.
+
+name: Bridge reconcile (fallback)
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report drift without committing mirror updates'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bridge-reconcile
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    name: Repair mirror drift for non-terminal executions
+    # This fallback needs network reach to the Commander Gateway. If a public
+    # GitHub-hosted runner is inappropriate, BRIDGE_RECONCILE_RUNNER can select
+    # a dedicated self-hosted runner. The Bridge service itself is not a GitHub
+    # Actions runner and does not depend on this workflow.
+    runs-on: ${{ fromJSON(vars.BRIDGE_RECONCILE_RUNNER || '"ubuntu-latest"') }}
+    timeout-minutes: 15
+
+    env:
+      ZERO3_COMMANDER_BASE_URL: ${{ secrets.ZERO3_COMMANDER_BASE_URL }}
+      ZERO3_COMMANDER_ID: ${{ vars.ZERO3_COMMANDER_ID || 'github-bridge' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install
+        run: python -m pip install --upgrade pip && python -m pip install .
+
+      - name: Check whether the fallback is configured
+        id: config
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          if [ -z "${ZERO3_COMMANDER_BASE_URL:-}" ] || [ -z "${{ secrets.ZERO3_COMMANDER_TOKEN }}" ]; then
+            echo 'configured=false' >> "$GITHUB_OUTPUT"
+            echo 'Fallback reconciliation is not configured; skipping.'
+          else
+            echo 'configured=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Materialise the machine token
+        if: steps.config.outputs.configured == 'true'
+        shell: bash
+        env:
+          ZERO3_COMMANDER_TOKEN: ${{ secrets.ZERO3_COMMANDER_TOKEN }}
+        run: |
+          set -Eeuo pipefail
+          umask 077
+          printf '%s' "$ZERO3_COMMANDER_TOKEN" > "$RUNNER_TEMP/commander.token"
+
+      - name: Reconcile
+        if: steps.config.outputs.configured == 'true'
+        shell: bash
+        env:
+          ZERO3_COMMANDER_TOKEN_FILE: ${{ runner.temp }}/commander.token
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          from zero3_pilot_commander_bridge.commander_client import CommanderClient
+          from zero3_pilot_commander_bridge.config import CommanderConfig
+          from zero3_pilot_commander_bridge.github_client import BridgeRepository
+          from zero3_pilot_commander_bridge.publisher import Publisher
+          from zero3_pilot_commander_bridge.reconciliation import Reconciler
+
+          repo = BridgeRepository(".")
+          publisher = Publisher(repo)
+          client = CommanderClient(CommanderConfig.from_env())
+          report = Reconciler(repo, client, publisher).reconcile()
+
+          print("checked:           ", report.checked)
+          print("state updated:     ", report.state_updated)
+          print("results published: ", report.results_published)
+          print("repaired:          ", report.repaired)
+          print("unreachable:       ", report.unreachable)
+          for problem in report.problems:
+              print("problem:", problem)
+          PY
+
+      - name: Commit mirror updates
+        if: steps.config.outputs.configured == 'true' && !inputs.dry_run
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name  'zero3-pilot-commander-bridge'
+          git config user.email 'bridge@users.noreply.github.com'
+          git add -- state events results index
+          if git diff --cached --quiet; then
+            echo 'No mirror drift to commit.'
+            exit 0
+          fi
+          git commit -m 'chore: reconcile mirror drift (fallback path)'
+          git pull --rebase origin main
+          git push origin HEAD:main

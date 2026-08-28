@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zero3.commander.event/2.0",
+  "title": "Zero3 Commander event mirror entry",
+  "description": "One append-only historical event for an execution, stored at events/<execution_id>/<event_sequence>.json. Events are immutable once written.",
+  "type": "object",
+  "required": ["schema", "execution_id", "event_sequence", "event_type", "occurred_at"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "zero3.commander.event/2.0" },
+    "execution_id": { "$ref": "#/$defs/identifier" },
+    "task_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "event_sequence": { "type": "integer", "minimum": 0 },
+    "event_type": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "state": { "type": "string", "maxLength": 64 },
+    "stage": { "type": "string", "maxLength": 128 },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "recorded_at": { "type": "string", "format": "date-time" },
+    "detail": {
+      "type": "object",
+      "description": "Opaque event detail relayed from Zero3. The bridge does not interpret it."
+    }
+  },
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" }
+  }
+}

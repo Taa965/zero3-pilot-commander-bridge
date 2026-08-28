@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zero3.commander.command.task-cancel/1.0",
+  "title": "Zero3 Commander task.cancel command envelope",
+  "description": "Envelope is defined so external agents have a stable contract. The capability is DISABLED in bridge/capabilities.json because the Commander Gateway exposes no cancel endpoint yet.",
+  "type": "object",
+  "required": ["schema", "command", "execution_id", "task_id", "commander_id", "issued_at"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "zero3.commander.command.task-cancel/1.0" },
+    "command": { "const": "task.cancel" },
+    "protocol_version": { "type": "string", "pattern": "^1[.][0-9x]+$" },
+    "execution_id": { "$ref": "#/$defs/identifier" },
+    "task_id": { "$ref": "#/$defs/uuid" },
+    "commander_id": { "$ref": "#/$defs/identifier" },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "reason": { "type": "string", "maxLength": 2048 }
+  },
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" },
+    "uuid": { "type": "string", "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$" }
+  }
+}

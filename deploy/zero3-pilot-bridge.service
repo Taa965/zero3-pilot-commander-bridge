@@ -1,0 +1,48 @@
+[Unit]
+Description=Zero3 Pilot Commander Bridge
+Documentation=https://github.com/Taa965/zero3-pilot-commander-bridge
+Wants=network-online.target
+After=network-online.target
+
+# Zero3 Core is intentionally not a Requires= dependency. The bridge must stay
+# alive through Core restarts, keep pending commands durable, and recover when
+# the Commander Gateway comes back.
+
+[Service]
+Type=simple
+User=zero3pilotbridge
+Group=zero3pilotbridge
+WorkingDirectory=/opt/zero3-pilot-commander-bridge
+EnvironmentFile=/etc/zero3-pilot-bridge/bridge.env
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/zero3-pilot-bridge-runtime/venv/bin/python -m zero3_pilot_commander_bridge --root /opt/zero3-pilot-commander-bridge run --interval 15 --commit --push
+Restart=always
+RestartSec=5s
+TimeoutStopSec=45s
+KillSignal=SIGTERM
+UMask=0027
+
+# The runtime needs to mutate only its own Git checkout. It reads the Bridge
+# credential file from /etc/zero3-pilot-bridge and the repo-scoped Git deploy key
+# from the service user's home. Neither location is writable by the service.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/opt/zero3-pilot-commander-bridge
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ProtectKernelLogs=true
+ProtectClock=true
+ProtectHostname=true
+LockPersonality=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+SystemCallArchitectures=native
+
+[Install]
+WantedBy=multi-user.target

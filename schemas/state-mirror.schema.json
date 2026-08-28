@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zero3.commander.state/2.0",
+  "title": "Zero3 Commander latest-state mirror",
+  "description": "The LATEST observed state of one execution. Not authoritative: Zero3 Central is. A document with a lower event_sequence must never overwrite a higher one.",
+  "type": "object",
+  "required": ["schema", "execution_id", "task_id", "state", "stage", "progress", "event_sequence", "updated_at"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "zero3.commander.state/2.0" },
+    "execution_id": { "$ref": "#/$defs/identifier" },
+    "task_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "state": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "stage": { "type": "string", "maxLength": 128 },
+    "progress": { "type": "number", "minimum": 0, "maximum": 100 },
+    "event_sequence": { "type": "integer", "minimum": 0 },
+    "terminal": { "type": "boolean" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "observed_by": { "type": "string", "maxLength": 128 },
+    "source": { "type": "string", "enum": ["publisher", "reconciliation"] }
+  },
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" }
+  }
+}

@@ -1,0 +1,35 @@
+[project]
+name = "zero3-pilot-commander-bridge"
+version = "0.1.0"
+description = "Transport and control middleware between external AI commanders and Zero3"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+
+# The format extra makes JSON Schema date-time validation an enforced runtime
+# property rather than an optional annotation that depends on what happens to
+# be installed on the host.
+dependencies = [
+  "jsonschema[format]>=4.21",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Keep protocol schemas usable in a normal wheel/non-editable install. Source
+# checkouts still use the top-level schemas/ directory; installed runtimes find
+# the same files under sys.prefix/share/zero3-pilot-commander-bridge/schemas.
+[tool.setuptools.data-files]
+"share/zero3-pilot-commander-bridge/schemas" = ["schemas/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

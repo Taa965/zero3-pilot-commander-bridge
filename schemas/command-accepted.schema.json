@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zero3.commander.command-accepted/1.0",
+  "title": "Commander Gateway accepted a command",
+  "description": "Zero3 took ownership of this execution. The file EXISTING is not what makes it true: it must parse, match this schema, and name the expected execution before the bridge treats the command as decided.",
+  "type": "object",
+  "required": ["schema", "execution_id", "command", "correlation", "accepted_at"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "zero3.commander.command-accepted/1.0" },
+    "execution_id": { "$ref": "#/$defs/identifier" },
+    "command": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "commander_id": { "type": ["string", "null"], "maxLength": 128 },
+    "correlation": {
+      "type": "string",
+      "enum": ["task_id", "unknown"],
+      "description": "Whether the gateway response could be correlated to a task. 'unknown' means Zero3 accepted ownership but the bridge could not extract a task_id: the command must NOT be resubmitted, because Zero3 may already be executing it. Reconciliation resolves it."
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Correlation handle returned by the gateway."
+    },
+    "accepted_at": { "type": "string", "format": "date-time" },
+    "commander_status": { "type": "integer", "minimum": 100, "maximum": 599 },
+    "correlation_problem": {
+      "type": "string",
+      "maxLength": 2048,
+      "description": "Why correlation failed, when correlation is 'unknown'."
+    },
+    "commander_response": {
+      "type": "object",
+      "description": "Opaque gateway response relayed verbatim."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "correlation": { "const": "task_id" } }, "required": ["correlation"] },
+      "then": { "required": ["task_id"] }
+    },
+    {
+      "if": { "properties": { "correlation": { "const": "unknown" } }, "required": ["correlation"] },
+      "then": { "required": ["correlation_problem"], "not": { "required": ["task_id"] } }
+    }
+  ],
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" }
+  }
+}

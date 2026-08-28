@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Credentials -- never commit. Tokens live outside the repo and are read
+# from ZERO3_COMMANDER_TOKEN_FILE at runtime.
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+.env.*
+!.env.example
+secrets/
+*token*.txt
+*.token
+
+# Atomic-write temporaries. A crashed write must never be committed.
+.tmp-*
+*.tmp
+*.partial
+
+# OS
+.DS_Store
+Thumbs.db

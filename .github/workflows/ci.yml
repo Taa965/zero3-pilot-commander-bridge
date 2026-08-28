@@ -1,0 +1,170 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Compile, test, package, and gate Bridge
+    runs-on: [self-hosted, Linux, X64, zero3-bridge, aws]
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Runner identity and isolation
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          echo "runner=${RUNNER_NAME:-unknown}"
+          echo "os=${RUNNER_OS:-unknown} arch=${RUNNER_ARCH:-unknown}"
+          uname -a
+          git --version
+          if [ -r /etc/zero3-pilot-bridge/commander-token ]; then
+            echo 'ERROR: CI runner can read Commander token' >&2
+            exit 1
+          fi
+          deploy_key="/${ZERO3_HOME_ROOT:-home}/zero3pilotbridge/.ssh/id_ed25519"
+          if [ -r "$deploy_key" ]; then
+            echo 'ERROR: CI runner can read Bridge deploy private key' >&2
+            exit 1
+          fi
+          echo 'credential isolation: PASS'
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Create isolated test environment
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python --version
+          rm -rf "$RUNNER_TEMP/bridge-ci-venv"
+          python -m venv "$RUNNER_TEMP/bridge-ci-venv"
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m pip install build
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m pip install -e '.[dev]'
+
+      - name: Compile
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m compileall src tests
+
+      - name: Full pytest suite
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m pytest -q
+
+      - name: Focused P0 and hardening gates
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m pytest -q \
+            tests/test_production_runtime.py \
+            tests/test_runtime_hardening.py \
+            tests/test_malformed_envelope_rejection.py \
+            tests/test_atomic_state_write.py \
+            tests/test_result_reconciliation.py \
+            tests/test_protocol_validation.py \
+            tests/test_status_projection.py
+
+      - name: Architecture boundary gates
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m pytest -q \
+            tests/test_no_core_imports.py::test_no_zero3_core_imports \
+            tests/test_no_core_imports.py::test_bridge_package_imports_nothing_from_core \
+            tests/test_no_core_imports.py::test_no_secrets_committed \
+            tests/test_no_core_imports.py::test_no_hardcoded_production_addresses \
+            tests/test_no_core_imports.py::test_tls_verification_is_never_disabled \
+            tests/test_no_core_imports.py::test_transport_contains_no_domain_assertions
+
+      - name: Schema and committed mirror hygiene
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" - <<'PY'
+          import json
+          import pathlib
+          from jsonschema import Draft202012Validator
+
+          schemas = sorted(pathlib.Path('schemas').glob('*.schema.json'))
+          assert schemas, 'no schemas found'
+          for path in schemas:
+              Draft202012Validator.check_schema(json.loads(path.read_text(encoding='utf-8')))
+              print('schema ok:', path.name)
+
+          for folder in ('bridge', 'index'):
+              for path in sorted(pathlib.Path(folder).glob('*.json')):
+                  json.loads(path.read_text(encoding='utf-8'))
+                  print('document ok:', path)
+          PY
+          empty="$(find commands state events results index bridge -type f -name '*.json' -empty -print)"
+          if [ -n "$empty" ]; then
+            echo 'zero-byte JSON documents committed:' >&2
+            echo "$empty" >&2
+            exit 1
+          fi
+
+      - name: Build wheel
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          rm -rf dist build *.egg-info src/*.egg-info
+          "$RUNNER_TEMP/bridge-ci-venv/bin/python" -m build
+          ls -l dist
+
+      - name: Clean-wheel install and packaged schema validation
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          rm -rf "$RUNNER_TEMP/bridge-wheel-venv"
+          python -m venv "$RUNNER_TEMP/bridge-wheel-venv"
+          "$RUNNER_TEMP/bridge-wheel-venv/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/bridge-wheel-venv/bin/python" -m pip install dist/*.whl
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/bridge-wheel-venv/bin/python" - <<'PY'
+          import zero3_pilot_commander_bridge
+          from zero3_pilot_commander_bridge.validation import load_schema
+
+          for name in (
+              'execution-submit.schema.json',
+              'state-mirror.schema.json',
+              'result.schema.json',
+              'bridge-health.schema.json',
+          ):
+              schema = load_schema(name)
+              assert isinstance(schema, dict)
+              print('packaged schema ok:', name)
+          print('package import ok:', zero3_pilot_commander_bridge.__name__)
+          PY
+          "$RUNNER_TEMP/bridge-wheel-venv/bin/python" -m zero3_pilot_commander_bridge --help >/dev/null
+          echo 'clean wheel CLI: PASS'
+
+      - name: Static deploy asset checks
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          grep -q '^User=zero3pilotbridge$' deploy/zero3-pilot-bridge.service
+          grep -q '^Group=zero3pilotbridge$' deploy/zero3-pilot-bridge.service
+          grep -q '/opt/zero3-pilot-bridge-runtime/venv/bin/python' deploy/zero3-pilot-bridge.service
+          grep -q 'EnvironmentFile=/etc/zero3-pilot-bridge/bridge.env' deploy/zero3-pilot-bridge.service
+          grep -q 'run --interval 15 --commit --push' deploy/zero3-pilot-bridge.service
+          grep -q 'zero3pilotbridge' deploy/install.sh
+          echo 'deploy assets: PASS'

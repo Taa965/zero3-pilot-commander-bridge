@@ -1,0 +1,6 @@
+{
+  "schema": "zero3.commander.index.active/1.0",
+  "description": "Non-terminal executions only. Lets an external agent resume context without a repository-wide search. Holds references, never full execution payloads.",
+  "executions": [],
+  "updated_at": "2026-08-28T00:00:00Z"
+}
