@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-final-clippy-20260828T2023Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "test.clippy",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-0c0b110282d34d40",
-  "terminal": false,
-  "updated_at": "2026-08-28T20:22:49Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T20:23:08Z"
 }

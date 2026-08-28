@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-final-clippy-20260828T2023Z",
+  "occurred_at": "2026-08-28T20:22:53Z",
+  "recorded_at": "2026-08-28T20:23:08Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0c0b110282d34d40"
+}
