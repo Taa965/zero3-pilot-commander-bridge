@@ -1,0 +1,54 @@
+{
+  "completed_at": "2026-08-28T17:11:57Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-autonomy-return-main-20260828T1712Z",
+  "recorded_at": "2026-08-28T17:11:57Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T17:11:38Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "repo.checkout"
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:11:39Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "git",
+            "checkout",
+            "-B",
+            "main",
+            "origin/main"
+          ],
+          "returncode": 0,
+          "stderr": "Switched to and reset branch 'main'\n",
+          "stdout": "Branch 'main' set up to track remote branch 'main' from 'origin'.\nYour branch is up to date with 'origin/main'.\n"
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:11:39Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "repo.checkout"
+      }
+    ]
+  },
+  "task_id": "pilot-task-d002c9a990ba4e44",
+  "terminal": true
+}
