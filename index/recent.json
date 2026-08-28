@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-weixin-hardening-patch-20260828T2113Z",
+      "progress": 0.0,
+      "stage": "file.patch",
+      "state": "failed",
+      "task_id": "pilot-task-3a3ff7035d0b4543",
+      "updated_at": "2026-08-28T21:13:04Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-installer-weixin-build2-20260828T2111Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-b2fbcad6f9c54aa5",
       "updated_at": "2026-08-28T18:42:38Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-gate-fmt4-20260828T1844Z",
-      "progress": 100.0,
-      "stage": "test.fmt",
-      "state": "succeeded",
-      "task_id": "pilot-task-51fec33acc0b4d05",
-      "updated_at": "2026-08-28T18:41:59Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T21:12:07Z"
+  "updated_at": "2026-08-28T21:13:04Z"
 }

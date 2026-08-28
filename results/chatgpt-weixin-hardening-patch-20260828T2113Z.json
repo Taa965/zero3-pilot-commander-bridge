@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-28T21:13:04Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-weixin-hardening-patch-20260828T2113Z",
+  "recorded_at": "2026-08-28T21:13:04Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "failed",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T21:13:04Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.patch"
+        }
+      },
+      {
+        "created_at": "2026-08-28T21:13:04Z",
+        "event_sequence": 2,
+        "event_type": "task.failed",
+        "payload": {
+          "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmpj6dm_6u8.patch']\nstderr:\nerror: corrupt patch at line 24\n"
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 0.0,
+        "stage": "file.patch"
+      }
+    ]
+  },
+  "task_id": "pilot-task-3a3ff7035d0b4543",
+  "terminal": true
+}
