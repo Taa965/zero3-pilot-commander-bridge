@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-final-push-20260828T2026Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T20:25:34Z",
+  "idempotency_key": "chatgpt-final-push-20260828T2026Z",
+  "payload": {
+    "execution_id": "chatgpt-final-push-20260828T2026Z",
+    "capability": "git.push_branch",
+    "args": {
+      "branch": "pilot-dev-node-desktop-20260829"
+    }
+  }
+}
