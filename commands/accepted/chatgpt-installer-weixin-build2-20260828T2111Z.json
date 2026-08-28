@@ -1,0 +1,14 @@
+{
+  "accepted_at": "2026-08-28T21:11:30Z",
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_response": {
+    "execution_id": "chatgpt-installer-weixin-build2-20260828T2111Z",
+    "schema": "zero3.execution-acceptance/1.0",
+    "task_id": "pilot-task-f9947edd87324e82"
+  },
+  "correlation": "task_id",
+  "execution_id": "chatgpt-installer-weixin-build2-20260828T2111Z",
+  "schema": "zero3.commander.command-accepted/1.0",
+  "task_id": "pilot-task-f9947edd87324e82"
+}
