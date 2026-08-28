@@ -1,0 +1,26 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "-c",
+        "user.name=Zero3 Pilot Dev Executor",
+        "-c",
+        "user.email=zero3-pilot-dev-executor@localhost",
+        "commit",
+        "-m",
+        "fix: unify ComputerAction API serialization"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[pilot-dev-node-desktop-20260829 8cfd326] fix: unify ComputerAction API serialization\n 1 file changed, 1 insertion(+)\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-contract-commit-20260828T2011Z",
+  "occurred_at": "2026-08-28T20:10:30Z",
+  "recorded_at": "2026-08-28T20:10:30Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0ab75be06f5d4642"
+}
