@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-canary-20260828T144540Z-0a9811",
+      "progress": 0.0,
+      "stage": "test.build",
+      "state": "running",
+      "task_id": "pilot-task-c8a1bf9713c64891",
+      "updated_at": "2026-08-28T14:45:55Z"
+    },
+    {
       "event_sequence": 2,
       "execution_id": "chatgpt-canary-20260828T144436Z-db3abd",
       "progress": 100.0,
@@ -58,5 +67,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T14:45:34Z"
+  "updated_at": "2026-08-28T14:45:55Z"
 }
