@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-ocu-fmt3-20260828T1841Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.fmt",
+  "state": "running",
+  "task_id": "pilot-task-c5621748826c43e0",
+  "terminal": false,
+  "updated_at": "2026-08-28T18:40:04Z"
+}
