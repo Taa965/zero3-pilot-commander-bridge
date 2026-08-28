@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.run"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-format-run-20260828T2122Z",
+  "occurred_at": "2026-08-28T21:21:52Z",
+  "recorded_at": "2026-08-28T21:21:52Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-8b90f4eaf9ca4e84"
+}
