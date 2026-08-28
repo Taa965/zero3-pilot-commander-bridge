@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 2,
+      "execution_id": "chatgpt-autonomy-restore-cargo-20260828T1631Z",
+      "progress": 100.0,
+      "stage": "file.write",
+      "state": "succeeded",
+      "task_id": "pilot-task-06d041e4befb4ee7",
+      "updated_at": "2026-08-28T16:30:52Z"
+    },
+    {
+      "event_sequence": 2,
       "execution_id": "chatgpt-autonomy-negative-test-20260828T1630Z",
       "progress": 0.0,
       "stage": "test.run",
@@ -139,5 +148,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T16:30:13Z"
+  "updated_at": "2026-08-28T16:30:52Z"
 }

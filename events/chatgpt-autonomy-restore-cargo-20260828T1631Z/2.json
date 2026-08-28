@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": null
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-autonomy-restore-cargo-20260828T1631Z",
+  "occurred_at": "2026-08-28T16:30:52Z",
+  "recorded_at": "2026-08-28T16:30:52Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-06d041e4befb4ee7"
+}
