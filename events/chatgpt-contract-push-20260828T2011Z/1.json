@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "git.push_branch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-contract-push-20260828T2011Z",
+  "occurred_at": "2026-08-28T20:11:09Z",
+  "recorded_at": "2026-08-28T20:11:09Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0c9cc738f6784dcc"
+}

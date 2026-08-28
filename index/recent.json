@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-contract-push-20260828T2011Z",
+      "progress": 0.0,
+      "stage": "git.push_branch",
+      "state": "running",
+      "task_id": "pilot-task-0c9cc738f6784dcc",
+      "updated_at": "2026-08-28T20:11:09Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-contract-commit-20260828T2011Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "failed",
       "task_id": "pilot-task-d4bfd40040484679",
       "updated_at": "2026-08-28T17:53:46Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-complete-build2-20260828T1754Z",
-      "progress": 100.0,
-      "stage": "test.build",
-      "state": "succeeded",
-      "task_id": "pilot-task-b81606185e67455b",
-      "updated_at": "2026-08-28T17:52:49Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T20:10:30Z"
+  "updated_at": "2026-08-28T20:11:09Z"
 }
