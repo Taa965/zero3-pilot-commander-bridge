@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.write"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-autonomy-write-canary-20260828T1632Z",
+  "occurred_at": "2026-08-28T16:31:12Z",
+  "recorded_at": "2026-08-28T16:31:12Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e4f0e8594f0b4383"
+}
