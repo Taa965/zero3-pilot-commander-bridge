@@ -1,0 +1,25 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "returncode": 0,
+      "stderr": "   Compiling zero3-web v0.1.0 (/opt/zero3-pilot-dev/apps/web)\n    Checking zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.57s\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-gate-clippy4-20260828T1845Z",
+  "occurred_at": "2026-08-28T18:42:20Z",
+  "recorded_at": "2026-08-28T18:42:38Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-b2fbcad6f9c54aa5"
+}
