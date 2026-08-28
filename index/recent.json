@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-final-checkout-main-20260828T2039Z",
+      "progress": 0.0,
+      "stage": "repo.checkout",
+      "state": "running",
+      "task_id": "pilot-task-3abca61e3cf24d8e",
+      "updated_at": "2026-08-28T20:39:19Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-final-repo-fetch-20260828T2038Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-78c77e53eb784353",
       "updated_at": "2026-08-28T18:32:37Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-ocu-fmt-20260828T1833Z",
-      "progress": 0.0,
-      "stage": "test.fmt",
-      "state": "failed",
-      "task_id": "pilot-task-1a0c674338c74a23",
-      "updated_at": "2026-08-28T18:31:02Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T20:38:58Z"
+  "updated_at": "2026-08-28T20:39:19Z"
 }
