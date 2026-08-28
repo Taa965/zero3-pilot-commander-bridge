@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-canary-20260828T144436Z-db3abd",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.clippy",
+  "state": "running",
+  "task_id": "pilot-task-f86cf2949c864772",
+  "terminal": false,
+  "updated_at": "2026-08-28T14:44:57Z"
+}
