@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-complete-patch1-20260828T1751Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T17:51:00Z",
+  "payload": {
+    "execution_id": "chatgpt-complete-patch1-20260828T1751Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/crates/zero3-providers/src/browser.rs b/crates/zero3-providers/src/browser.rs\n--- a/crates/zero3-providers/src/browser.rs\n+++ b/crates/zero3-providers/src/browser.rs\n@@ -189,7 +189,9 @@ impl CdpBrowserProvider {\n         if let Some(path) = executable {\n             builder = builder.chrome_executable(path);\n         }\n-        let config = builder.build().context(\"build Chromium launch config\")?;\n+        let config = builder\n+            .build()\n+            .map_err(|error| anyhow!(\"build Chromium launch config: {error}\"))?;\n         let (browser, handler) = Browser::launch(config)\n             .await\n             .context(\"launch Chromium through CDP\")?;\n@@ -380,7 +382,7 @@ impl BrowserProvider for CdpBrowserProvider {\n                         let mut tabs = Vec::with_capacity(pages.len());\n                         for page in pages {\n                             tabs.push(json!({\n-                                \"target_id\": page.target_id().to_string(),\n+                                \"target_id\": format!(\"{:?}\", page.target_id()),\n                                 \"url\": page.url().await?.unwrap_or_default(),\n                                 \"title\": page.get_title().await?.unwrap_or_default(),\n                             }));\ndiff --git a/crates/zero3-scheduler/src/lib.rs b/crates/zero3-scheduler/src/lib.rs\n--- a/crates/zero3-scheduler/src/lib.rs\n+++ b/crates/zero3-scheduler/src/lib.rs\n@@ -23,6 +23,8 @@\n //! from a physically crash-torn tail is a separate, explicit opt-in via\n //! `RecoveryMode::RecoverCrashTail` / `recover_with_mode` — the normal\n //! `recover()` path never silently tolerates one.\n+//!\n+pub mod persistent;\n \n use std::collections::HashMap;\n use std::sync::{Arc, Mutex};\n"
+    }
+  }
+}
