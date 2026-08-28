@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "deploy.health"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-final-deploy-health-20260828T2040Z",
+  "occurred_at": "2026-08-28T20:40:20Z",
+  "recorded_at": "2026-08-28T20:40:20Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-17b1a51609424c95"
+}

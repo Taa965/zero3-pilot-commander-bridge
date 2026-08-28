@@ -1,0 +1,21 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "curl",
+        "-fsS",
+        "http://127.0.0.1:8788/health"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"git_sha\":\"17d638f\",\"status\":\"ok\",\"version\":\"0.1.0\"}"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-final-deploy-health-20260828T2040Z",
+  "occurred_at": "2026-08-28T20:40:20Z",
+  "recorded_at": "2026-08-28T20:40:20Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-17b1a51609424c95"
+}
