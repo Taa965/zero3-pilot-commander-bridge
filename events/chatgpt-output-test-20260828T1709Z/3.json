@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 101: ['cargo', 'test', '--workspace']\nstderr:\nerror: unclosed table, expected `]`\n --> Cargo.toml:1:11\n  |\n1 | [workspace\n  |           ^\n"
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-output-test-20260828T1709Z",
+  "occurred_at": "2026-08-28T17:09:02Z",
+  "recorded_at": "2026-08-28T17:09:02Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0f83c9a709564a14"
+}

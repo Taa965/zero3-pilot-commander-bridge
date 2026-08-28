@@ -1,0 +1,52 @@
+{
+  "completed_at": "2026-08-28T17:09:02Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-output-test-20260828T1709Z",
+  "recorded_at": "2026-08-28T17:09:02Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "failed",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T17:09:02Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "test.run"
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:09:02Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "cargo",
+            "test",
+            "--workspace"
+          ],
+          "returncode": 101,
+          "stderr": "error: unclosed table, expected `]`\n --> Cargo.toml:1:11\n  |\n1 | [workspace\n  |           ^\n",
+          "stdout": ""
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:09:02Z",
+        "event_sequence": 3,
+        "event_type": "task.failed",
+        "payload": {
+          "reason": "command failed with exit 101: ['cargo', 'test', '--workspace']\nstderr:\nerror: unclosed table, expected `]`\n --> Cargo.toml:1:11\n  |\n1 | [workspace\n  |           ^\n"
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 0.0,
+        "stage": "test.run"
+      }
+    ]
+  },
+  "task_id": "pilot-task-0f83c9a709564a14",
+  "terminal": true
+}
