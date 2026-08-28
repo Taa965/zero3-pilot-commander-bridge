@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "push",
+        "origin",
+        "HEAD:refs/heads/pilot-dev-complete-runtime-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "To github.com:Taa965/zero3-pilot.git\n   c509e59..56ad5bb  HEAD -> pilot-dev-complete-runtime-20260829\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-final-push-20260828T1821Z",
+  "occurred_at": "2026-08-28T18:19:22Z",
+  "recorded_at": "2026-08-28T18:19:39Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-b643bf0075ee40ce"
+}
