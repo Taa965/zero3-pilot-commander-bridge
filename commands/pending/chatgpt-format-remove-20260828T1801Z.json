@@ -1,0 +1,7 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "execution_id":"chatgpt-format-remove-20260828T1801Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-28T18:01:00Z",
+  "payload":{"execution_id":"chatgpt-format-remove-20260828T1801Z","capability":"file.patch","args":{"diff":"diff --git a/crates/zero3-core/tests/format_workspace_once.rs b/crates/zero3-core/tests/format_workspace_once.rs\ndeleted file mode 100644\n--- a/crates/zero3-core/tests/format_workspace_once.rs\n+++ /dev/null\n@@ -1,13 +0,0 @@\n-use std::path::Path;\n-use std::process::Command;\n-\n-#[test]\n-fn format_workspace_once() {\n-    let root = Path::new(env!(\"CARGO_MANIFEST_DIR\")).join(\"../..\");\n-    let status = Command::new(\"cargo\")\n-        .args([\"fmt\", \"--all\"])\n-        .current_dir(root)\n-        .status()\n-        .expect(\"spawn cargo fmt\");\n-    assert!(status.success(), \"cargo fmt --all failed: {status}\");\n-}\n"}}}
