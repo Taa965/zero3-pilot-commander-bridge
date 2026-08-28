@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=nowarn",
+        "/opt/zero3-pilot-dev/tmpz24_3gut.patch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-persist-regression2-20260828T2118Z",
+  "occurred_at": "2026-08-28T21:17:26Z",
+  "recorded_at": "2026-08-28T21:17:26Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-9547e97bbc6d4bee"
+}
