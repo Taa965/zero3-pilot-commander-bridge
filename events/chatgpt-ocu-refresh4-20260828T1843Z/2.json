@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "pilot-dev-complete-runtime-20260829",
+        "origin/pilot-dev-complete-runtime-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Reset branch 'pilot-dev-complete-runtime-20260829'\n",
+      "stdout": "Branch 'pilot-dev-complete-runtime-20260829' set up to track remote branch 'pilot-dev-complete-runtime-20260829' from 'origin'.\nYour branch is up to date with 'origin/pilot-dev-complete-runtime-20260829'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-ocu-refresh4-20260828T1843Z",
+  "occurred_at": "2026-08-28T18:41:01Z",
+  "recorded_at": "2026-08-28T18:41:19Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0c7ccdf08a0a4bdf"
+}
