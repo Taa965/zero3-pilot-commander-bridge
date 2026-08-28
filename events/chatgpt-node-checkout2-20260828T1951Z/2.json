@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "pilot-dev-node-desktop-20260829",
+        "origin/pilot-dev-node-desktop-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Switched to a new branch 'pilot-dev-node-desktop-20260829'\n",
+      "stdout": "Branch 'pilot-dev-node-desktop-20260829' set up to track remote branch 'pilot-dev-node-desktop-20260829' from 'origin'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-node-checkout2-20260828T1951Z",
+  "occurred_at": "2026-08-28T19:49:29Z",
+  "recorded_at": "2026-08-28T19:49:46Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e698e008240d42fd"
+}
