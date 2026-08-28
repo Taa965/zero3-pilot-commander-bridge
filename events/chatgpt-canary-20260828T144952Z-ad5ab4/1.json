@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "git.push_branch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-canary-20260828T144952Z-ad5ab4",
+  "occurred_at": "2026-08-28T14:50:01Z",
+  "recorded_at": "2026-08-28T14:50:02Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-26fac425fcbd4e3e"
+}
