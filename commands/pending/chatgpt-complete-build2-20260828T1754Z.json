@@ -1,8 +1,0 @@
-{
-  "schema":"zero3.commander.command.execution-submit/1.0",
-  "command":"execution.submit",
-  "execution_id":"chatgpt-complete-build2-20260828T1754Z",
-  "commander_id":"chatgpt-web-session",
-  "issued_at":"2026-08-28T17:54:00Z",
-  "payload":{"execution_id":"chatgpt-complete-build2-20260828T1754Z","capability":"test.build","args":{}}
-}
