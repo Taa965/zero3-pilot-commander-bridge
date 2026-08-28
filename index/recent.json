@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 3,
+      "execution_id": "chatgpt-ui-listapps3-20260828T2016Z",
+      "progress": 100.0,
+      "stage": "file.patch",
+      "state": "succeeded",
+      "task_id": "pilot-task-badb1128cc5e4f7e",
+      "updated_at": "2026-08-28T20:16:45Z"
+    },
+    {
       "event_sequence": 2,
       "execution_id": "chatgpt-ui-listapps2-20260828T2014Z",
       "progress": 0.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-77fa21252e9f4055",
       "updated_at": "2026-08-28T17:56:34Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-complete-pushfix-20260828T1758Z",
-      "progress": 100.0,
-      "stage": "git.push_branch",
-      "state": "succeeded",
-      "task_id": "pilot-task-bb61fd91303a4608",
-      "updated_at": "2026-08-28T17:55:37Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T20:13:57Z"
+  "updated_at": "2026-08-28T20:16:45Z"
 }
