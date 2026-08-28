@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 1: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmp173c_36e.patch']\nstderr:\nerror: patch failed: crates/zero3-providers/src/weixin_clawbot.rs:530\nerror: crates/zero3-providers/src/weixin_clawbot.rs: patch does not apply\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-weixin-regression-patch-20260828T2117Z",
+  "occurred_at": "2026-08-28T21:16:47Z",
+  "recorded_at": "2026-08-28T21:16:47Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-6d341dde362b4c16"
+}
