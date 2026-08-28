@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.5",
+  "execution_id": "chatgpt-final-deploy-health-20260828T2040Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T20:40:00Z",
+  "idempotency_key": "chatgpt-final-deploy-health-20260828T2040Z",
+  "payload": {
+    "execution_id": "chatgpt-final-deploy-health-20260828T2040Z",
+    "capability": "deploy.health",
+    "args": {}
+  }
+}
