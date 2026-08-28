@@ -1,0 +1,15 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-autonomy-restore-cargo-20260828T1631Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T16:31:00Z",
+  "payload": {
+    "capability": "file.write",
+    "args": {
+      "path": "Cargo.toml",
+      "content": "[workspace]\nresolver = \"2\"\nmembers = [\n    \"crates/zero3-core\",\n    \"crates/zero3-store\",\n    \"crates/zero3-providers\",\n    \"crates/zero3-scheduler\",\n    \"crates/zero3-subagents\",\n    \"crates/zero3-memory\",\n    \"apps/web\",\n]\n\n[workspace.package]\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"Apache-2.0\"\nrepository = \"https://github.com/Taa965/zero3-pilot\"\n\n[workspace.dependencies]\nserde = { version = \"1\", features = [\"derive\"] }\nserde_json = \"1\"\ntokio = { version = \"1\", features = [\"rt-multi-thread\", \"macros\", \"time\", \"sync\"] }\nasync-trait = \"0.1\"\nchrono = { version = \"0.4\", features = [\"serde\"] }\nuuid = { version = \"1\", features = [\"v4\", \"serde\"] }\nanyhow = \"1\"\nthiserror = \"1\"\n"
+    },
+    "execution_id": "chatgpt-autonomy-restore-cargo-20260828T1631Z"
+  }
+}
