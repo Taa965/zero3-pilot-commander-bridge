@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 1: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmp751ezi23.patch']\nstderr:\nerror: patch failed: crates/zero3-providers/src/weixin_clawbot.rs:486\nerror: crates/zero3-providers/src/weixin_clawbot.rs: patch does not apply\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-weixin-windows-persist-20260828T2114Z",
+  "occurred_at": "2026-08-28T21:14:00Z",
+  "recorded_at": "2026-08-28T21:14:00Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-85e852204ce64774"
+}
