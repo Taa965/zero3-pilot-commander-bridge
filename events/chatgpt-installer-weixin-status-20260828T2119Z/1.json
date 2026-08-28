@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.status"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-installer-weixin-status-20260828T2119Z",
+  "occurred_at": "2026-08-28T21:19:17Z",
+  "recorded_at": "2026-08-28T21:19:17Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-c66fa452b01a4f2d"
+}
