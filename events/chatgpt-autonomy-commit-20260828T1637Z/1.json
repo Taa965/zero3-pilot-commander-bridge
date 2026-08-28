@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "git.commit"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-autonomy-commit-20260828T1637Z",
+  "occurred_at": "2026-08-28T16:36:18Z",
+  "recorded_at": "2026-08-28T16:36:18Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-1817992e85c54061"
+}
