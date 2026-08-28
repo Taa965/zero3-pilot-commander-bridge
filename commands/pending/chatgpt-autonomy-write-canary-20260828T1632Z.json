@@ -1,0 +1,15 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-autonomy-write-canary-20260828T1632Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T16:32:00Z",
+  "payload": {
+    "capability": "file.write",
+    "args": {
+      "path": "docs/chatgpt-autonomy-canary.md",
+      "content": "# ChatGPT Autonomous Development Canary\n\nThis file was created end-to-end by the ChatGPT web session through the isolated Zero3 Pilot Commander Bridge and Dev Executor.\n\nCanary date: 2026-08-29 Asia/Singapore.\n\nIt has no runtime or production behavior.\n"
+    },
+    "execution_id": "chatgpt-autonomy-write-canary-20260828T1632Z"
+  }
+}
