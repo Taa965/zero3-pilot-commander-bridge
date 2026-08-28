@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-gate-fmt2-20260828T1802Z",
+  "occurred_at": "2026-08-28T17:58:49Z",
+  "recorded_at": "2026-08-28T17:59:08Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-72215352165b4ec3"
+}
