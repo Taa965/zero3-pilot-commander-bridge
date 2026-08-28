@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "git.commit"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-node-commit1-20260828T2007Z",
+  "occurred_at": "2026-08-28T19:58:16Z",
+  "recorded_at": "2026-08-28T19:58:16Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-47310d9fd9bc4ae5"
+}
