@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.status"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-contract-status-20260828T2010Z",
+  "occurred_at": "2026-08-28T20:10:09Z",
+  "recorded_at": "2026-08-28T20:10:10Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-6beab1e862d84a22"
+}
