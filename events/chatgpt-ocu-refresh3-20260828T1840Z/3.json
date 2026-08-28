@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-ocu-refresh3-20260828T1840Z",
+  "occurred_at": "2026-08-28T18:38:32Z",
+  "recorded_at": "2026-08-28T18:38:49Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-507b5c0da50849d4"
+}
