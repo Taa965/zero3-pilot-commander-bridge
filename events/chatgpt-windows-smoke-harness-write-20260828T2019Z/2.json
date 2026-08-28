@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": null
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-windows-smoke-harness-write-20260828T2019Z",
+  "occurred_at": "2026-08-28T20:19:36Z",
+  "recorded_at": "2026-08-28T20:19:36Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-7e0539c0d25d4e09"
+}
