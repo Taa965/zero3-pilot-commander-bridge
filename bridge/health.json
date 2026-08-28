@@ -4,11 +4,11 @@
   "github_egress": "healthy",
   "github_ingress": "healthy",
   "last_command_received_at": "2026-08-28T18:30:04Z",
-  "last_event_published_at": "2026-08-28T18:30:04Z",
+  "last_event_published_at": "2026-08-28T18:30:23Z",
   "outbox_backlog": 0,
-  "publish_lag_seconds": 4.45,
+  "publish_lag_seconds": 1.85,
   "schema": "zero3.commander.bridge-health/1.0",
-  "updated_at": "2026-08-28T18:30:04Z",
+  "updated_at": "2026-08-28T18:30:23Z",
   "zero3_central": "unknown",
   "zero3_commander": "healthy"
 }
