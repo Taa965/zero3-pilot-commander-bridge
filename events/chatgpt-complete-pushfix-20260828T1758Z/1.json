@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "git.push_branch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-complete-pushfix-20260828T1758Z",
+  "occurred_at": "2026-08-28T17:55:18Z",
+  "recorded_at": "2026-08-28T17:55:18Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-bb61fd91303a4608"
+}
