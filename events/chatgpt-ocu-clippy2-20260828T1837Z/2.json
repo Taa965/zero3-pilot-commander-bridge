@@ -1,0 +1,25 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "returncode": 0,
+      "stderr": "    Checking zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n   Compiling zero3-web v0.1.0 (/opt/zero3-pilot-dev/apps/web)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.69s\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-ocu-clippy2-20260828T1837Z",
+  "occurred_at": "2026-08-28T18:33:37Z",
+  "recorded_at": "2026-08-28T18:33:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-422e546f1733478a"
+}
