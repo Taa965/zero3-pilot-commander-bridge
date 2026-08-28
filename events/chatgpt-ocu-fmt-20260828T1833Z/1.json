@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.fmt"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-ocu-fmt-20260828T1833Z",
+  "occurred_at": "2026-08-28T18:30:44Z",
+  "recorded_at": "2026-08-28T18:30:44Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-1a0c674338c74a23"
+}
