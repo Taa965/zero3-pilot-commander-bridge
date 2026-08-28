@@ -1,0 +1,12 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-installer-weixin-test-final-20260828T2125Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T21:25:00Z",
+  "payload": {
+    "capability": "test.run",
+    "args": {},
+    "execution_id": "chatgpt-installer-weixin-test-final-20260828T2125Z"
+  }
+}
