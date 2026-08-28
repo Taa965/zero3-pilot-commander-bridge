@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 101: ['cargo', 'test', '--workspace']"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-autonomy-negative-test-20260828T1630Z",
+  "occurred_at": "2026-08-28T16:29:54Z",
+  "recorded_at": "2026-08-28T16:30:13Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e8ead20154504dfa"
+}
