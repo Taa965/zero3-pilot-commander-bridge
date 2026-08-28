@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-28T20:21:12Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-computer-serde-test-write-20260828T2021Z",
+  "recorded_at": "2026-08-28T20:21:12Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T20:21:12Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.write"
+        }
+      },
+      {
+        "created_at": "2026-08-28T20:21:12Z",
+        "event_sequence": 2,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": null
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "file.write"
+      }
+    ]
+  },
+  "task_id": "pilot-task-6a6162ee7bc9424b",
+  "terminal": true
+}
