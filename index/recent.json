@@ -2,13 +2,13 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
-      "event_sequence": 1,
+      "event_sequence": 3,
       "execution_id": "chatgpt-node-push1-20260828T2008Z",
-      "progress": 0.0,
+      "progress": 100.0,
       "stage": "git.push_branch",
-      "state": "running",
+      "state": "succeeded",
       "task_id": "pilot-task-e522797d75714beb",
-      "updated_at": "2026-08-28T19:58:56Z"
+      "updated_at": "2026-08-28T19:59:15Z"
     },
     {
       "event_sequence": 3,
@@ -454,5 +454,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T19:58:56Z"
+  "updated_at": "2026-08-28T19:59:15Z"
 }

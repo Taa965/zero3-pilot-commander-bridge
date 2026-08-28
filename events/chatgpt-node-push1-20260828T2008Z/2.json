@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "push",
+        "origin",
+        "HEAD:refs/heads/pilot-dev-node-desktop-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "To github.com:Taa965/zero3-pilot.git\n   a446887..7f93989  HEAD -> pilot-dev-node-desktop-20260829\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-node-push1-20260828T2008Z",
+  "occurred_at": "2026-08-28T19:58:57Z",
+  "recorded_at": "2026-08-28T19:59:15Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e522797d75714beb"
+}
