@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-weixin-checkout-20260828T2059Z",
+      "progress": 0.0,
+      "stage": "repo.checkout",
+      "state": "running",
+      "task_id": "pilot-task-4803456e869b44b0",
+      "updated_at": "2026-08-28T21:05:52Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-final-deploy-health-20260828T2040Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "failed",
       "task_id": "pilot-task-e8447798a9c54b90",
       "updated_at": "2026-08-28T18:34:34Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-ocu-clippy2-20260828T1837Z",
-      "progress": 100.0,
-      "stage": "test.clippy",
-      "state": "succeeded",
-      "task_id": "pilot-task-422e546f1733478a",
-      "updated_at": "2026-08-28T18:33:54Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T20:40:20Z"
+  "updated_at": "2026-08-28T21:05:52Z"
 }

@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.checkout"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-checkout-20260828T2059Z",
+  "occurred_at": "2026-08-28T21:05:52Z",
+  "recorded_at": "2026-08-28T21:05:52Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-4803456e869b44b0"
+}
