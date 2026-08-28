@@ -2,13 +2,13 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
-      "event_sequence": 1,
+      "event_sequence": 3,
       "execution_id": "chatgpt-final-fmt-20260828T2022Z",
-      "progress": 0.0,
+      "progress": 100.0,
       "stage": "test.fmt",
-      "state": "running",
+      "state": "succeeded",
       "task_id": "pilot-task-9b15f35a813e45ac",
-      "updated_at": "2026-08-28T20:22:10Z"
+      "updated_at": "2026-08-28T20:22:28Z"
     },
     {
       "event_sequence": 2,
@@ -454,5 +454,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T20:22:10Z"
+  "updated_at": "2026-08-28T20:22:28Z"
 }
