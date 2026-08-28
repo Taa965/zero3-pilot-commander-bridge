@@ -2,13 +2,13 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
-      "event_sequence": 1,
+      "event_sequence": 2,
       "execution_id": "chatgpt-autonomy-branch-20260828T1629Z",
-      "progress": 0.0,
+      "progress": 100.0,
       "stage": "git.create_branch",
-      "state": "running",
+      "state": "succeeded",
       "task_id": "pilot-task-597c50a1c18f4062",
-      "updated_at": "2026-08-28T16:28:35Z"
+      "updated_at": "2026-08-28T16:28:54Z"
     },
     {
       "event_sequence": 2,
@@ -121,5 +121,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T16:28:35Z"
+  "updated_at": "2026-08-28T16:28:55Z"
 }
