@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-28T16:32:50Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-autonomy-clippy-20260828T1633Z",
+  "recorded_at": "2026-08-28T16:32:50Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T16:32:31Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "test.clippy"
+        }
+      },
+      {
+        "created_at": "2026-08-28T16:32:33Z",
+        "event_sequence": 2,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "test.clippy"
+      }
+    ]
+  },
+  "task_id": "pilot-task-d30bf7b4ee954b0c",
+  "terminal": true
+}
