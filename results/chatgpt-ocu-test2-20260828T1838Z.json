@@ -1,0 +1,52 @@
+{
+  "completed_at": "2026-08-28T18:34:34Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-ocu-test2-20260828T1838Z",
+  "recorded_at": "2026-08-28T18:34:34Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "failed",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T18:34:15Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "test.run"
+        }
+      },
+      {
+        "created_at": "2026-08-28T18:34:23Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "cargo",
+            "test",
+            "--workspace"
+          ],
+          "returncode": 101,
+          "stderr": "   Compiling zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n   Compiling zero3-web v0.1.0 (/opt/zero3-pilot-dev/apps/web)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.83s\n     Running unittests src/lib.rs (target/debug/deps/zero3_core-0fff12ff36793601)\n     Running unittests src/lib.rs (target/debug/deps/zero3_memory-2c105831a9123749)\n     Running unittests src/lib.rs (target/debug/deps/zero3_providers-597ff2ec12758dae)\n     Running unittests src/bin/fake_ocu.rs (target/debug/deps/fake_ocu-eed87e428e4f86e5)\n     Running unittests src/bin/fake_ocu_hang.rs (target/debug/deps/fake_ocu_hang-88c938b44540565f)\n     Running tests/browser_real.rs (target/debug/deps/browser_real-915a00c454597d29)\n     Running tests/open_computer_use.rs (target/debug/deps/open_computer_use-2aa9bcab6131e3e1)\nerror: test failed, to rerun pass `-p zero3-providers --test open_computer_use`\n",
+          "stdout": "\nrunning 4 tests\ntest permission::tests::insufficient_grant_on_irreversible_action_is_denied_not_escalated ... ok\ntest permission::tests::insufficient_grant_on_reversible_action_requires_approval_not_silent_allow ... ok\ntest permission::tests::permission_levels_form_the_expected_strict_order ... ok\ntest permission::tests::sufficient_grant_always_allows_regardless_of_reversibility ... ok\n\ntest result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 3 tests\ntest tests::personal_memory_without_explicit_approval_is_rejected ... ok\ntest tests::scopes_do_not_leak_into_each_other_and_search_is_scoped ... ok\ntest tests::operational_memory_persists_across_reopen ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 6 tests\ntest browser::tests::semantic_contract_has_no_chromiumoxide_types ... ok\ntest browser::tests::unimplemented_provider_never_reports_success ... ok\ntest computer::tests::unimplemented_provider_never_reports_success ... ok\ntest registry::tests::register_get_list ... ok\ntest registry::tests::health_check_distinguishes_missing_from_unhealthy ... ok\ntest registry::tests::select_finds_first_matching_capability_deterministically ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest real_chromium_semantic_agent_flow ... ignored, requires a real Chrome/Chromium executable\n\ntest result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 6 tests\ntest capabilities_enumerate_against_the_live_backend ... FAILED\ntest a_hung_backend_times_out_instead_of_blocking_forever ... ok\ntest execute_maps_each_action_to_the_correct_real_tool_call ... FAILED\ntest missing_binary_fails_gracefully_not_panicking ... ok\ntest process_starts_and_the_mcp_handshake_succeeds ... ok\ntest clean_shutdown_closes_the_session ... ok\n\nfailures:\n\n---- capabilities_enumerate_against_the_live_backend stdout ----\n\nthread 'capabilities_enumerate_against_the_live_backend' (917244) panicked at crates/zero3-providers/tests/open_computer_use.rs:47:9:\ndeclared capability 'list_apps' is not in the backend's real tools/list\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n---- execute_maps_each_action_to_the_correct_real_tool_call stdout ----\n\nthread 'execute_maps_each_action_to_the_correct_real_tool_call' (917258) panicked at crates/zero3-providers/tests/open_computer_use.rs:92:5:\nassertion `left == right` failed\n  left: Object {\"app\": String(\"Finder\"), \"max_tree_depth\": Number(16), \"max_tree_nodes\": Number(200), \"text_limit\": Number(4000)}\n right: Object {\"app\": String(\"Finder\")}\n\n\nfailures:\n    capabilities_enumerate_against_the_live_backend\n    execute_maps_each_action_to_the_correct_real_tool_call\n\ntest result: FAILED. 4 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.01s\n\n"
+        }
+      },
+      {
+        "created_at": "2026-08-28T18:34:23Z",
+        "event_sequence": 3,
+        "event_type": "task.failed",
+        "payload": {
+          "reason": "command failed with exit 101: ['cargo', 'test', '--workspace']\nstderr:\n   Compiling zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n   Compiling zero3-web v0.1.0 (/opt/zero3-pilot-dev/apps/web)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.83s\n     Running unittests src/lib.rs (target/debug/deps/zero3_core-0fff12ff36793601)\n     Running unittests src/lib.rs (target/debug/deps/zero3_memory-2c105831a9123749)\n     Running unittests src/lib.rs (target/debug/deps/zero3_providers-597ff2ec12758dae)\n     Running unittests src/bin/fake_ocu.rs (target/debug/deps/fake_ocu-eed87e428e4f86e5)\n     Running unittests src/bin/fake_ocu_hang.rs (target/debug/deps/fake_ocu_hang-88c938b44540565f)\n     Running tests/browser_real.rs (target/debug/deps/browser_real-915a00c454597d29)\n     Running tests/open_computer_use.rs (target/debug/deps/open_computer_use-2aa9bcab6131e3e1)\nerror: test failed, to rerun pass `-p zero3-providers --test open_computer_use`\n\nstdout:\n\nrunning 4 tests\ntest permission::tests::insufficient_grant_on_irreversible_action_is_denied_not_escalated ... ok\ntest permission::tests::insufficient_grant_on_reversible_action_requires_approval_not_silent_allow ... ok\ntest permission::tests::permission_levels_form_the_expected_strict_order ... ok\ntest permission::tests::sufficient_grant_always_allows_regardless_of_reversibility ... ok\n\ntest result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 3 tests\ntest tests::personal_memory_without_explicit_approval_is_rejected ... ok\ntest tests::scopes_do_not_leak_into_each_other_and_search_is_scoped ... ok\ntest tests::operational_memory_persists_across_reopen ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 6 tests\ntest browser::tests::semantic_contract_has_no_chromiumoxide_types ... ok\ntest browser::tests::unimplemented_provider_never_reports_success ... ok\ntest computer::tests::unimplemented_provider_never_reports_success ... ok\ntest registry::tests::register_get_list ... ok\ntest registry::tests::health_check_distinguishes_missing_from_unhealthy ... ok\ntest registry::tests::select_finds_first_matching_capability_deterministically ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest real_chromium_semantic_agent_flow ... ignored, requires a real Chrome/Chromium executable\n\ntest result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 6 tests\ntest capabilities_enumerate_against_the_live_backend ... FAILED\ntest a_hung_backend_times_out_instead_of_blocking_forever ... ok\ntest execute_maps_each_action_to_the_correct_real_tool_call ... FAILED\ntest missing_binary_fails_gracefully_not_panicking ... ok\ntest process_starts_and_the_mcp_handshake_succeeds ... ok\ntest clean_shutdown_closes_the_session ... ok\n\nfailures:\n\n---- capabilities_enumerate_against_the_live_backend stdout ----\n\nthread 'capabilities_enumerate_against_the_live_backend' (917244) panicked at crates/zero3-providers/tests/open_computer_use.rs:47:9:\ndeclared capability 'list_apps' is not in the backend's real tools/list\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n---- execute_maps_each_action_to_the_correct_real_tool_call stdout ----\n\nthread 'execute_maps_each_action_to_the_correct_real_tool_call' (917258) panicked at crates/zero3-providers/tests/open_computer_use.rs:92:5:\nassertion `left == right` failed\n  left: Object {\"app\": String(\"Finder\"), \"max_tree_depth\": Number(16), \"max_tree_nodes\": Number(200), \"text_limit\": Number(4000)}\n right: Object {\"app\": String(\"Finder\")}\n\n\nfailures:\n    capabilities_enumerate_against_the_live_backend\n    execute_maps_each_action_to_the_correct_real_tool_call\n\ntest result: FAILED. 4 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.01s\n\n"
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 0.0,
+        "stage": "test.run"
+      }
+    ]
+  },
+  "task_id": "pilot-task-e8447798a9c54b90",
+  "terminal": true
+}
