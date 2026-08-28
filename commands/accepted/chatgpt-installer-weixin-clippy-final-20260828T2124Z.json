@@ -1,0 +1,14 @@
+{
+  "accepted_at": "2026-08-28T21:24:08Z",
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_response": {
+    "execution_id": "chatgpt-installer-weixin-clippy-final-20260828T2124Z",
+    "schema": "zero3.execution-acceptance/1.0",
+    "task_id": "pilot-task-dbe1ad5ec12f4ce9"
+  },
+  "correlation": "task_id",
+  "execution_id": "chatgpt-installer-weixin-clippy-final-20260828T2124Z",
+  "schema": "zero3.commander.command-accepted/1.0",
+  "task_id": "pilot-task-dbe1ad5ec12f4ce9"
+}

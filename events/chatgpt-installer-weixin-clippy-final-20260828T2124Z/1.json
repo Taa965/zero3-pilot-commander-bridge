@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.clippy"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-installer-weixin-clippy-final-20260828T2124Z",
+  "occurred_at": "2026-08-28T21:24:08Z",
+  "recorded_at": "2026-08-28T21:24:08Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-dbe1ad5ec12f4ce9"
+}
