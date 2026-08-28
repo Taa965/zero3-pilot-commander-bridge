@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.fetch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-final-repo-fetch-20260828T2038Z",
+  "occurred_at": "2026-08-28T20:38:39Z",
+  "recorded_at": "2026-08-28T20:38:39Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-f5ab8d11eb6e47b5"
+}
