@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-computer-serde-fix-20260828T2010Z",
+  "occurred_at": "2026-08-28T20:01:06Z",
+  "recorded_at": "2026-08-28T20:01:06Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-692dbe923f174a40"
+}
