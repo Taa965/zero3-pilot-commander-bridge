@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": null
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-output-break-20260828T1708Z",
+  "occurred_at": "2026-08-28T17:08:05Z",
+  "recorded_at": "2026-08-28T17:08:05Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-49a944942ebf4490"
+}

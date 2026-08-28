@@ -1,0 +1,12 @@
+{
+  "event_sequence": 2,
+  "execution_id": "chatgpt-output-break-20260828T1708Z",
+  "progress": 100.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "file.write",
+  "state": "succeeded",
+  "task_id": "pilot-task-49a944942ebf4490",
+  "terminal": true,
+  "updated_at": "2026-08-28T17:08:05Z"
+}
