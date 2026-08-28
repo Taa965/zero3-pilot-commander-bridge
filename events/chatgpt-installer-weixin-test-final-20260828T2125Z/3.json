@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-installer-weixin-test-final-20260828T2125Z",
+  "occurred_at": "2026-08-28T21:25:23Z",
+  "recorded_at": "2026-08-28T21:25:26Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-c337f5568e6c4871"
+}
