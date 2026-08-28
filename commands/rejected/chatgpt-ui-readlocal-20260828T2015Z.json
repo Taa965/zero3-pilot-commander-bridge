@@ -1,0 +1,10 @@
+{
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_status": 422,
+  "execution_id": "chatgpt-ui-readlocal-20260828T2015Z",
+  "reason": "{\"error\": \"unknown or disabled capability 'shell.run'\", \"allowed\": [\"ci.logs\", \"ci.status\", \"deploy.health\", \"deploy.status\", \"file.patch\", \"file.read\", \"file.write\", \"git.commit\", \"git.create_branch\", \"git.push_branch\", \"repo.checkout\", \"repo.diff\", \"repo.fetch\", \"repo.log\", \"repo.status\", \"test.build\", \"test.clippy\", \"test.fmt\", \"test.run\"]}",
+  "reason_code": "commander-rejected",
+  "rejected_at": "2026-08-28T20:14:53Z",
+  "schema": "zero3.commander.command-rejected/1.0"
+}
