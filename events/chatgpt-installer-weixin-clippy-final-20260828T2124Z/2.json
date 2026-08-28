@@ -1,0 +1,25 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "returncode": 0,
+      "stderr": "    Checking zero3-core v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-core)\n    Checking zeroize v1.9.0\n    Checking rustls-pki-types v1.15.1\n    Checking getrandom v0.2.17\n    Checking untrusted v0.9.0\n    Checking subtle v2.6.1\n    Checking ring v0.17.14\n    Checking webpki-roots v1.0.9\n    Checking urlencoding v2.1.3\n    Checking zero3-store v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-store)\n    Checking zero3-scheduler v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-scheduler)\n   Compiling zero3-web v0.1.0 (/opt/zero3-pilot-dev/apps/web)\n    Checking zero3-memory v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-memory)\n    Checking zero3-subagents v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-subagents)\n    Checking rustls-webpki v0.103.15\n    Checking rustls v0.23.43\n    Checking zero3-desktop v0.1.0 (/opt/zero3-pilot-dev/apps/desktop)\n    Checking tokio-rustls v0.26.4\n    Checking hyper-rustls v0.27.9\n    Checking reqwest v0.12.28\n    Checking zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n    Checking zero3-node v0.1.0 (/opt/zero3-pilot-dev/apps/node)\n    Checking zero3-weixin v0.1.0 (/opt/zero3-pilot-dev/apps/weixin)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 11.23s\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-installer-weixin-clippy-final-20260828T2124Z",
+  "occurred_at": "2026-08-28T21:24:19Z",
+  "recorded_at": "2026-08-28T21:24:27Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-dbe1ad5ec12f4ce9"
+}
