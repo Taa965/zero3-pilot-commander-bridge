@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.clippy"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-contract-clippy-20260828T2009Z",
+  "occurred_at": "2026-08-28T20:09:11Z",
+  "recorded_at": "2026-08-28T20:09:11Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-99b5c5e886c64442"
+}
