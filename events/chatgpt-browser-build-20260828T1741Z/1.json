@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.build"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-browser-build-20260828T1741Z",
+  "occurred_at": "2026-08-28T17:39:50Z",
+  "recorded_at": "2026-08-28T17:39:50Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-886b2d306d684d2a"
+}
