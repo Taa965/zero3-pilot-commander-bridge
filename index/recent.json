@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 2,
+      "execution_id": "chatgpt-canary-20260828T144045Z-ead34c",
+      "progress": 100.0,
+      "stage": "file.write",
+      "state": "succeeded",
+      "task_id": "pilot-task-4c55800eebbf451a",
+      "updated_at": "2026-08-28T14:40:51Z"
+    },
+    {
+      "event_sequence": 2,
       "execution_id": "chatgpt-canary-20260828T143948Z-1a7d6b",
       "progress": 100.0,
       "stage": "git.create_branch",
@@ -13,5 +22,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T14:40:32Z"
+  "updated_at": "2026-08-28T14:40:51Z"
 }
