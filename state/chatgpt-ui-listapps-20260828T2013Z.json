@@ -1,0 +1,12 @@
+{
+  "event_sequence": 2,
+  "execution_id": "chatgpt-ui-listapps-20260828T2013Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "file.patch",
+  "state": "failed",
+  "task_id": "pilot-task-a5157e86a16a42a4",
+  "terminal": true,
+  "updated_at": "2026-08-28T20:13:19Z"
+}

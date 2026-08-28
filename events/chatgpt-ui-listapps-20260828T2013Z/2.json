@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmpiypbagzt.patch']\nstderr:\nerror: corrupt patch at line 7\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-ui-listapps-20260828T2013Z",
+  "occurred_at": "2026-08-28T20:13:19Z",
+  "recorded_at": "2026-08-28T20:13:19Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-a5157e86a16a42a4"
+}
