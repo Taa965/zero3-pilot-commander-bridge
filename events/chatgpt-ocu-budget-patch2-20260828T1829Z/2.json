@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmp_ttemvuw.patch']\nstderr:\nerror: corrupt patch at line 23\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-ocu-budget-patch2-20260828T1829Z",
+  "occurred_at": "2026-08-28T18:28:13Z",
+  "recorded_at": "2026-08-28T18:28:13Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-a09e378ba4a54c20"
+}
