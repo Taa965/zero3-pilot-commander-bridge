@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "Diff in /opt/zero3-pilot-dev/crates/zero3-providers/tests/open_computer_use.rs:27:\n     let adapter = OpenComputerUseAdapter::new(bin);\n \n     let remote_tools = adapter.list_remote_tools().await.unwrap();\n-    for expected in [\"list_apps\", \"click\", \"type_text\", \"press_key\", \"get_app_state\"] {\n+    for expected in [\n+        \"list_apps\",\n+        \"click\",\n+        \"type_text\",\n+        \"press_key\",\n+        \"get_app_state\",\n+    ] {\n         assert!(remote_tools.contains(&expected.to_string()));\n     }\n \n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-ocu-fmt3-20260828T1841Z",
+  "occurred_at": "2026-08-28T18:40:04Z",
+  "recorded_at": "2026-08-28T18:40:23Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-c5621748826c43e0"
+}

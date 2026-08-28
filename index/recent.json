@@ -2,13 +2,13 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
-      "event_sequence": 1,
+      "event_sequence": 3,
       "execution_id": "chatgpt-ocu-fmt3-20260828T1841Z",
       "progress": 0.0,
       "stage": "test.fmt",
-      "state": "running",
+      "state": "failed",
       "task_id": "pilot-task-c5621748826c43e0",
-      "updated_at": "2026-08-28T18:40:04Z"
+      "updated_at": "2026-08-28T18:40:23Z"
     },
     {
       "event_sequence": 3,
@@ -454,5 +454,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T18:40:04Z"
+  "updated_at": "2026-08-28T18:40:23Z"
 }
