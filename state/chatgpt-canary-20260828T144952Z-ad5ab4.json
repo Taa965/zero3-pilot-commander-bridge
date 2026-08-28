@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 2,
   "execution_id": "chatgpt-canary-20260828T144952Z-ad5ab4",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "git.push_branch",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-26fac425fcbd4e3e",
-  "terminal": false,
-  "updated_at": "2026-08-28T14:50:02Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T14:50:20Z"
 }
