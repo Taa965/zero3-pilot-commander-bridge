@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 101: ['cargo', 'test', '--workspace']\nstderr:\n   Compiling zero3-core v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-core)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.92s\n     Running unittests src/lib.rs (target/debug/deps/zero3_core-0fff12ff36793601)\n     Running tests/format_node_desktop_once.rs (target/debug/deps/format_node_desktop_once-5590e761f49380db)\nerror: test failed, to rerun pass `-p zero3-core --test format_node_desktop_once`\n\nstdout:\n\nrunning 4 tests\ntest permission::tests::insufficient_grant_on_irreversible_action_is_denied_not_escalated ... ok\ntest permission::tests::permission_levels_form_the_expected_strict_order ... ok\ntest permission::tests::sufficient_grant_always_allows_regardless_of_reversibility ... ok\ntest permission::tests::insufficient_grant_on_reversible_action_requires_approval_not_silent_allow ... ok\n\ntest result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest format_workspace_once_then_remove_harness ... FAILED\n\nfailures:\n\n---- format_workspace_once_then_remove_harness stdout ----\n\nthread 'format_workspace_once_then_remove_harness' (956631) panicked at crates/zero3-core/tests/format_node_desktop_once.rs:7:81:\nremove formatter harness: Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    format_workspace_once_then_remove_harness\n\ntest result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s\n\n"
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-node-format-run-20260828T1959Z",
+  "occurred_at": "2026-08-28T19:53:41Z",
+  "recorded_at": "2026-08-28T19:53:59Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-6220ff78366c4b35"
+}
