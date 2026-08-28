@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-format-refresh-20260828T1759Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "repo.checkout",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-77fa21252e9f4055",
-  "terminal": false,
-  "updated_at": "2026-08-28T17:56:16Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T17:56:34Z"
 }
