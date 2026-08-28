@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.run"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-ocu-test2-20260828T1838Z",
+  "occurred_at": "2026-08-28T18:34:15Z",
+  "recorded_at": "2026-08-28T18:34:15Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e8447798a9c54b90"
+}
