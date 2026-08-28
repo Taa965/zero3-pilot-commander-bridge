@@ -1,0 +1,26 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "-c",
+        "user.name=Zero3 Pilot Dev Executor",
+        "-c",
+        "user.email=zero3-pilot-dev-executor@localhost",
+        "commit",
+        "-m",
+        "fix: close Windows desktop and local UI product gates"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[pilot-dev-node-desktop-20260829 86f095e] fix: close Windows desktop and local UI product gates\n 4 files changed, 189 insertions(+), 214 deletions(-)\n rewrite docs/ARCHITECTURE.md (99%)\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-final-commit-20260828T2026Z",
+  "occurred_at": "2026-08-28T20:25:25Z",
+  "recorded_at": "2026-08-28T20:25:25Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-3720bc15875849e0"
+}
