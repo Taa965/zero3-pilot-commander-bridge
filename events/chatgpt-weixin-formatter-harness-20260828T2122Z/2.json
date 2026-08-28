@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": null
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-weixin-formatter-harness-20260828T2122Z",
+  "occurred_at": "2026-08-28T21:21:31Z",
+  "recorded_at": "2026-08-28T21:21:31Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-77433c025ada4e35"
+}
