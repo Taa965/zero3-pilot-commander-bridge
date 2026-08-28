@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.checkout"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-ocu-refresh-20260828T1832Z",
+  "occurred_at": "2026-08-28T18:30:04Z",
+  "recorded_at": "2026-08-28T18:30:04Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-4c214e8a160b45c9"
+}

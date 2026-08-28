@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-ocu-refresh-20260828T1832Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "repo.checkout",
+  "state": "running",
+  "task_id": "pilot-task-4c214e8a160b45c9",
+  "terminal": false,
+  "updated_at": "2026-08-28T18:30:04Z"
+}
