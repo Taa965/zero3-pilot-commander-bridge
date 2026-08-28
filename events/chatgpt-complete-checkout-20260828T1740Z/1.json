@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.checkout"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-complete-checkout-20260828T1740Z",
+  "occurred_at": "2026-08-28T17:39:09Z",
+  "recorded_at": "2026-08-28T17:39:09Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-f20873969ba34983"
+}

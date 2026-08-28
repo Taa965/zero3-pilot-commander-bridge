@@ -3,12 +3,12 @@
   "commander_protocol": "zero3-pilot-commander-v1/1.0",
   "github_egress": "healthy",
   "github_ingress": "healthy",
-  "last_command_received_at": "2026-08-28T17:11:38Z",
-  "last_event_published_at": "2026-08-28T17:11:57Z",
+  "last_command_received_at": "2026-08-28T17:39:09Z",
+  "last_event_published_at": "2026-08-28T17:39:09Z",
   "outbox_backlog": 0,
-  "publish_lag_seconds": 1.911,
+  "publish_lag_seconds": 4.214,
   "schema": "zero3.commander.bridge-health/1.0",
-  "updated_at": "2026-08-28T17:37:35Z",
+  "updated_at": "2026-08-28T17:39:09Z",
   "zero3_central": "unknown",
   "zero3_commander": "healthy"
 }
