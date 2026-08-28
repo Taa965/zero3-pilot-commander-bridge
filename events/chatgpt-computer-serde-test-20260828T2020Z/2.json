@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmplotyw9r8.patch']\nstderr:\nerror: corrupt patch at line 23\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-computer-serde-test-20260828T2020Z",
+  "occurred_at": "2026-08-28T20:20:34Z",
+  "recorded_at": "2026-08-28T20:20:34Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-68d1b7ec88314daf"
+}

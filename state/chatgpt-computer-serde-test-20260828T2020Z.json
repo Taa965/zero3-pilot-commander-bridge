@@ -1,0 +1,12 @@
+{
+  "event_sequence": 2,
+  "execution_id": "chatgpt-computer-serde-test-20260828T2020Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "file.patch",
+  "state": "failed",
+  "task_id": "pilot-task-68d1b7ec88314daf",
+  "terminal": true,
+  "updated_at": "2026-08-28T20:20:34Z"
+}
