@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-final-test-20260828T1819Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "test.run",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-20d8a040a2204e25",
-  "terminal": false,
-  "updated_at": "2026-08-28T18:18:02Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T18:18:21Z"
 }
