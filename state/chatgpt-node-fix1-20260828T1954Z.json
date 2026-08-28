@@ -1,0 +1,12 @@
+{
+  "event_sequence": 3,
+  "execution_id": "chatgpt-node-fix1-20260828T1954Z",
+  "progress": 100.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "file.patch",
+  "state": "succeeded",
+  "task_id": "pilot-task-8ad7f2338730412f",
+  "terminal": true,
+  "updated_at": "2026-08-28T19:51:23Z"
+}

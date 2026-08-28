@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=nowarn",
+        "/opt/zero3-pilot-dev/tmpq4dmwhu0.patch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-node-fix1-20260828T1954Z",
+  "occurred_at": "2026-08-28T19:51:23Z",
+  "recorded_at": "2026-08-28T19:51:23Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-8ad7f2338730412f"
+}
