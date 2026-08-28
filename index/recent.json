@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-contract-test-20260828T2011Z",
+      "progress": 0.0,
+      "stage": "test.run",
+      "state": "running",
+      "task_id": "pilot-task-6f989f089a6b4b46",
+      "updated_at": "2026-08-28T20:01:45Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-computer-serde-fix-20260828T2010Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-a8e7d3526a6345dc",
       "updated_at": "2026-08-28T17:48:23Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-browser-build-20260828T1741Z",
-      "progress": 0.0,
-      "stage": "test.build",
-      "state": "failed",
-      "task_id": "pilot-task-886b2d306d684d2a",
-      "updated_at": "2026-08-28T17:42:16Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T20:01:06Z"
+  "updated_at": "2026-08-28T20:01:45Z"
 }
