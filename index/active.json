@@ -1,6 +1,16 @@
 {
   "description": "Non-terminal executions only. Lets an external agent resume context without a repository-wide search. Holds references, never full execution payloads.",
-  "executions": [],
+  "executions": [
+    {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-ocu-clippy2-20260828T1837Z",
+      "progress": 0.0,
+      "stage": "test.clippy",
+      "state": "running",
+      "task_id": "pilot-task-422e546f1733478a",
+      "updated_at": "2026-08-28T18:33:35Z"
+    }
+  ],
   "schema": "zero3.commander.index.active/1.0",
-  "updated_at": "2026-08-28T18:33:14Z"
+  "updated_at": "2026-08-28T18:33:35Z"
 }

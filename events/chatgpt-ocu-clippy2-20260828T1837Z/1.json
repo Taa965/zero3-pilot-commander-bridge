@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.clippy"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-ocu-clippy2-20260828T1837Z",
+  "occurred_at": "2026-08-28T18:33:35Z",
+  "recorded_at": "2026-08-28T18:33:35Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-422e546f1733478a"
+}
