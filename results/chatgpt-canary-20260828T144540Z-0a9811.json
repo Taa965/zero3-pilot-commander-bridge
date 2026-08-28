@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-28T14:46:50Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-canary-20260828T144540Z-0a9811",
+  "recorded_at": "2026-08-28T14:46:50Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T14:45:55Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "test.build"
+        }
+      },
+      {
+        "created_at": "2026-08-28T14:46:45Z",
+        "event_sequence": 2,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "test.build"
+      }
+    ]
+  },
+  "task_id": "pilot-task-c8a1bf9713c64891",
+  "terminal": true
+}
