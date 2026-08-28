@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-08-28T17:52:49Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-complete-build2-20260828T1754Z",
+  "recorded_at": "2026-08-28T17:52:49Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T17:52:12Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "test.build"
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:52:34Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "cargo",
+            "build",
+            "--workspace",
+            "--all-targets"
+          ],
+          "returncode": 0,
+          "stderr": "   Compiling zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n   Compiling libsqlite3-sys v0.35.0\n   Compiling hashlink v0.10.0\n   Compiling fallible-iterator v0.3.0\n   Compiling fallible-streaming-iterator v0.1.9\n   Compiling rusqlite v0.37.0\n   Compiling zero3-web v0.1.0 (/opt/zero3-pilot-dev/apps/web)\n   Compiling zero3-scheduler v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-scheduler)\n   Compiling zero3-memory v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-memory)\n   Compiling zero3-subagents v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-subagents)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 21.54s\n",
+          "stdout": ""
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:52:34Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "test.build"
+      }
+    ]
+  },
+  "task_id": "pilot-task-b81606185e67455b",
+  "terminal": true
+}
