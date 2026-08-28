@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-installer-weixin-refresh-20260828T2110Z",
+      "progress": 0.0,
+      "stage": "repo.checkout",
+      "state": "running",
+      "task_id": "pilot-task-672a43ee295f4377",
+      "updated_at": "2026-08-28T21:10:53Z"
+    },
+    {
       "event_sequence": 2,
       "execution_id": "chatgpt-weixin-semicolon-fix-20260828T2108Z",
       "progress": 0.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-0c7ccdf08a0a4bdf",
       "updated_at": "2026-08-28T18:41:19Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-ocu-fmt3-20260828T1841Z",
-      "progress": 0.0,
-      "stage": "test.fmt",
-      "state": "failed",
-      "task_id": "pilot-task-c5621748826c43e0",
-      "updated_at": "2026-08-28T18:40:23Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T21:09:19Z"
+  "updated_at": "2026-08-28T21:10:53Z"
 }
