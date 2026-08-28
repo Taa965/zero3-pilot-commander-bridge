@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-canary-20260828T144231Z-b92966",
+  "occurred_at": "2026-08-28T14:42:45Z",
+  "recorded_at": "2026-08-28T14:43:03Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-c697fa68a9234a02"
+}
