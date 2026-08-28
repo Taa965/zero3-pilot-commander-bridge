@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 1: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmph0jtbav6.patch']\nstderr:\nerror: patch failed: apps/node/static/index.html:32\nerror: apps/node/static/index.html: patch does not apply\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-ui-listapps2-20260828T2014Z",
+  "occurred_at": "2026-08-28T20:13:57Z",
+  "recorded_at": "2026-08-28T20:13:57Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-990505c651f4446c"
+}

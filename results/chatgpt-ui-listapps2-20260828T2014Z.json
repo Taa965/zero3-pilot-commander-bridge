@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-28T20:13:57Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-ui-listapps2-20260828T2014Z",
+  "recorded_at": "2026-08-28T20:13:57Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "failed",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T20:13:57Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.patch"
+        }
+      },
+      {
+        "created_at": "2026-08-28T20:13:57Z",
+        "event_sequence": 2,
+        "event_type": "task.failed",
+        "payload": {
+          "reason": "command failed with exit 1: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmph0jtbav6.patch']\nstderr:\nerror: patch failed: apps/node/static/index.html:32\nerror: apps/node/static/index.html: patch does not apply\n"
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 0.0,
+        "stage": "file.patch"
+      }
+    ]
+  },
+  "task_id": "pilot-task-990505c651f4446c",
+  "terminal": true
+}
