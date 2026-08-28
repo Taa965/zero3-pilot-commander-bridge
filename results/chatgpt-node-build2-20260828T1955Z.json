@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-08-28T19:52:03Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-node-build2-20260828T1955Z",
+  "recorded_at": "2026-08-28T19:52:03Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T19:51:44Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "test.build"
+        }
+      },
+      {
+        "created_at": "2026-08-28T19:51:56Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "cargo",
+            "build",
+            "--workspace",
+            "--all-targets"
+          ],
+          "returncode": 0,
+          "stderr": "   Compiling zero3-node v0.1.0 (/opt/zero3-pilot-dev/apps/node)\n   Compiling zero3-desktop v0.1.0 (/opt/zero3-pilot-dev/apps/desktop)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 11.85s\n",
+          "stdout": ""
+        }
+      },
+      {
+        "created_at": "2026-08-28T19:51:56Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "test.build"
+      }
+    ]
+  },
+  "task_id": "pilot-task-3c4ee15f699141d5",
+  "terminal": true
+}
