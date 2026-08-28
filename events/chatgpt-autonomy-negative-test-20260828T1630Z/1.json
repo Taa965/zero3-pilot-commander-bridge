@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.run"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-autonomy-negative-test-20260828T1630Z",
+  "occurred_at": "2026-08-28T16:29:54Z",
+  "recorded_at": "2026-08-28T16:29:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e8ead20154504dfa"
+}
