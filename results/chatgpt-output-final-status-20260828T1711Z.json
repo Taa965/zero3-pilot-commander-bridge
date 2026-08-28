@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-08-28T17:10:59Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-output-final-status-20260828T1711Z",
+  "recorded_at": "2026-08-28T17:10:59Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T17:10:59Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "repo.status"
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:10:59Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "git",
+            "status",
+            "--short",
+            "--branch"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "## pilot-dev-chatgpt-autonomy-20260829...origin/main [ahead 1]\n"
+        }
+      },
+      {
+        "created_at": "2026-08-28T17:10:59Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "repo.status"
+      }
+    ]
+  },
+  "task_id": "pilot-task-ec08a08108694d71",
+  "terminal": true
+}
