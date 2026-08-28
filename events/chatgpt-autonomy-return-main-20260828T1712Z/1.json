@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.checkout"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-autonomy-return-main-20260828T1712Z",
+  "occurred_at": "2026-08-28T17:11:38Z",
+  "recorded_at": "2026-08-28T17:11:38Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-d002c9a990ba4e44"
+}
