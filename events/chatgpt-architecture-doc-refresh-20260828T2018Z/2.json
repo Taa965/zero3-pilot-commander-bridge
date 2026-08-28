@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": null
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-architecture-doc-refresh-20260828T2018Z",
+  "occurred_at": "2026-08-28T20:18:40Z",
+  "recorded_at": "2026-08-28T20:18:40Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-6834b9ba65d5472a"
+}
