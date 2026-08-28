@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-targets"
+      ],
+      "returncode": 101,
+      "stderr": "    Updating crates.io index\n     Locking 35 packages to latest compatible versions\n      Adding cfg_aliases v0.2.2\n      Adding chacha20 v0.10.2\n      Adding cpufeatures v0.3.1\n      Adding hyper-rustls v0.27.9\n      Adding lru-slab v0.1.2\n      Adding quinn v0.11.11\n      Adding quinn-proto v0.11.17\n      Adding quinn-udp v0.5.15\n      Adding rand v0.10.2\n      Adding rand_core v0.10.1\n      Adding rand_pcg v0.10.2\n      Adding reqwest v0.12.28 (available: v0.13.4)\n      Adding ring v0.17.14\n      Adding rustls v0.23.43\n      Adding rustls-pki-types v1.15.1\n      Adding rustls-webpki v0.103.15\n      Adding subtle v2.6.1\n      Adding tinyvec v1.12.0\n      Adding tinyvec_macros v0.1.1\n      Adding tokio-rustls v0.26.4\n      Adding untrusted v0.9.0\n      Adding urlencoding v2.1.3\n      Adding web-time v1.1.0\n      Adding webpki-roots v1.0.9\n      Adding windows-sys v0.52.0\n      Adding windows-targets v0.52.6\n      Adding windows_aarch64_gnullvm v0.52.6\n      Adding windows_aarch64_msvc v0.52.6\n      Adding windows_i686_gnu v0.52.6\n      Adding windows_i686_gnullvm v0.52.6\n      Adding windows_i686_msvc v0.52.6\n      Adding windows_x86_64_gnu v0.52.6\n      Adding windows_x86_64_gnullvm v0.52.6\n      Adding windows_x86_64_msvc v0.52.6\n      Adding zeroize v1.9.0\n Downloading crates ...\n  Downloaded getrandom v0.2.17\n  Downloaded chacha20 v0.10.2\n  Downloaded cpufeatures v0.3.1\n  Downloaded hyper-rustls v0.27.9\n  Downloaded cfg_aliases v0.2.2\n  Downloaded lru-slab v0.1.2\n  Downloaded rustc-hash v2.1.3\n  Downloaded tinyvec_macros v0.1.1\n  Downloaded rand_pcg v0.10.2\n  Downloaded subtle v2.6.1\n  Downloaded rand_core v0.10.1\n  Downloaded urlencoding v2.1.3\n  Downloaded untrusted v0.9.0\n  Downloaded quinn-udp v0.5.15\n  Downloaded rustls-pki-types v1.15.1\n  Downloaded tokio-rustls v0.26.4\n  Downloaded tinyvec v1.12.0\n  Downloaded quinn v0.11.11\n  Downloaded zeroize v1.9.0\n  Downloaded rand v0.10.2\n  Downloaded rustls-webpki v0.103.15\n  Downloaded reqwest v0.12.28\n  Downloaded webpki-roots v1.0.9\n  Downloaded quinn-proto v0.11.17\n  Downloaded rustls v0.23.43\n  Downloaded ring v0.17.14\n   Compiling ring v0.17.14\n   Compiling zeroize v1.9.0\n   Compiling rustls-pki-types v1.15.1\n   Compiling getrandom v0.2.17\n   Compiling untrusted v0.9.0\n   Compiling rustls v0.23.43\n   Compiling subtle v2.6.1\n   Compiling webpki-roots v1.0.9\n   Compiling urlencoding v2.1.3\n   Compiling zero3-web v0.1.0 (/opt/zero3-pilot-dev/apps/web)\n   Compiling zero3-desktop v0.1.0 (/opt/zero3-pilot-dev/apps/desktop)\n   Compiling rustls-webpki v0.103.15\n   Compiling tokio-rustls v0.26.4\n   Compiling hyper-rustls v0.27.9\n   Compiling reqwest v0.12.28\n   Compiling zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n   Compiling zero3-weixin v0.1.0 (/opt/zero3-pilot-dev/apps/weixin)\nerror: expected `;`, found keyword `return`\n  --> apps/weixin/src/main.rs:98:61\n   |\n98 |         println!(\"如需换绑，请先运行 zero3-pilot-weixin disconnect。\")\n   |                                                                       ^ help: add `;` here\n99 |         return Ok(());\n   |         ------ unexpected token\n\nerror: expected `;`, found keyword `return`\n   --> apps/weixin/src/main.rs:125:63\n    |\n125 |                 println!(\"连接完成。现在可运行 zero3-pilot-weixin run。\")\n    |                                                                          ^ help: add `;` here\n126 |                 return Ok(());\n    |                 ------ unexpected token\n\nerror: could not compile `zero3-weixin` (bin \"zero3-pilot-weixin\" test) due to 2 previous errors\nwarning: build failed, waiting for other jobs to finish...\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-build-20260828T2107Z",
+  "occurred_at": "2026-08-28T21:07:18Z",
+  "recorded_at": "2026-08-28T21:07:28Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-c9a0041c5277460d"
+}

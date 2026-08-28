@@ -2,13 +2,13 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
-      "event_sequence": 1,
+      "event_sequence": 3,
       "execution_id": "chatgpt-weixin-build-20260828T2107Z",
       "progress": 0.0,
       "stage": "test.build",
-      "state": "running",
+      "state": "failed",
       "task_id": "pilot-task-c9a0041c5277460d",
-      "updated_at": "2026-08-28T21:06:50Z"
+      "updated_at": "2026-08-28T21:07:28Z"
     },
     {
       "event_sequence": 3,
@@ -454,5 +454,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T21:06:50Z"
+  "updated_at": "2026-08-28T21:07:28Z"
 }
