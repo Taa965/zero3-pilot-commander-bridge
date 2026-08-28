@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 1: ['cargo', 'fmt', '--all', '--', '--check']\nstdout:\nDiff in /opt/zero3-pilot-dev/crates/zero3-providers/src/open_computer_use.rs:333:\n                     \"text_limit\": DEFAULT_SNAPSHOT_TEXT_LIMIT\n                 }),\n             ),\n-            ComputerAction::Click { app, x, y } => {\n-                (\"click\", json!({ \"app\": app, \"x\": x, \"y\": y }))\n-            }\n+            ComputerAction::Click { app, x, y } => (\"click\", json!({ \"app\": app, \"x\": x, \"y\": y })),\n             ComputerAction::Type { app, text } => {\n                 (\"type_text\", json!({ \"app\": app, \"text\": text }))\n             }\n"
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-ocu-fmt-20260828T1833Z",
+  "occurred_at": "2026-08-28T18:30:44Z",
+  "recorded_at": "2026-08-28T18:31:02Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-1a0c674338c74a23"
+}
