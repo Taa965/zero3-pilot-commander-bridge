@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-autonomy-return-main-20260828T1712Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T17:12:00Z",
+  "payload": {
+    "capability": "repo.checkout",
+    "args": {
+      "ref": "main"
+    },
+    "execution_id": "chatgpt-autonomy-return-main-20260828T1712Z"
+  }
+}
