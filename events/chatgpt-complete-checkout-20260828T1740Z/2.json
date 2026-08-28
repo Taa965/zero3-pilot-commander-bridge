@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "pilot-dev-complete-runtime-20260829",
+        "origin/pilot-dev-complete-runtime-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Switched to a new branch 'pilot-dev-complete-runtime-20260829'\n",
+      "stdout": "Branch 'pilot-dev-complete-runtime-20260829' set up to track remote branch 'pilot-dev-complete-runtime-20260829' from 'origin'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-complete-checkout-20260828T1740Z",
+  "occurred_at": "2026-08-28T17:39:10Z",
+  "recorded_at": "2026-08-28T17:39:29Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-f20873969ba34983"
+}
