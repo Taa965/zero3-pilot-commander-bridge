@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-installer-weixin-final-polish-20260828T2120Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T21:20:00Z",
+  "payload": {
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/weixin/src/main.rs b/apps/weixin/src/main.rs\n--- a/apps/weixin/src/main.rs\n+++ b/apps/weixin/src/main.rs\n@@ -292,6 +292,9 @@ fn render_reply(value: &Value) -> String {\n     if let Some(text) = value.as_str() {\n         return text.to_string();\n     }\n+    if let Some(summary) = value.get(\"summary\").and_then(Value::as_str) {\n+        return summary.to_string();\n+    }\n     if let Some(output) = value.get(\"output\").and_then(Value::as_str) {\n         return output.to_string();\n     }\ndiff --git a/installer/Zero3Pilot.iss b/installer/Zero3Pilot.iss\n--- a/installer/Zero3Pilot.iss\n+++ b/installer/Zero3Pilot.iss\n@@ -50,7 +50,7 @@ function CommandExists(const Name: String): Boolean;\n var\n   ResultCode: Integer;\n begin\n-  Result := Exec(ExpandConstant('{cmd}'), '/C where \\\"' + Name + '\\\" >nul 2>nul', '', SW_HIDE,\n+  Result := Exec(ExpandConstant('{cmd}'), '/C where \"' + Name + '\" >nul 2>nul', '', SW_HIDE,\n     ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);\n end;\n"
+    },
+    "execution_id": "chatgpt-installer-weixin-final-polish-20260828T2120Z"
+  }
+}
