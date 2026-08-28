@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmpre3bedae.patch']\nstderr:\nerror: corrupt patch at line 25\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-installer-weixin-final-polish-20260828T2120Z",
+  "occurred_at": "2026-08-28T21:19:54Z",
+  "recorded_at": "2026-08-28T21:19:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-d9348d390d9e48da"
+}
