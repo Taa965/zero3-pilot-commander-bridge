@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-complete-pushfix-20260828T1758Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "git.push_branch",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-bb61fd91303a4608",
-  "terminal": false,
-  "updated_at": "2026-08-28T17:55:18Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T17:55:37Z"
 }

@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-complete-pushfix-20260828T1758Z",
+  "occurred_at": "2026-08-28T17:55:20Z",
+  "recorded_at": "2026-08-28T17:55:37Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-bb61fd91303a4608"
+}
