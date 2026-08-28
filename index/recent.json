@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-autonomy-clippy-20260828T1633Z",
+      "progress": 0.0,
+      "stage": "test.clippy",
+      "state": "running",
+      "task_id": "pilot-task-d30bf7b4ee954b0c",
+      "updated_at": "2026-08-28T16:32:31Z"
+    },
+    {
       "event_sequence": 2,
       "execution_id": "chatgpt-autonomy-fmt-20260828T1632Z",
       "progress": 100.0,
@@ -166,5 +175,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T16:32:10Z"
+  "updated_at": "2026-08-28T16:32:31Z"
 }
