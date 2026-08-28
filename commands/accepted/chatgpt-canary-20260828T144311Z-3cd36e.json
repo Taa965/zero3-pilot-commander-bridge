@@ -1,0 +1,14 @@
+{
+  "accepted_at": "2026-08-28T14:43:23Z",
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_response": {
+    "execution_id": "chatgpt-canary-20260828T144311Z-3cd36e",
+    "schema": "zero3.execution-acceptance/1.0",
+    "task_id": "pilot-task-d9ec167f5cff4282"
+  },
+  "correlation": "task_id",
+  "execution_id": "chatgpt-canary-20260828T144311Z-3cd36e",
+  "schema": "zero3.commander.command-accepted/1.0",
+  "task_id": "pilot-task-d9ec167f5cff4282"
+}

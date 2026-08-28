@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.clippy"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-canary-20260828T144311Z-3cd36e",
+  "occurred_at": "2026-08-28T14:43:23Z",
+  "recorded_at": "2026-08-28T14:43:23Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-d9ec167f5cff4282"
+}
