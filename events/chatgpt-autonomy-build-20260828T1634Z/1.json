@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.build"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-autonomy-build-20260828T1634Z",
+  "occurred_at": "2026-08-28T16:33:28Z",
+  "recorded_at": "2026-08-28T16:33:28Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-7f75ac7d9bd14e41"
+}
