@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-weixin-windows-persist-20260828T2114Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T21:14:00Z",
+  "payload": {
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/crates/zero3-providers/src/weixin_clawbot.rs b/crates/zero3-providers/src/weixin_clawbot.rs\n--- a/crates/zero3-providers/src/weixin_clawbot.rs\n+++ b/crates/zero3-providers/src/weixin_clawbot.rs\n@@ -486,1 +486,11 @@\n-    std::fs::rename(&temp, path).context(\"atomically replace Weixin state\")?;\n+    match std::fs::rename(&temp, path) {\n+        Ok(()) => {}\n+        Err(error) if cfg!(windows) => {\n+            if path.exists() {\n+                std::fs::remove_file(path).context(\"replace existing Weixin state on Windows\")?;\n+            }\n+            std::fs::rename(&temp, path)\n+                .context(\"finish replacing Weixin state on Windows\")?;\n+        }\n+        Err(error) => return Err(error).context(\"atomically replace Weixin state\"),\n+    }\n"
+    },
+    "execution_id": "chatgpt-weixin-windows-persist-20260828T2114Z"
+  }
+}
