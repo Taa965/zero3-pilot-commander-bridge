@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-windows-smoke-harness-fix-20260828T2018Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T20:17:38Z",
+  "idempotency_key": "chatgpt-windows-smoke-harness-fix-20260828T2018Z",
+  "payload": {
+    "execution_id": "chatgpt-windows-smoke-harness-fix-20260828T2018Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml\n--- a/.github/workflows/ci.yml\n+++ b/.github/workflows/ci.yml\n@@ -109,8 +109,9 @@\n         run: |\n           $ErrorActionPreference = 'Stop'\n           $env:ZERO3_PILOT_NODE_PORT = '8790'\n           $env:ZERO3_DESKTOP_SMOKE_MS = '2000'\n-          & 'target\\debug\\zero3-pilot.exe'\n-          if ($LASTEXITCODE -ne 0) { throw \"zero3-pilot desktop exited with $LASTEXITCODE\" }\n+          $desktopPath = (Resolve-Path 'target\\debug\\zero3-pilot.exe').Path\n+          $desktop = Start-Process -FilePath $desktopPath -PassThru -Wait\n+          if ($desktop.ExitCode -ne 0) { throw \"zero3-pilot desktop exited with $($desktop.ExitCode)\" }\n       - name: Stop product smoke Node\n"
+    }
+  }
+}
