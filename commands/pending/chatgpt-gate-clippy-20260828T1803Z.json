@@ -1,0 +1,1 @@
+{"schema":"zero3.commander.command.execution-submit/1.0","command":"execution.submit","execution_id":"chatgpt-gate-clippy-20260828T1803Z","commander_id":"chatgpt-web-session","issued_at":"2026-08-28T18:03:00Z","payload":{"execution_id":"chatgpt-gate-clippy-20260828T1803Z","capability":"test.clippy","args":{}}}
