@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "## pilot-dev-node-desktop-20260829...origin/pilot-dev-node-desktop-20260829\n M Cargo.lock\n M apps/desktop/src/main.rs\n M apps/node/src/main.rs\n?? crates/zero3-core/tests/\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-node-status1-20260828T2000Z",
+  "occurred_at": "2026-08-28T19:54:38Z",
+  "recorded_at": "2026-08-28T19:54:38Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-502ba87666b64498"
+}

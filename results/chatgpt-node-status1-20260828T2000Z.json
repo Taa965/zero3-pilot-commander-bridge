@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-08-28T19:54:39Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-node-status1-20260828T2000Z",
+  "recorded_at": "2026-08-28T19:54:39Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T19:54:38Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "repo.status"
+        }
+      },
+      {
+        "created_at": "2026-08-28T19:54:38Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "git",
+            "status",
+            "--short",
+            "--branch"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "## pilot-dev-node-desktop-20260829...origin/pilot-dev-node-desktop-20260829\n M Cargo.lock\n M apps/desktop/src/main.rs\n M apps/node/src/main.rs\n?? crates/zero3-core/tests/\n"
+        }
+      },
+      {
+        "created_at": "2026-08-28T19:54:38Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "repo.status"
+      }
+    ]
+  },
+  "task_id": "pilot-task-502ba87666b64498",
+  "terminal": true
+}
