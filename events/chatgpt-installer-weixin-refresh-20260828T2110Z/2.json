@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "pilot-dev-installer-weixin-20260829",
+        "origin/pilot-dev-installer-weixin-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Reset branch 'pilot-dev-installer-weixin-20260829'\n",
+      "stdout": "M\tCargo.lock\nBranch 'pilot-dev-installer-weixin-20260829' set up to track remote branch 'pilot-dev-installer-weixin-20260829' from 'origin'.\nYour branch is up to date with 'origin/pilot-dev-installer-weixin-20260829'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-installer-weixin-refresh-20260828T2110Z",
+  "occurred_at": "2026-08-28T21:10:53Z",
+  "recorded_at": "2026-08-28T21:11:11Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-672a43ee295f4377"
+}
