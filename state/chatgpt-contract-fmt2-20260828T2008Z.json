@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-contract-fmt2-20260828T2008Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "test.fmt",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-f04a62a1dcc14674",
-  "terminal": false,
-  "updated_at": "2026-08-28T20:08:14Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T20:08:33Z"
 }
