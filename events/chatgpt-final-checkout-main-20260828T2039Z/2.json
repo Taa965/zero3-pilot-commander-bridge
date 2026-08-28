@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "main",
+        "origin/main"
+      ],
+      "returncode": 0,
+      "stderr": "Switched to and reset branch 'main'\n",
+      "stdout": "Branch 'main' set up to track remote branch 'main' from 'origin'.\nYour branch is up to date with 'origin/main'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-final-checkout-main-20260828T2039Z",
+  "occurred_at": "2026-08-28T20:39:20Z",
+  "recorded_at": "2026-08-28T20:39:38Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-3abca61e3cf24d8e"
+}

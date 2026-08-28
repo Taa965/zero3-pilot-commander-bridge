@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-final-checkout-main-20260828T2039Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "repo.checkout",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-3abca61e3cf24d8e",
-  "terminal": false,
-  "updated_at": "2026-08-28T20:39:19Z"
+  "terminal": true,
+  "updated_at": "2026-08-28T20:39:38Z"
 }
