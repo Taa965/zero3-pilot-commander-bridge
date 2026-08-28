@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-semicolon-fix-20260828T2108Z",
+  "occurred_at": "2026-08-28T21:09:19Z",
+  "recorded_at": "2026-08-28T21:09:19Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-f3ae9ea25f78457d"
+}
