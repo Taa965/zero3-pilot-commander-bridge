@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.fmt"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-complete-fmt-20260828T1755Z",
+  "occurred_at": "2026-08-28T17:53:27Z",
+  "recorded_at": "2026-08-28T17:53:27Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-d4bfd40040484679"
+}
