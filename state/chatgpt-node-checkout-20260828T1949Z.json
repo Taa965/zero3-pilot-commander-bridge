@@ -1,0 +1,12 @@
+{
+  "event_sequence": 2,
+  "execution_id": "chatgpt-node-checkout-20260828T1949Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "repo.checkout",
+  "state": "failed",
+  "task_id": "pilot-task-0473519329314505",
+  "terminal": true,
+  "updated_at": "2026-08-28T19:48:32Z"
+}

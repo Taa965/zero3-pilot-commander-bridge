@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "invalid ref: ''"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-node-checkout-20260828T1949Z",
+  "occurred_at": "2026-08-28T19:48:32Z",
+  "recorded_at": "2026-08-28T19:48:32Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0473519329314505"
+}

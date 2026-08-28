@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-28T19:48:32Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-node-checkout-20260828T1949Z",
+  "recorded_at": "2026-08-28T19:48:32Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "failed",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T19:48:32Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "repo.checkout"
+        }
+      },
+      {
+        "created_at": "2026-08-28T19:48:32Z",
+        "event_sequence": 2,
+        "event_type": "task.failed",
+        "payload": {
+          "reason": "invalid ref: ''"
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 0.0,
+        "stage": "repo.checkout"
+      }
+    ]
+  },
+  "task_id": "pilot-task-0473519329314505",
+  "terminal": true
+}
