@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 2,
+      "execution_id": "chatgpt-autonomy-status-20260828T1636Z",
+      "progress": 100.0,
+      "stage": "repo.status",
+      "state": "succeeded",
+      "task_id": "pilot-task-dc5d01374c4d46e7",
+      "updated_at": "2026-08-28T16:35:21Z"
+    },
+    {
+      "event_sequence": 2,
       "execution_id": "chatgpt-autonomy-test-20260828T1635Z",
       "progress": 100.0,
       "stage": "test.run",
@@ -193,5 +202,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T16:34:44Z"
+  "updated_at": "2026-08-28T16:35:22Z"
 }
