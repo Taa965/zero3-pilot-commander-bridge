@@ -1,0 +1,26 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "-c",
+        "user.name=Zero3 Pilot Dev Executor",
+        "-c",
+        "user.email=zero3-pilot-dev-executor@localhost",
+        "commit",
+        "-m",
+        "feat: complete browser, subagents, scheduler, memory and real smoke gates"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[pilot-dev-complete-runtime-20260829 56ad5bb] feat: complete browser, subagents, scheduler, memory and real smoke gates\n 6 files changed, 89 insertions(+), 48 deletions(-)\n delete mode 100644 crates/zero3-core/tests/format_workspace_once.rs\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-final-commit-20260828T1820Z",
+  "occurred_at": "2026-08-28T18:18:59Z",
+  "recorded_at": "2026-08-28T18:18:59Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-eb64bff9788744af"
+}
