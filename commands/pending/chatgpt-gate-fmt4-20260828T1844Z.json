@@ -1,0 +1,3 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0","command":"execution.submit","protocol_version":"1.0","execution_id":"chatgpt-gate-fmt4-20260828T1844Z","commander_id":"chatgpt-web-session","issued_at":"2026-08-28T18:44:00Z","payload":{"execution_id":"chatgpt-gate-fmt4-20260828T1844Z","capability":"test.fmt","args":{}}
+}
