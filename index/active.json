@@ -1,16 +1,6 @@
 {
   "description": "Non-terminal executions only. Lets an external agent resume context without a repository-wide search. Holds references, never full execution payloads.",
-  "executions": [
-    {
-      "event_sequence": 1,
-      "execution_id": "chatgpt-canary-20260828T144659Z-534532",
-      "progress": 0.0,
-      "stage": "test.run",
-      "state": "running",
-      "task_id": "pilot-task-05b2e1e6181c4f1a",
-      "updated_at": "2026-08-28T14:47:11Z"
-    }
-  ],
+  "executions": [],
   "schema": "zero3.commander.index.active/1.0",
-  "updated_at": "2026-08-28T14:47:11Z"
+  "updated_at": "2026-08-28T14:47:30Z"
 }
