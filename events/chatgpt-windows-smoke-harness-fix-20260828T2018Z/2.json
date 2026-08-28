@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmpfvfrppeh.patch']\nstderr:\nerror: corrupt patch at line 15\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-windows-smoke-harness-fix-20260828T2018Z",
+  "occurred_at": "2026-08-28T20:18:01Z",
+  "recorded_at": "2026-08-28T20:18:01Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-99ef912aac5f451d"
+}

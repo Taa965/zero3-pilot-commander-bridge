@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-windows-smoke-harness-fix-20260828T2018Z",
+  "occurred_at": "2026-08-28T20:18:01Z",
+  "recorded_at": "2026-08-28T20:18:01Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-99ef912aac5f451d"
+}
