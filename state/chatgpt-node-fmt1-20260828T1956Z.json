@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-node-fmt1-20260828T1956Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.fmt",
+  "state": "running",
+  "task_id": "pilot-task-3632ecae4a564c8e",
+  "terminal": false,
+  "updated_at": "2026-08-28T19:52:23Z"
+}

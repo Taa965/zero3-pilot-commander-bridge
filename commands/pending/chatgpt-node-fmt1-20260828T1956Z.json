@@ -1,1 +1,0 @@
-{"schema":"zero3.commander.command.execution-submit/1.0","command":"execution.submit","protocol_version":"1.0","execution_id":"chatgpt-node-fmt1-20260828T1956Z","commander_id":"chatgpt-web-session","issued_at":"2026-08-28T19:56:00Z","idempotency_key":"chatgpt-node-fmt1-20260828T1956Z","payload":{"execution_id":"chatgpt-node-fmt1-20260828T1956Z","capability":"test.fmt","args":{}}}
