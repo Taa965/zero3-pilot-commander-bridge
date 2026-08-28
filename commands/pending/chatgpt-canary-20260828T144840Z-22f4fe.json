@@ -1,0 +1,12 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-canary-20260828T144840Z-22f4fe",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T14:48:40Z",
+  "payload": {
+    "capability": "test.run",
+    "args": {},
+    "execution_id": "chatgpt-canary-20260828T144840Z-22f4fe"
+  }
+}
