@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-installer-weixin-fmt-20260828T2121Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.fmt",
+  "state": "running",
+  "task_id": "pilot-task-e5f1113e00f445a0",
+  "terminal": false,
+  "updated_at": "2026-08-28T21:20:33Z"
+}

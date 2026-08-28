@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.fmt"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-installer-weixin-fmt-20260828T2121Z",
+  "occurred_at": "2026-08-28T21:20:33Z",
+  "recorded_at": "2026-08-28T21:20:33Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e5f1113e00f445a0"
+}
