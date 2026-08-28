@@ -1,9 +1,0 @@
-{
-  "schema": "zero3.commander.command.execution-submit/1.0",
-  "command": "execution.submit",
-  "protocol_version": "1.0",
-  "execution_id": "chatgpt-ocu-fmt2-20260828T1836Z",
-  "commander_id": "chatgpt-web-session",
-  "issued_at": "2026-08-28T18:36:00Z",
-  "payload": {"execution_id":"chatgpt-ocu-fmt2-20260828T1836Z","capability":"test.fmt","args":{}}
-}
