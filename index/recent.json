@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-ocu-refresh4-20260828T1843Z",
+      "progress": 0.0,
+      "stage": "repo.checkout",
+      "state": "running",
+      "task_id": "pilot-task-0c7ccdf08a0a4bdf",
+      "updated_at": "2026-08-28T18:41:00Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-ocu-fmt3-20260828T1841Z",
       "progress": 0.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-26fac425fcbd4e3e",
       "updated_at": "2026-08-28T14:50:20Z"
-    },
-    {
-      "event_sequence": 2,
-      "execution_id": "chatgpt-canary-20260828T144934Z-306142",
-      "progress": 100.0,
-      "stage": "git.commit",
-      "state": "succeeded",
-      "task_id": "pilot-task-0f198dbc142f4c64",
-      "updated_at": "2026-08-28T14:49:41Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T18:40:23Z"
+  "updated_at": "2026-08-28T18:41:00Z"
 }
