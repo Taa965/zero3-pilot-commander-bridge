@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": null
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-node-formatter-fix-20260828T2002Z",
+  "occurred_at": "2026-08-28T19:55:37Z",
+  "recorded_at": "2026-08-28T19:55:37Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-6a1045106bf74cff"
+}
