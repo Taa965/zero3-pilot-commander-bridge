@@ -1,0 +1,14 @@
+{
+  "accepted_at": "2026-08-28T17:58:10Z",
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_response": {
+    "execution_id": "chatgpt-format-remove-20260828T1801Z",
+    "schema": "zero3.execution-acceptance/1.0",
+    "task_id": "pilot-task-a5663281e30547ea"
+  },
+  "correlation": "task_id",
+  "execution_id": "chatgpt-format-remove-20260828T1801Z",
+  "schema": "zero3.commander.command-accepted/1.0",
+  "task_id": "pilot-task-a5663281e30547ea"
+}

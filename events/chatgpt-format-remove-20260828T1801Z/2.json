@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=nowarn",
+        "/opt/zero3-pilot-dev/tmpg0bc3c0s.patch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-format-remove-20260828T1801Z",
+  "occurred_at": "2026-08-28T17:58:10Z",
+  "recorded_at": "2026-08-28T17:58:10Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-a5663281e30547ea"
+}

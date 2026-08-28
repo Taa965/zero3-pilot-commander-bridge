@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-format-remove-20260828T1801Z",
+  "occurred_at": "2026-08-28T17:58:10Z",
+  "recorded_at": "2026-08-28T17:58:10Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-a5663281e30547ea"
+}
