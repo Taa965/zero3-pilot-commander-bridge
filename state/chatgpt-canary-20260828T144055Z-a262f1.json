@@ -1,0 +1,12 @@
+{
+  "event_sequence": 2,
+  "execution_id": "chatgpt-canary-20260828T144055Z-a262f1",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.fmt",
+  "state": "outcome_unknown",
+  "task_id": "pilot-task-49d1777c7b92433c",
+  "terminal": true,
+  "updated_at": "2026-08-28T14:41:13Z"
+}

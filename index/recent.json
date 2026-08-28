@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 2,
+      "execution_id": "chatgpt-canary-20260828T144055Z-a262f1",
+      "progress": 0.0,
+      "stage": "test.fmt",
+      "state": "outcome_unknown",
+      "task_id": "pilot-task-49d1777c7b92433c",
+      "updated_at": "2026-08-28T14:41:13Z"
+    },
+    {
+      "event_sequence": 2,
       "execution_id": "chatgpt-canary-20260828T144045Z-ead34c",
       "progress": 100.0,
       "stage": "file.write",
@@ -22,5 +31,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-28T14:40:51Z"
+  "updated_at": "2026-08-28T14:41:13Z"
 }
