@@ -1,0 +1,15 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-weixin-formatter-harness-20260828T2122Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-28T21:22:00Z",
+  "payload": {
+    "capability": "file.write",
+    "args": {
+      "path": "apps/weixin/tests/format_workspace.rs",
+      "content": "use std::path::PathBuf;\nuse std::process::Command;\n\n#[test]\nfn format_workspace_once_and_remove_self() {\n    let root = PathBuf::from(env!(\"CARGO_MANIFEST_DIR\")).join(\"../..\");\n    let status = Command::new(\"cargo\")\n        .args([\"fmt\", \"--all\"])\n        .current_dir(&root)\n        .status()\n        .expect(\"run cargo fmt --all\");\n    assert!(status.success(), \"cargo fmt --all failed\");\n    let self_path = PathBuf::from(env!(\"CARGO_MANIFEST_DIR\"))\n        .join(\"tests\")\n        .join(\"format_workspace.rs\");\n    std::fs::remove_file(self_path).expect(\"remove formatter harness\");\n}\n"
+    },
+    "execution_id": "chatgpt-weixin-formatter-harness-20260828T2122Z"
+  }
+}
