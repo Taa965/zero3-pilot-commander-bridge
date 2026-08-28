@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-gate-fmt4-20260828T1844Z",
+  "occurred_at": "2026-08-28T18:41:40Z",
+  "recorded_at": "2026-08-28T18:41:59Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-51fec33acc0b4d05"
+}
