@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.write"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-autonomy-break-cargo-20260828T1629Z",
+  "occurred_at": "2026-08-28T16:29:15Z",
+  "recorded_at": "2026-08-28T16:29:15Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-363927d187f5441f"
+}
