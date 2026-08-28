@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-ocu-budget-patch-20260828T1828Z",
+  "occurred_at": "2026-08-28T18:27:16Z",
+  "recorded_at": "2026-08-28T18:27:16Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0fd01052069a43e0"
+}

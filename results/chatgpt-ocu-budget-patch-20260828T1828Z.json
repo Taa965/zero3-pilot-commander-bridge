@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-28T18:27:16Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-ocu-budget-patch-20260828T1828Z",
+  "recorded_at": "2026-08-28T18:27:16Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "failed",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-28T18:27:16Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.patch"
+        }
+      },
+      {
+        "created_at": "2026-08-28T18:27:16Z",
+        "event_sequence": 2,
+        "event_type": "task.failed",
+        "payload": {
+          "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmpb3n6vdio.patch']\nstderr:\nerror: unrecognized input\n"
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 0.0,
+        "stage": "file.patch"
+      }
+    ]
+  },
+  "task_id": "pilot-task-0fd01052069a43e0",
+  "terminal": true
+}
