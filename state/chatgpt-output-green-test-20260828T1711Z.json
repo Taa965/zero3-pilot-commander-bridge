@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-output-green-test-20260828T1711Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.run",
+  "state": "running",
+  "task_id": "pilot-task-de129730911b4599",
+  "terminal": false,
+  "updated_at": "2026-08-28T17:10:02Z"
+}

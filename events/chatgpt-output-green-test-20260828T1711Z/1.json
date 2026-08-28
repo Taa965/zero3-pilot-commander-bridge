@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.run"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-output-green-test-20260828T1711Z",
+  "occurred_at": "2026-08-28T17:10:01Z",
+  "recorded_at": "2026-08-28T17:10:02Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-de129730911b4599"
+}
