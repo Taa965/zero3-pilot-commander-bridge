@@ -1,0 +1,1 @@
+{"schema":"zero3.commander.command.execution-submit/1.0","command":"execution.submit","execution_id":"chatgpt-format-refresh-20260828T1759Z","commander_id":"chatgpt-web-session","issued_at":"2026-08-28T17:59:00Z","payload":{"execution_id":"chatgpt-format-refresh-20260828T1759Z","capability":"repo.checkout","args":{"ref":"pilot-dev-complete-runtime-20260829"}}}
