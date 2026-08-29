@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-router-skills-fetch-20260829T0124Z",
+  "occurred_at": "2026-08-29T01:24:11Z",
+  "recorded_at": "2026-08-29T01:24:28Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-472662e685d94439"
+}
