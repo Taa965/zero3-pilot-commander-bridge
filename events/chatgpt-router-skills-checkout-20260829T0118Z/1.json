@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.checkout"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-router-skills-checkout-20260829T0118Z",
+  "occurred_at": "2026-08-29T01:19:35Z",
+  "recorded_at": "2026-08-29T01:19:35Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-578c5ce0aa804ba8"
+}
