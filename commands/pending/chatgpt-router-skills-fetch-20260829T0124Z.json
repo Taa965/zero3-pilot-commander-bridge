@@ -1,8 +1,0 @@
-{
-  "schema":"zero3.commander.command.execution-submit/1.0",
-  "command":"execution.submit",
-  "execution_id":"chatgpt-router-skills-fetch-20260829T0124Z",
-  "commander_id":"chatgpt-web-session",
-  "issued_at":"2026-08-29T01:24:00Z",
-  "payload":{"capability":"repo.fetch","args":{},"execution_id":"chatgpt-router-skills-fetch-20260829T0124Z"}
-}
