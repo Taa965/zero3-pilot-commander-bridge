@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-weixin-sync-noop-head-20260829T0047Z",
+      "progress": 0.0,
+      "stage": "repo.checkout",
+      "state": "running",
+      "task_id": "pilot-task-b256b424eb1145f2",
+      "updated_at": "2026-08-29T00:47:10Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-weixin-binded-test-20260829T0046Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-6834b9ba65d5472a",
       "updated_at": "2026-08-28T20:18:40Z"
-    },
-    {
-      "event_sequence": 2,
-      "execution_id": "chatgpt-windows-smoke-harness-fix-20260828T2018Z",
-      "progress": 0.0,
-      "stage": "file.patch",
-      "state": "failed",
-      "task_id": "pilot-task-99ef912aac5f451d",
-      "updated_at": "2026-08-28T20:18:01Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T00:46:14Z"
+  "updated_at": "2026-08-29T00:47:10Z"
 }

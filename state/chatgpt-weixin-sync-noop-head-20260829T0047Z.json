@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-weixin-sync-noop-head-20260829T0047Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "repo.checkout",
+  "state": "running",
+  "task_id": "pilot-task-b256b424eb1145f2",
+  "terminal": false,
+  "updated_at": "2026-08-29T00:47:10Z"
+}
