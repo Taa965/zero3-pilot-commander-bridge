@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-node-submit-validation-20260829T0226Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:26:00Z",
+  "idempotency_key": "chatgpt-router-node-submit-validation-20260829T0226Z",
+  "payload": {
+    "execution_id": "chatgpt-router-node-submit-validation-20260829T0226Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -497,9 +497,35 @@\n     if request.goal.trim().is_empty() {\n         return Err(ApiError::bad_request(\"agent goal must not be empty\"));\n     }\n-    if state.agents.get(&request.backend).is_none() {\n+    if request.skills.len() > 8 {\n+        return Err(ApiError::bad_request(\n+            \"at most 8 skills may be selected for one task\",\n+        ));\n+    }\n+    for skill_name in &request.skills {\n+        let skill = state\n+            .skills\n+            .get(skill_name, None)\n+            .await\n+            .map_err(ApiError::internal)?\n+            .ok_or_else(|| ApiError::bad_request(format!(\"unknown skill {skill_name:?}\")))?;\n+        if !skill.summary.invocation.user_invocable {\n+            return Err(ApiError::bad_request(format!(\n+                \"skill {skill_name:?} is not user-invocable\"\n+            )));\n+        }\n+        action_gate(\n+            request.approval.granted_level,\n+            request.approval.approved,\n+            \"skill\",\n+            &format!(\"invoke:{skill_name}\"),\n+            skill.summary.required_permission,\n+            true,\n+        )?;\n+    }\n+    if request.backend != \"auto\" && state.agents.get(&request.backend).is_none() {\n         return Err(ApiError::bad_request(format!(\n             \"unknown agent backend {:?}\",\n             request.backend\n         )));\n     }\n"
+    }
+  }
+}
