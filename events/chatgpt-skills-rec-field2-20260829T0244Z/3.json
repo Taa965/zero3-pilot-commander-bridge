@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-skills-rec-field2-20260829T0244Z",
+  "occurred_at": "2026-08-29T02:24:35Z",
+  "recorded_at": "2026-08-29T02:24:35Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-01a31501d777453e"
+}
