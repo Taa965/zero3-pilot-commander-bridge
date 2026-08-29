@@ -1,8 +1,0 @@
-{
-  "schema":"zero3.commander.command.execution-submit/1.0",
-  "command":"execution.submit",
-  "execution_id":"chatgpt-router-skills-resync-20260829T0125Z",
-  "commander_id":"chatgpt-web-session",
-  "issued_at":"2026-08-29T01:25:00Z",
-  "payload":{"capability":"repo.checkout","args":{"ref":"pilot-dev-router-skills-20260829"},"execution_id":"chatgpt-router-skills-resync-20260829T0125Z"}
-}
