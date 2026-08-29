@@ -3,6 +3,24 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-router-remove-subagent-import-20260829T0233Z",
+      "progress": 100.0,
+      "stage": "file.patch",
+      "state": "succeeded",
+      "task_id": "pilot-task-b9a1f41ccf994a77",
+      "updated_at": "2026-08-29T02:19:26Z"
+    },
+    {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-router-ui-agent-select-20260829T0232Z",
+      "progress": 0.0,
+      "stage": "file.patch",
+      "state": "failed",
+      "task_id": "pilot-task-9dc1420e72cb4315",
+      "updated_at": "2026-08-29T02:19:26Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-router-skills-build3-20260829T0231Z",
       "progress": 100.0,
       "stage": "test.build",
@@ -432,27 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-472662e685d94439",
       "updated_at": "2026-08-29T01:24:28Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-router-skills-checkout-20260829T0118Z",
-      "progress": 100.0,
-      "stage": "repo.checkout",
-      "state": "succeeded",
-      "task_id": "pilot-task-578c5ce0aa804ba8",
-      "updated_at": "2026-08-29T01:19:54Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-installer-weixin-main-status-20260829T0056Z",
-      "progress": 100.0,
-      "stage": "repo.status",
-      "state": "succeeded",
-      "task_id": "pilot-task-4e435079ed194bdf",
-      "updated_at": "2026-08-29T00:55:53Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:19:05Z"
+  "updated_at": "2026-08-29T02:19:26Z"
 }

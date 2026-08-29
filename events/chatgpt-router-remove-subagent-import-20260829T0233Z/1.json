@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-router-remove-subagent-import-20260829T0233Z",
+  "occurred_at": "2026-08-29T02:19:26Z",
+  "recorded_at": "2026-08-29T02:19:26Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-b9a1f41ccf994a77"
+}
