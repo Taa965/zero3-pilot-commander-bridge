@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-weixin-summary-reply-20260829T0035Z",
+      "progress": 100.0,
+      "stage": "file.patch",
+      "state": "succeeded",
+      "task_id": "pilot-task-cb64009a54c7465f",
+      "updated_at": "2026-08-29T00:35:52Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-installer-weixin-push-20260829T0034Z",
       "progress": 100.0,
       "stage": "git.push_branch",
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-47310d9fd9bc4ae5",
       "updated_at": "2026-08-28T19:58:16Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-node-status2-20260828T2006Z",
-      "progress": 100.0,
-      "stage": "repo.status",
-      "state": "succeeded",
-      "task_id": "pilot-task-c5ef1099064643e9",
-      "updated_at": "2026-08-28T19:57:36Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T00:35:15Z"
+  "updated_at": "2026-08-29T00:35:52Z"
 }

@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-weixin-summary-reply-20260829T0035Z",
+  "occurred_at": "2026-08-29T00:35:52Z",
+  "recorded_at": "2026-08-29T00:35:52Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-cb64009a54c7465f"
+}
