@@ -1,8 +1,0 @@
-{
-  "schema":"zero3.commander.command.execution-submit/1.0",
-  "command":"execution.submit",
-  "execution_id":"chatgpt-router-node-state-20260829T0133Z",
-  "commander_id":"chatgpt-web-session",
-  "issued_at":"2026-08-29T01:33:00Z",
-  "payload":{"capability":"file.patch","args":{"diff":"diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -46,7 +46,9 @@\n     scheduler: Arc<PersistentScheduler>,\n     memory: Arc<SqliteMemoryStore>,\n     agents: Arc<SubagentRegistry>,\n+    skills: Arc<SkillRegistry>,\n+    agent_router: HeuristicAgentRouter,\n     browser: Arc<CdpBrowserProvider>,\n     computer: Arc<OpenComputerUseAdapter>,\n     data_dir: PathBuf,\n"},"execution_id":"chatgpt-router-node-state-20260829T0133Z"}
-}
