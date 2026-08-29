@@ -1,0 +1,8 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "execution_id":"chatgpt-router-node-imports-20260829T0128Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T01:28:00Z",
+  "payload":{"capability":"file.patch","args":{"diff":"diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -26,12 +26,13 @@\n };\n use zero3_core::subagent::SubagentTask;\n use zero3_memory::{MemoryClass, MemoryRecord, MemoryScope, MemoryStore, SqliteMemoryStore};\n+use zero3_skills::{FilesystemSkillProvider, SkillRegistry, SkillRoot};\n use zero3_providers::browser::{BrowserAction, BrowserProvider, CdpBrowserProvider};\n use zero3_providers::computer::{ComputerAction, ComputerProvider};\n use zero3_providers::open_computer_use::OpenComputerUseAdapter;\n use zero3_providers::Provider;\n use zero3_scheduler::persistent::{PersistentScheduler, ScheduleSpec, ScheduledTask};\n use zero3_scheduler::{JobManager, JobRecord, RecoveryMode};\n use zero3_store::EventStore;\n use zero3_subagents::workers::{ClaudeWorker, CliWorkerConfig, CodexWorker, HermesWorker};\n-use zero3_subagents::SubagentRegistry;\n+use zero3_subagents::{HeuristicAgentRouter, RouteRequest, RoutingDecision, SubagentRegistry};\n"},"execution_id":"chatgpt-router-node-imports-20260829T0128Z"}
+}
