@@ -1,0 +1,14 @@
+{
+  "accepted_at": "2026-08-29T00:37:50Z",
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_response": {
+    "execution_id": "chatgpt-weixin-summary-test-final-20260829T0038Z",
+    "schema": "zero3.execution-acceptance/1.0",
+    "task_id": "pilot-task-7b8237a419a04180"
+  },
+  "correlation": "task_id",
+  "execution_id": "chatgpt-weixin-summary-test-final-20260829T0038Z",
+  "schema": "zero3.commander.command-accepted/1.0",
+  "task_id": "pilot-task-7b8237a419a04180"
+}

@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-weixin-summary-test-final-20260829T0038Z",
+      "progress": 0.0,
+      "stage": "test.run",
+      "state": "running",
+      "task_id": "pilot-task-7b8237a419a04180",
+      "updated_at": "2026-08-29T00:37:51Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-weixin-summary-clippy-20260829T0037Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-f04a62a1dcc14674",
       "updated_at": "2026-08-28T20:08:33Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-contract-test-20260828T2011Z",
-      "progress": 100.0,
-      "stage": "test.run",
-      "state": "succeeded",
-      "task_id": "pilot-task-6f989f089a6b4b46",
-      "updated_at": "2026-08-28T20:02:23Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T00:37:32Z"
+  "updated_at": "2026-08-29T00:37:51Z"
 }
