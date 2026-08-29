@@ -1,0 +1,10 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "protocol_version":"1.0",
+  "execution_id":"chatgpt-skills-rec-constructor-method-20260829T0246Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T02:46:00Z",
+  "idempotency_key":"chatgpt-skills-rec-constructor-method-20260829T0246Z",
+  "payload":{"execution_id":"chatgpt-skills-rec-constructor-method-20260829T0246Z","capability":"file.patch","args":{"diff":"diff --git a/crates/zero3-skills/src/lib.rs b/crates/zero3-skills/src/lib.rs\n--- a/crates/zero3-skills/src/lib.rs\n+++ b/crates/zero3-skills/src/lib.rs\n@@ -158,9 +158,18 @@\n     pub fn named(name: impl Into<String>, roots: Vec<SkillRoot>) -> Self {\n         Self {\n             name: name.into(),\n             roots,\n             recursive: false,\n         }\n     }\n \n+    pub fn recursive_named(name: impl Into<String>, roots: Vec<SkillRoot>) -> Self {\n+        Self {\n+            name: name.into(),\n+            roots,\n+            recursive: true,\n+        }\n+    }\n+\n     fn discover_root(&self, root: &SkillRoot) -> anyhow::Result<Vec<SkillCandidate>> {\n"}}
+}
