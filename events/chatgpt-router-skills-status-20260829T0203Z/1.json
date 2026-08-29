@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.status"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-router-skills-status-20260829T0203Z",
+  "occurred_at": "2026-08-29T02:02:57Z",
+  "recorded_at": "2026-08-29T02:02:58Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-787591a38cae4213"
+}
