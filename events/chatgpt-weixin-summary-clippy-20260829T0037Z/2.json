@@ -1,0 +1,25 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "returncode": 0,
+      "stderr": "    Checking zero3-weixin v0.1.0 (/opt/zero3-pilot-dev/apps/weixin)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.63s\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-summary-clippy-20260829T0037Z",
+  "occurred_at": "2026-08-29T00:37:13Z",
+  "recorded_at": "2026-08-29T00:37:32Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-58286e47d86149a7"
+}
