@@ -1,0 +1,14 @@
+{
+  "accepted_at": "2026-08-29T02:04:57Z",
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_response": {
+    "execution_id": "chatgpt-router-skills-read-node-20260829T0206Z",
+    "schema": "zero3.execution-acceptance/1.0",
+    "task_id": "pilot-task-8ec895ed927e4a6d"
+  },
+  "correlation": "task_id",
+  "execution_id": "chatgpt-router-skills-read-node-20260829T0206Z",
+  "schema": "zero3.commander.command-accepted/1.0",
+  "task_id": "pilot-task-8ec895ed927e4a6d"
+}

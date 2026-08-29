@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-router-skills-read-node-20260829T0206Z",
+      "progress": 100.0,
+      "stage": "file.read",
+      "state": "succeeded",
+      "task_id": "pilot-task-8ec895ed927e4a6d",
+      "updated_at": "2026-08-29T02:04:57Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-router-skills-build1-20260829T0205Z",
       "progress": 0.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-c337f5568e6c4871",
       "updated_at": "2026-08-28T21:25:26Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-installer-weixin-clippy-final-20260828T2124Z",
-      "progress": 100.0,
-      "stage": "test.clippy",
-      "state": "succeeded",
-      "task_id": "pilot-task-dbe1ad5ec12f4ce9",
-      "updated_at": "2026-08-28T21:24:27Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:04:36Z"
+  "updated_at": "2026-08-29T02:04:57Z"
 }

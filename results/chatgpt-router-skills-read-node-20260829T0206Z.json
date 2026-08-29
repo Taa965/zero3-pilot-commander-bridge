@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-29T02:04:57Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-router-skills-read-node-20260829T0206Z",
+  "recorded_at": "2026-08-29T02:04:57Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-29T02:04:57Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.read"
+        }
+      },
+      {
+        "created_at": "2026-08-29T02:04:57Z",
+        "event_sequence": 2,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": null
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "file.read"
+      }
+    ]
+  },
+  "task_id": "pilot-task-8ec895ed927e4a6d",
+  "terminal": true
+}
