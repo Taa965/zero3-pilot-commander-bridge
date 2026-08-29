@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "git.commit"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-summary-commit-20260829T0039Z",
+  "occurred_at": "2026-08-29T00:38:30Z",
+  "recorded_at": "2026-08-29T00:38:30Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-776819c1d9a44308"
+}
