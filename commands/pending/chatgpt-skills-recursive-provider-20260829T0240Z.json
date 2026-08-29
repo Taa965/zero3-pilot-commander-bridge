@@ -1,0 +1,16 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "protocol_version":"1.0",
+  "execution_id":"chatgpt-skills-recursive-provider-20260829T0240Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T02:40:00Z",
+  "idempotency_key":"chatgpt-skills-recursive-provider-20260829T0240Z",
+  "payload":{
+    "execution_id":"chatgpt-skills-recursive-provider-20260829T0240Z",
+    "capability":"file.patch",
+    "args":{
+      "diff":"diff --git a/crates/zero3-skills/src/lib.rs b/crates/zero3-skills/src/lib.rs\n--- a/crates/zero3-skills/src/lib.rs\n+++ b/crates/zero3-skills/src/lib.rs\n@@ -143,6 +143,7 @@\n pub struct FilesystemSkillProvider {\n     name: String,\n     roots: Vec<SkillRoot>,\n+    recursive: bool,\n }\n \n impl FilesystemSkillProvider {\n@@ -151,6 +152,7 @@\n         Self {\n             name: \"filesystem\".into(),\n             roots,\n+            recursive: false,\n         }\n     }\n \n@@ -159,8 +161,17 @@\n         Self {\n             name: name.into(),\n             roots,\n+            recursive: false,\n         }\n     }\n+\n+    pub fn recursive_named(name: impl Into<String>, roots: Vec<SkillRoot>) -> Self {\n+        Self {\n+            name: name.into(),\n+            roots,\n+            recursive: true,\n+        }\n+    }\n \n     fn discover_root(&self, root: &SkillRoot) -> anyhow::Result<Vec<SkillCandidate>> {\n"
+    }
+  }
+}
