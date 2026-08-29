@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.diff"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-router-skills-diff-20260829T0204Z",
+  "occurred_at": "2026-08-29T02:03:19Z",
+  "recorded_at": "2026-08-29T02:03:19Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-ee66563610e6404b"
+}

@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-router-skills-diff-20260829T0204Z",
+      "progress": 100.0,
+      "stage": "repo.diff",
+      "state": "succeeded",
+      "task_id": "pilot-task-ee66563610e6404b",
+      "updated_at": "2026-08-29T02:03:19Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-router-skills-status-20260829T0203Z",
       "progress": 100.0,
       "stage": "repo.status",
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-a65f4ab65cc249df",
       "updated_at": "2026-08-28T21:23:47Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-weixin-unused-error-fix-20260828T2123Z",
-      "progress": 100.0,
-      "stage": "file.patch",
-      "state": "succeeded",
-      "task_id": "pilot-task-ff066db335864414",
-      "updated_at": "2026-08-28T21:22:49Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:02:58Z"
+  "updated_at": "2026-08-29T02:03:20Z"
 }

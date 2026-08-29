@@ -1,0 +1,21 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "diff",
+        "--stat"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": " apps/node/src/main.rs | 16 +++++++++++++++-\n 1 file changed, 15 insertions(+), 1 deletion(-)\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-router-skills-diff-20260829T0204Z",
+  "occurred_at": "2026-08-29T02:03:19Z",
+  "recorded_at": "2026-08-29T02:03:19Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-ee66563610e6404b"
+}
