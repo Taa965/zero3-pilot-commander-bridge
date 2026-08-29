@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-wip-push-20260829T0218Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:18:00Z",
+  "idempotency_key": "chatgpt-router-wip-push-20260829T0218Z",
+  "payload": {
+    "execution_id": "chatgpt-router-wip-push-20260829T0218Z",
+    "capability": "git.push_branch",
+    "args": {"branch":"pilot-dev-router-skills-20260829"}
+  }
+}
