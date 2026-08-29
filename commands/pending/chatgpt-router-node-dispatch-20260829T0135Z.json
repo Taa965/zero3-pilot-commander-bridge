@@ -1,0 +1,8 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "execution_id":"chatgpt-router-node-dispatch-20260829T0135Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T01:35:00Z",
+  "payload":{"capability":"file.patch","args":{"diff":"diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -329,12 +329,2 @@\n                 )\n                 .map_err(|error| anyhow::anyhow!(error.message))?;\n-                let result = state\n-                    .agents\n-                    .dispatch(\n-                        &request.backend,\n-                        SubagentTask {\n-                            goal: request.goal,\n-                            context: request.context,\n-                        },\n-                    )\n-                    .await?;\n-                Ok(serde_json::to_value(result)?)\n+                execute_agent_request(&state, request).await\n"},"execution_id":"chatgpt-router-node-dispatch-20260829T0135Z"}
+}
