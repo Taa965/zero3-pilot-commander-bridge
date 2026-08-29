@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "main",
+        "origin/main"
+      ],
+      "returncode": 0,
+      "stderr": "Switched to and reset branch 'main'\n",
+      "stdout": "Branch 'main' set up to track remote branch 'main' from 'origin'.\nYour branch is up to date with 'origin/main'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-installer-weixin-return-main-20260829T0055Z",
+  "occurred_at": "2026-08-29T00:54:38Z",
+  "recorded_at": "2026-08-29T00:54:56Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-3c0904ae227c4cae"
+}
