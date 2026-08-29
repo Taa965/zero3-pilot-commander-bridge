@@ -1,0 +1,8 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "execution_id":"chatgpt-router-node-module-20260829T0140Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T01:40:00Z",
+  "payload":{"capability":"file.patch","args":{"diff":"diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -4,6 +4,9 @@\n //! desktop UI, providers, subagents, persistent jobs, schedules, and memory.\n //! Side-effecting browser/computer/subagent requests are routed through the\n //! shared `zero3-core` policy seam before execution.\n \n+mod agent_runtime;\n+\n+use agent_runtime::execute_agent_request;\n use std::net::SocketAddr;\n use std::path::{Path as FsPath, PathBuf};\n"},"execution_id":"chatgpt-router-node-module-20260829T0140Z"}
+}
