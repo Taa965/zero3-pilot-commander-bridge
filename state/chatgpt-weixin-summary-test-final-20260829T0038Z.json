@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-weixin-summary-test-final-20260829T0038Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "test.run",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-7b8237a419a04180",
-  "terminal": false,
-  "updated_at": "2026-08-29T00:37:51Z"
+  "terminal": true,
+  "updated_at": "2026-08-29T00:38:09Z"
 }
