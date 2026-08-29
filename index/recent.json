@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-router-clippy1-20260829T0235Z",
+      "progress": 0.0,
+      "stage": "test.clippy",
+      "state": "running",
+      "task_id": "pilot-task-d53c228e64124433",
+      "updated_at": "2026-08-29T02:20:46Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-router-remove-route-imports-20260829T0234Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "failed",
       "task_id": "pilot-task-3b69df6635c64c96",
       "updated_at": "2026-08-29T01:26:58Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-router-skills-resync-20260829T0125Z",
-      "progress": 100.0,
-      "stage": "repo.checkout",
-      "state": "succeeded",
-      "task_id": "pilot-task-2bdcbb336a154fe4",
-      "updated_at": "2026-08-29T01:25:43Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:20:06Z"
+  "updated_at": "2026-08-29T02:20:46Z"
 }
