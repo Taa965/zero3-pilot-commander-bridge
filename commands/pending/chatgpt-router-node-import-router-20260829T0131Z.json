@@ -1,0 +1,8 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "execution_id":"chatgpt-router-node-import-router-20260829T0131Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T01:31:00Z",
+  "payload":{"capability":"file.patch","args":{"diff":"diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -38,2 +38,2 @@\n use zero3_subagents::workers::{ClaudeWorker, CliWorkerConfig, CodexWorker, HermesWorker};\n-use zero3_subagents::SubagentRegistry;\n+use zero3_subagents::{HeuristicAgentRouter, RouteRequest, RoutingDecision, SubagentRegistry};\n"},"execution_id":"chatgpt-router-node-import-router-20260829T0131Z"}
+}
