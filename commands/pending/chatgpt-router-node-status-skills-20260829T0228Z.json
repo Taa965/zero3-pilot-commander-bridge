@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-node-status-skills-20260829T0228Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:28:00Z",
+  "idempotency_key": "chatgpt-router-node-status-skills-20260829T0228Z",
+  "payload": {
+    "execution_id": "chatgpt-router-node-status-skills-20260829T0228Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -433,4 +433,5 @@\n async fn status(State(state): State<Arc<AppState>>) -> Result<Json<Value>, ApiError> {\n     let schedules = state.scheduler.list().map_err(ApiError::internal)?;\n     let memories = state.memory.list(None).map_err(ApiError::internal)?;\n+    let skill_catalog = state.skills.snapshot(None).await;\n     Ok(Json(json!({\n@@ -442,3 +443,8 @@\n         \"memories\": memories.len(),\n         \"agents\": state.agents.list(),\n+        \"skills\": {\n+            \"count\": skill_catalog.skills.len(),\n+            \"catalog_complete\": skill_catalog.complete,\n+            \"providers\": state.skills.provider_names(),\n+        },\n         \"browser\": {\n"
+    }
+  }
+}
