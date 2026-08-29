@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "## pilot-dev-router-skills-20260829...origin/pilot-dev-router-skills-20260829\n M Cargo.lock\n M apps/node/src/agent_runtime.rs\n M apps/node/src/main.rs\n M crates/zero3-skills/src/lib.rs\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-router-wip-status-20260829T0216Z",
+  "occurred_at": "2026-08-29T02:10:50Z",
+  "recorded_at": "2026-08-29T02:10:50Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-3bfed6d9a025407a"
+}
