@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-weixin-summary-test-20260829T0036Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T00:36:00Z",
+  "payload": {
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/weixin/src/main.rs b/apps/weixin/src/main.rs\n--- a/apps/weixin/src/main.rs\n+++ b/apps/weixin/src/main.rs\n@@ -356,6 +356,13 @@\n         assert_eq!(goal, \"inspect this\");\n     }\n \n+    #[test]\n+    fn reply_prefers_agent_summary() {\n+        let value = json!({\"summary\": \"完成摘要\", \"output\": {\"details\": true}});\n+        assert_eq!(render_reply(&value), \"完成摘要\");\n+    }\n+\n     #[test]\n     fn truncation_preserves_utf8() {\n"
+    },
+    "execution_id": "chatgpt-weixin-summary-test-20260829T0036Z"
+  }
+}
