@@ -1,8 +1,0 @@
-{
-  "schema":"zero3.commander.command.execution-submit/1.0",
-  "command":"execution.submit",
-  "execution_id":"chatgpt-router-node-module-imports-20260829T0138Z",
-  "commander_id":"chatgpt-web-session",
-  "issued_at":"2026-08-29T01:38:00Z",
-  "payload":{"capability":"file.patch","args":{"diff":"diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -5,6 +5,9 @@\n //! Side-effecting browser/computer/subagent requests are routed through the\n //! shared `zero3-core` policy seam before execution.\n \n+mod agent_runtime;\n+\n+use agent_runtime::execute_agent_request;\n use std::net::SocketAddr;\n use std::path::{Path as FsPath, PathBuf};\n use std::sync::Arc;\n@@ -24,8 +27,8 @@\n use zero3_core::permission::{\n     ActionRequest, Decision, DefaultPolicy, PermissionLevel, PolicyEngine,\n };\n-use zero3_core::subagent::SubagentTask;\n use zero3_memory::{MemoryClass, MemoryRecord, MemoryScope, MemoryStore, SqliteMemoryStore};\n+use zero3_skills::{FilesystemSkillProvider, SkillRegistry, SkillRoot};\n use zero3_providers::browser::{BrowserAction, BrowserProvider, CdpBrowserProvider};\n use zero3_providers::computer::{ComputerAction, ComputerProvider};\n@@ -36,7 +39,7 @@\n use zero3_scheduler::{JobManager, JobRecord, RecoveryMode};\n use zero3_store::EventStore;\n use zero3_subagents::workers::{ClaudeWorker, CliWorkerConfig, CodexWorker, HermesWorker};\n-use zero3_subagents::SubagentRegistry;\n+use zero3_subagents::{HeuristicAgentRouter, SubagentRegistry};\n \n const VERSION: &str = env!(\"CARGO_PKG_VERSION\");\n"},"execution_id":"chatgpt-router-node-module-imports-20260829T0138Z"}
-}

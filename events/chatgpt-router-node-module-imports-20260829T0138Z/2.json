@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmpvfnctq1c.patch']\nstderr:\nerror: corrupt patch at line 23\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-router-node-module-imports-20260829T0138Z",
+  "occurred_at": "2026-08-29T01:39:24Z",
+  "recorded_at": "2026-08-29T01:39:24Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-ca1355e026c94447"
+}
