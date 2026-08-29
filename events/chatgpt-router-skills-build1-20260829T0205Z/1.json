@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.build"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-router-skills-build1-20260829T0205Z",
+  "occurred_at": "2026-08-29T02:03:59Z",
+  "recorded_at": "2026-08-29T02:03:59Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-13693f7d4edf47cd"
+}
