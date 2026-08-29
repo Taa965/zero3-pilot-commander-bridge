@@ -6,9 +6,9 @@
   "last_command_received_at": "2026-08-29T02:27:52Z",
   "last_event_published_at": "2026-08-29T02:27:52Z",
   "outbox_backlog": 0,
-  "publish_lag_seconds": 2.135,
+  "publish_lag_seconds": 2.546,
   "schema": "zero3.commander.bridge-health/1.0",
-  "updated_at": "2026-08-29T09:22:56Z",
+  "updated_at": "2026-08-29T09:28:10Z",
   "zero3_central": "unknown",
   "zero3_commander": "healthy"
 }
