@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "test.clippy"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-binded-clippy-20260829T0045Z",
+  "occurred_at": "2026-08-29T00:44:55Z",
+  "recorded_at": "2026-08-29T00:44:55Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-dc2fb8f3eba34879"
+}

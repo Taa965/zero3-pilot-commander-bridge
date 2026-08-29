@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-weixin-binded-clippy-20260829T0045Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.clippy",
+  "state": "running",
+  "task_id": "pilot-task-dc2fb8f3eba34879",
+  "terminal": false,
+  "updated_at": "2026-08-29T00:44:56Z"
+}
