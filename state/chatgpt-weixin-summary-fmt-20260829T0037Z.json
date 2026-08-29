@@ -1,0 +1,12 @@
+{
+  "event_sequence": 1,
+  "execution_id": "chatgpt-weixin-summary-fmt-20260829T0037Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "test.fmt",
+  "state": "running",
+  "task_id": "pilot-task-b2a8de094d8b4f5f",
+  "terminal": false,
+  "updated_at": "2026-08-29T00:36:33Z"
+}
