@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-node-clean-imports2-20260829T0221Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:21:00Z",
+  "idempotency_key": "chatgpt-router-node-clean-imports2-20260829T0221Z",
+  "payload": {
+    "execution_id": "chatgpt-router-node-clean-imports2-20260829T0221Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -30,3 +30,2 @@\n-use zero3_core::subagent::SubagentTask;\n use zero3_skills::SkillRegistry;\n use zero3_memory::{MemoryClass, MemoryRecord, MemoryScope, MemoryStore, SqliteMemoryStore};\n@@ -39,3 +38,3 @@\n use zero3_store::EventStore;\n use zero3_subagents::workers::{ClaudeWorker, CliWorkerConfig, CodexWorker, HermesWorker};\n-use zero3_subagents::{HeuristicAgentRouter, RouteRequest, RoutingDecision, SubagentRegistry};\n+use zero3_subagents::{HeuristicAgentRouter, SubagentRegistry};\n"
+    }
+  }
+}
