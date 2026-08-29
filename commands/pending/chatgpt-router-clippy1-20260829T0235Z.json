@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-clippy1-20260829T0235Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:35:00Z",
+  "idempotency_key": "chatgpt-router-clippy1-20260829T0235Z",
+  "payload": {
+    "execution_id": "chatgpt-router-clippy1-20260829T0235Z",
+    "capability": "test.clippy",
+    "args": {}
+  }
+}
