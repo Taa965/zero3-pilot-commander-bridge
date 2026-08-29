@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.status"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-postsync-status-20260829T0048Z",
+  "occurred_at": "2026-08-29T00:47:49Z",
+  "recorded_at": "2026-08-29T00:47:49Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-b3b77a056e9e44ab"
+}
