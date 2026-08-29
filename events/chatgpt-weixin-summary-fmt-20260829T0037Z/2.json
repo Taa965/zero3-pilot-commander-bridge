@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-summary-fmt-20260829T0037Z",
+  "occurred_at": "2026-08-29T00:36:34Z",
+  "recorded_at": "2026-08-29T00:36:52Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-b2a8de094d8b4f5f"
+}
