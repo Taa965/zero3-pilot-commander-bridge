@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-weixin-summary-test-20260829T0036Z",
+  "occurred_at": "2026-08-29T00:36:12Z",
+  "recorded_at": "2026-08-29T00:36:12Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-fafc0f941b574724"
+}
