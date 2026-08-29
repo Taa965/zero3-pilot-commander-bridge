@@ -2,13 +2,13 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
-      "event_sequence": 1,
+      "event_sequence": 3,
       "execution_id": "chatgpt-router-reset-remote-20260829T0137Z",
-      "progress": 0.0,
+      "progress": 100.0,
       "stage": "repo.checkout",
-      "state": "running",
+      "state": "succeeded",
       "task_id": "pilot-task-0e1fdf8a45654753",
-      "updated_at": "2026-08-29T01:37:14Z"
+      "updated_at": "2026-08-29T01:37:33Z"
     },
     {
       "event_sequence": 3,
@@ -454,5 +454,5 @@
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T01:37:14Z"
+  "updated_at": "2026-08-29T01:37:33Z"
 }

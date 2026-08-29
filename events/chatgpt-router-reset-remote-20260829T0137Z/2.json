@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "pilot-dev-router-skills-20260829",
+        "origin/pilot-dev-router-skills-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Reset branch 'pilot-dev-router-skills-20260829'\n",
+      "stdout": "M\tapps/node/src/main.rs\nBranch 'pilot-dev-router-skills-20260829' set up to track remote branch 'pilot-dev-router-skills-20260829' from 'origin'.\nYour branch is up to date with 'origin/pilot-dev-router-skills-20260829'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-router-reset-remote-20260829T0137Z",
+  "occurred_at": "2026-08-29T01:37:15Z",
+  "recorded_at": "2026-08-29T01:37:33Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0e1fdf8a45654753"
+}

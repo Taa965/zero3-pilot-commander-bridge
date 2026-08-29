@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-router-reset-remote-20260829T0137Z",
+  "occurred_at": "2026-08-29T01:37:15Z",
+  "recorded_at": "2026-08-29T01:37:33Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0e1fdf8a45654753"
+}
