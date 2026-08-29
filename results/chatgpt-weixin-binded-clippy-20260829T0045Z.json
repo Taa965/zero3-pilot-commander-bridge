@@ -1,0 +1,56 @@
+{
+  "completed_at": "2026-08-29T00:45:15Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-weixin-binded-clippy-20260829T0045Z",
+  "recorded_at": "2026-08-29T00:45:15Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-29T00:44:55Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "test.clippy"
+        }
+      },
+      {
+        "created_at": "2026-08-29T00:45:01Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "cargo",
+            "clippy",
+            "--workspace",
+            "--all-targets",
+            "--",
+            "-D",
+            "warnings"
+          ],
+          "returncode": 0,
+          "stderr": "    Checking zero3-providers v0.1.0 (/opt/zero3-pilot-dev/crates/zero3-providers)\n    Checking zero3-weixin v0.1.0 (/opt/zero3-pilot-dev/apps/weixin)\n    Checking zero3-node v0.1.0 (/opt/zero3-pilot-dev/apps/node)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 6.13s\n",
+          "stdout": ""
+        }
+      },
+      {
+        "created_at": "2026-08-29T00:45:01Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "test.clippy"
+      }
+    ]
+  },
+  "task_id": "pilot-task-dc2fb8f3eba34879",
+  "terminal": true
+}
