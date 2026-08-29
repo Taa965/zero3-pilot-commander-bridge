@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "pilot-dev-installer-weixin-20260829",
+        "origin/pilot-dev-installer-weixin-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Reset branch 'pilot-dev-installer-weixin-20260829'\n",
+      "stdout": "M\tcrates/zero3-providers/src/weixin_clawbot.rs\nBranch 'pilot-dev-installer-weixin-20260829' set up to track remote branch 'pilot-dev-installer-weixin-20260829' from 'origin'.\nYour branch is up to date with 'origin/pilot-dev-installer-weixin-20260829'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-sync-noop-head-20260829T0047Z",
+  "occurred_at": "2026-08-29T00:47:10Z",
+  "recorded_at": "2026-08-29T00:47:28Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-b256b424eb1145f2"
+}
