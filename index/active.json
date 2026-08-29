@@ -1,6 +1,16 @@
 {
   "description": "Non-terminal executions only. Lets an external agent resume context without a repository-wide search. Holds references, never full execution payloads.",
-  "executions": [],
+  "executions": [
+    {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-router-reset-remote-20260829T0137Z",
+      "progress": 0.0,
+      "stage": "repo.checkout",
+      "state": "running",
+      "task_id": "pilot-task-0e1fdf8a45654753",
+      "updated_at": "2026-08-29T01:37:14Z"
+    }
+  ],
   "schema": "zero3.commander.index.active/1.0",
-  "updated_at": "2026-08-29T01:36:36Z"
+  "updated_at": "2026-08-29T01:37:14Z"
 }

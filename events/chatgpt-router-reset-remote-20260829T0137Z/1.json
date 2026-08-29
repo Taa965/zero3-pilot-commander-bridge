@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "repo.checkout"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-router-reset-remote-20260829T0137Z",
+  "occurred_at": "2026-08-29T01:37:14Z",
+  "recorded_at": "2026-08-29T01:37:14Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-0e1fdf8a45654753"
+}
