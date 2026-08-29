@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-router-write-agent-runtime-20260829T0211Z",
+      "progress": 100.0,
+      "stage": "file.write",
+      "state": "succeeded",
+      "task_id": "pilot-task-e4622b58b49442d3",
+      "updated_at": "2026-08-29T02:07:53Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-router-remove-dup-import-20260829T0210Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-cb64009a54c7465f",
       "updated_at": "2026-08-29T00:35:52Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-installer-weixin-push-20260829T0034Z",
-      "progress": 100.0,
-      "stage": "git.push_branch",
-      "state": "succeeded",
-      "task_id": "pilot-task-339a0fa6775a4e16",
-      "updated_at": "2026-08-29T00:35:15Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:07:13Z"
+  "updated_at": "2026-08-29T02:07:53Z"
 }

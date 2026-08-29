@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": null
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-router-write-agent-runtime-20260829T0211Z",
+  "occurred_at": "2026-08-29T02:07:53Z",
+  "recorded_at": "2026-08-29T02:07:53Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e4622b58b49442d3"
+}
