@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-08-29T00:33:38Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-installer-weixin-status-final-20260829T0033Z",
+  "recorded_at": "2026-08-29T00:33:38Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-29T00:33:38Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "repo.status"
+        }
+      },
+      {
+        "created_at": "2026-08-29T00:33:38Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "git",
+            "status",
+            "--short",
+            "--branch"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "## pilot-dev-installer-weixin-20260829...origin/pilot-dev-installer-weixin-20260829\n M Cargo.lock\n M apps/weixin/src/main.rs\n M crates/zero3-providers/src/weixin_clawbot.rs\n"
+        }
+      },
+      {
+        "created_at": "2026-08-29T00:33:38Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "repo.status"
+      }
+    ]
+  },
+  "task_id": "pilot-task-abdfc0ffb8d64188",
+  "terminal": true
+}

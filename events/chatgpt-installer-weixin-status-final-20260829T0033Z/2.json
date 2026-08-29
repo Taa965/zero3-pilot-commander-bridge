@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "## pilot-dev-installer-weixin-20260829...origin/pilot-dev-installer-weixin-20260829\n M Cargo.lock\n M apps/weixin/src/main.rs\n M crates/zero3-providers/src/weixin_clawbot.rs\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-installer-weixin-status-final-20260829T0033Z",
+  "occurred_at": "2026-08-29T00:33:38Z",
+  "recorded_at": "2026-08-29T00:33:38Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-abdfc0ffb8d64188"
+}
