@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-skill-clean-import-20260829T0214Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:14:00Z",
+  "idempotency_key": "chatgpt-router-skill-clean-import-20260829T0214Z",
+  "payload": {
+    "execution_id": "chatgpt-router-skill-clean-import-20260829T0214Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/crates/zero3-skills/src/lib.rs b/crates/zero3-skills/src/lib.rs\n--- a/crates/zero3-skills/src/lib.rs\n+++ b/crates/zero3-skills/src/lib.rs\n@@ -10,3 +10,3 @@\n-use std::collections::{BTreeMap, HashSet};\n+use std::collections::BTreeMap;\n use std::fs;\n use std::path::{Path, PathBuf};\n"
+    }
+  }
+}
