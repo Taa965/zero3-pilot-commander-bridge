@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-router-node-dispatch-20260829T0135Z",
+      "progress": 0.0,
+      "stage": "file.patch",
+      "state": "failed",
+      "task_id": "pilot-task-6db7f4aa545b4baa",
+      "updated_at": "2026-08-29T01:34:26Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-router-node-auto-helper-20260829T0134Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "failed",
       "task_id": "pilot-task-85e852204ce64774",
       "updated_at": "2026-08-28T21:14:00Z"
-    },
-    {
-      "event_sequence": 2,
-      "execution_id": "chatgpt-weixin-hardening-patch-20260828T2113Z",
-      "progress": 0.0,
-      "stage": "file.patch",
-      "state": "failed",
-      "task_id": "pilot-task-3a3ff7035d0b4543",
-      "updated_at": "2026-08-28T21:13:04Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T01:33:47Z"
+  "updated_at": "2026-08-29T01:34:26Z"
 }
