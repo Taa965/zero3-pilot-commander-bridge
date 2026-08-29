@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-router-skills-resync-20260829T0125Z",
+  "occurred_at": "2026-08-29T01:25:25Z",
+  "recorded_at": "2026-08-29T01:25:43Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-2bdcbb336a154fe4"
+}
