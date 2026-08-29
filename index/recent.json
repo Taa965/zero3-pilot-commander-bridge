@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 1,
+      "execution_id": "chatgpt-weixin-binded-push-20260829T0049Z",
+      "progress": 0.0,
+      "stage": "git.push_branch",
+      "state": "running",
+      "task_id": "pilot-task-5ad1e1e12f0a4a7c",
+      "updated_at": "2026-08-29T00:49:07Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-weixin-binded-commit-20260829T0048Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-6a6162ee7bc9424b",
       "updated_at": "2026-08-28T20:21:12Z"
-    },
-    {
-      "event_sequence": 2,
-      "execution_id": "chatgpt-computer-serde-test-20260828T2020Z",
-      "progress": 0.0,
-      "stage": "file.patch",
-      "state": "failed",
-      "task_id": "pilot-task-68d1b7ec88314daf",
-      "updated_at": "2026-08-28T20:20:34Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T00:48:28Z"
+  "updated_at": "2026-08-29T00:49:07Z"
 }
