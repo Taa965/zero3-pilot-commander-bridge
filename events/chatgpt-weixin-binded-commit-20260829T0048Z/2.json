@@ -1,0 +1,26 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "-c",
+        "user.name=Zero3 Pilot Dev Executor",
+        "-c",
+        "user.email=zero3-pilot-dev-executor@localhost",
+        "commit",
+        "-m",
+        "fix: fail closed when bound Weixin credentials are missing"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[pilot-dev-installer-weixin-20260829 622a9e7] fix: fail closed when bound Weixin credentials are missing\n 1 file changed, 6 insertions(+)\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-binded-commit-20260829T0048Z",
+  "occurred_at": "2026-08-29T00:48:28Z",
+  "recorded_at": "2026-08-29T00:48:28Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e74f194f65504577"
+}
