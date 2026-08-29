@@ -1,0 +1,12 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-weixin-summary-commit-20260829T0039Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T00:39:00Z",
+  "payload": {
+    "capability": "git.commit",
+    "args": {"message": "fix: prefer agent summary in Weixin replies"},
+    "execution_id": "chatgpt-weixin-summary-commit-20260829T0039Z"
+  }
+}
