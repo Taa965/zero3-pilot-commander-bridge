@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=nowarn",
+        "/opt/zero3-pilot-dev/tmp4vq26s9e.patch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-router-remove-dup-import-20260829T0210Z",
+  "occurred_at": "2026-08-29T02:07:13Z",
+  "recorded_at": "2026-08-29T02:07:13Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-bc8ff86767b64863"
+}

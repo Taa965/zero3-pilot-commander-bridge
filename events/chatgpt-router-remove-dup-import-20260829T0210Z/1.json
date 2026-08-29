@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-router-remove-dup-import-20260829T0210Z",
+  "occurred_at": "2026-08-29T02:07:13Z",
+  "recorded_at": "2026-08-29T02:07:13Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-bc8ff86767b64863"
+}
