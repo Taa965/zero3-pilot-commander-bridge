@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-skills-rec-constructor-method-20260829T0246Z",
+  "occurred_at": "2026-08-29T02:25:54Z",
+  "recorded_at": "2026-08-29T02:25:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-6ad057093d9d43d6"
+}
