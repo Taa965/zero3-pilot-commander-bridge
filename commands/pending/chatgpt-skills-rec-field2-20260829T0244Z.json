@@ -1,0 +1,10 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "protocol_version":"1.0",
+  "execution_id":"chatgpt-skills-rec-field2-20260829T0244Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T02:44:00Z",
+  "idempotency_key":"chatgpt-skills-rec-field2-20260829T0244Z",
+  "payload":{"execution_id":"chatgpt-skills-rec-field2-20260829T0244Z","capability":"file.patch","args":{"diff":"diff --git a/crates/zero3-skills/src/lib.rs b/crates/zero3-skills/src/lib.rs\n--- a/crates/zero3-skills/src/lib.rs\n+++ b/crates/zero3-skills/src/lib.rs\n@@ -143,4 +143,5 @@\n pub struct FilesystemSkillProvider {\n     name: String,\n     roots: Vec<SkillRoot>,\n+    recursive: bool,\n }\n"}}
+}
