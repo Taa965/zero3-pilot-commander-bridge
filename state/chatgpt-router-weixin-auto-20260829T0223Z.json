@@ -1,0 +1,12 @@
+{
+  "event_sequence": 2,
+  "execution_id": "chatgpt-router-weixin-auto-20260829T0223Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "file.patch",
+  "state": "failed",
+  "task_id": "pilot-task-e6701e9d1cf64e51",
+  "terminal": true,
+  "updated_at": "2026-08-29T02:14:28Z"
+}
