@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=nowarn",
+        "/opt/zero3-pilot-dev/tmpsoqbxu5g.patch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-router-node-skill-routes-20260829T0225Z",
+  "occurred_at": "2026-08-29T02:15:46Z",
+  "recorded_at": "2026-08-29T02:15:46Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-4f47320ea6d64916"
+}
