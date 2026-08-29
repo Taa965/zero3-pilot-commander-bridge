@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-router-skills-build1-20260829T0205Z",
   "progress": 0.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "test.build",
-  "state": "running",
+  "state": "failed",
   "task_id": "pilot-task-13693f7d4edf47cd",
-  "terminal": false,
-  "updated_at": "2026-08-29T02:03:59Z"
+  "terminal": true,
+  "updated_at": "2026-08-29T02:04:36Z"
 }
