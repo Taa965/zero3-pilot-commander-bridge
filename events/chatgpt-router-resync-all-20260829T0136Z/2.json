@@ -1,0 +1,21 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "fetch",
+        "origin"
+      ],
+      "returncode": 0,
+      "stderr": "From github.com:Taa965/zero3-pilot\n   25580ea..622be56  pilot-dev-router-skills-20260829 -> origin/pilot-dev-router-skills-20260829\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-router-resync-all-20260829T0136Z",
+  "occurred_at": "2026-08-29T01:36:17Z",
+  "recorded_at": "2026-08-29T01:36:35Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-262030c2b1a14a5f"
+}
