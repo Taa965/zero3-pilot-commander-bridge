@@ -1,0 +1,8 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "execution_id":"chatgpt-router-node-grep-20260829T0129Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T01:29:00Z",
+  "payload":{"capability":"shell.run","args":{"argv":["grep","-nE","zero3_core::subagent|zero3_memory|zero3_subagents|struct AppState|struct AgentRunRequest","apps/node/src/main.rs"]},"execution_id":"chatgpt-router-node-grep-20260829T0129Z"}
+}
