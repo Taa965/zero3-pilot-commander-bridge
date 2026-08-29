@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-router-node-import-router3-20260829T0132Z",
+  "occurred_at": "2026-08-29T01:31:29Z",
+  "recorded_at": "2026-08-29T01:31:29Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-374a4739ca844c89"
+}
