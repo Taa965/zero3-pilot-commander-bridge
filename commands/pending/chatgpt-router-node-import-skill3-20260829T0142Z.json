@@ -1,0 +1,8 @@
+{
+  "schema":"zero3.commander.command.execution-submit/1.0",
+  "command":"execution.submit",
+  "execution_id":"chatgpt-router-node-import-skill3-20260829T0142Z",
+  "commander_id":"chatgpt-web-session",
+  "issued_at":"2026-08-29T01:42:00Z",
+  "payload":{"capability":"file.patch","args":{"diff":"diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -28,2 +28,3 @@\n use zero3_memory::{MemoryClass, MemoryRecord, MemoryScope, MemoryStore, SqliteMemoryStore};\n+use zero3_skills::{FilesystemSkillProvider, SkillRegistry, SkillRoot};\n use zero3_providers::browser::{BrowserAction, BrowserProvider, CdpBrowserProvider};\n"},"execution_id":"chatgpt-router-node-import-skill3-20260829T0142Z"}
+}
