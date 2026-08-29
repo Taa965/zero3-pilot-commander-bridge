@@ -1,0 +1,23 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "checkout",
+        "-B",
+        "pilot-dev-router-skills-20260829",
+        "origin/pilot-dev-router-skills-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Switched to a new branch 'pilot-dev-router-skills-20260829'\n",
+      "stdout": "Branch 'pilot-dev-router-skills-20260829' set up to track remote branch 'pilot-dev-router-skills-20260829' from 'origin'.\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-router-skills-checkout-20260829T0118Z",
+  "occurred_at": "2026-08-29T01:19:36Z",
+  "recorded_at": "2026-08-29T01:19:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-578c5ce0aa804ba8"
+}

@@ -1,12 +1,12 @@
 {
-  "event_sequence": 1,
+  "event_sequence": 3,
   "execution_id": "chatgpt-router-skills-checkout-20260829T0118Z",
-  "progress": 0.0,
+  "progress": 100.0,
   "schema": "zero3.commander.state/2.0",
   "source": "publisher",
   "stage": "repo.checkout",
-  "state": "running",
+  "state": "succeeded",
   "task_id": "pilot-task-578c5ce0aa804ba8",
-  "terminal": false,
-  "updated_at": "2026-08-29T01:19:35Z"
+  "terminal": true,
+  "updated_at": "2026-08-29T01:19:54Z"
 }
