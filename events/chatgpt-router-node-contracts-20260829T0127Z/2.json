@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmpxshgq_kt.patch']\nstderr:\nerror: patch fragment without header at line 19: @@ -45,6 +46,8 @@ struct AppState {\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-router-node-contracts-20260829T0127Z",
+  "occurred_at": "2026-08-29T01:26:58Z",
+  "recorded_at": "2026-08-29T01:26:58Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-3b69df6635c64c96"
+}
