@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-node-skill-routes-20260829T0225Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:25:00Z",
+  "idempotency_key": "chatgpt-router-node-skill-routes-20260829T0225Z",
+  "payload": {
+    "execution_id": "chatgpt-router-node-skill-routes-20260829T0225Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -719,3 +719,5 @@\n         .route(\"/health\", get(health))\n         .route(\"/api/v1/status\", get(status))\n+        .route(\"/api/v1/skills\", get(list_skills))\n+        .route(\"/api/v1/skills/:name\", get(get_skill))\n         .route(\"/api/v1/jobs\", get(list_jobs))\n"
+    }
+  }
+}
