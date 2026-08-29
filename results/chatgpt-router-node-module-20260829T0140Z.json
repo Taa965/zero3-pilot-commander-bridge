@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-08-29T01:40:19Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-router-node-module-20260829T0140Z",
+  "recorded_at": "2026-08-29T01:40:19Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-29T01:40:19Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.patch"
+        }
+      },
+      {
+        "created_at": "2026-08-29T01:40:19Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "git",
+            "apply",
+            "--whitespace=nowarn",
+            "/opt/zero3-pilot-dev/tmpu4wsjv_n.patch"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      {
+        "created_at": "2026-08-29T01:40:19Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "file.patch"
+      }
+    ]
+  },
+  "task_id": "pilot-task-deb86f230b8a4efe",
+  "terminal": true
+}
