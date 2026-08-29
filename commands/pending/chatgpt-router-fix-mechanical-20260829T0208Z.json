@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-fix-mechanical-20260829T0208Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:08:00Z",
+  "idempotency_key": "chatgpt-router-fix-mechanical-20260829T0208Z",
+  "payload": {
+    "execution_id": "chatgpt-router-fix-mechanical-20260829T0208Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/crates/zero3-skills/src/lib.rs b/crates/zero3-skills/src/lib.rs\n--- a/crates/zero3-skills/src/lib.rs\n+++ b/crates/zero3-skills/src/lib.rs\n@@ -7,7 +7,7 @@\n //! stale catalog behind.\n \n-use std::collections::{BTreeMap, HashSet};\n+use std::collections::BTreeMap;\n use std::fs;\n use std::path::{Path, PathBuf};\n use std::sync::{Arc, RwLock};\ndiff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -29,8 +29,7 @@\n };\n use zero3_core::subagent::SubagentTask;\n use zero3_skills::{FilesystemSkillProvider, SkillRegistry, SkillRoot};\n use zero3_memory::{MemoryClass, MemoryRecord, MemoryScope, MemoryStore, SqliteMemoryStore};\n-use zero3_skills::{FilesystemSkillProvider, SkillRegistry, SkillRoot};\n use zero3_providers::browser::{BrowserAction, BrowserProvider, CdpBrowserProvider};\n use zero3_providers::computer::{ComputerAction, ComputerProvider};\n use zero3_providers::open_computer_use::OpenComputerUseAdapter;\n@@ -39,7 +38,7 @@\n use zero3_scheduler::persistent::{PersistentScheduler, ScheduleSpec, ScheduledTask};\n use zero3_scheduler::{JobManager, JobRecord, RecoveryMode};\n use zero3_store::EventStore;\n use zero3_subagents::workers::{ClaudeWorker, CliWorkerConfig, CodexWorker, HermesWorker};\n-use zero3_subagents::{HeuristicAgentRouter, RouteRequest, RoutingDecision, SubagentRegistry};\n+use zero3_subagents::{HeuristicAgentRouter, SubagentRegistry};\n \n const VERSION: &str = env!(\"CARGO_PKG_VERSION\");"
+    }
+  }
+}
