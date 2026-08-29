@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "push",
+        "origin",
+        "HEAD:refs/heads/pilot-dev-installer-weixin-20260829"
+      ],
+      "returncode": 0,
+      "stderr": "Everything up-to-date\n",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-summary-push2-20260829T0040Z",
+  "occurred_at": "2026-08-29T00:39:51Z",
+  "recorded_at": "2026-08-29T00:40:09Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-12c28b1626f34a5e"
+}
