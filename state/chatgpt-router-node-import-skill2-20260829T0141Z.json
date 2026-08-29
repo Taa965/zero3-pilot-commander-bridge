@@ -1,0 +1,12 @@
+{
+  "event_sequence": 2,
+  "execution_id": "chatgpt-router-node-import-skill2-20260829T0141Z",
+  "progress": 0.0,
+  "schema": "zero3.commander.state/2.0",
+  "source": "publisher",
+  "stage": "file.patch",
+  "state": "failed",
+  "task_id": "pilot-task-83298b2219b14f8b",
+  "terminal": true,
+  "updated_at": "2026-08-29T01:40:39Z"
+}
