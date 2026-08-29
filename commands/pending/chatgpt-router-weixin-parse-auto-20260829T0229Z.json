@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-weixin-parse-auto-20260829T0229Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:29:00Z",
+  "idempotency_key": "chatgpt-router-weixin-parse-auto-20260829T0229Z",
+  "payload": {
+    "execution_id": "chatgpt-router-weixin-parse-auto-20260829T0229Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/weixin/src/main.rs b/apps/weixin/src/main.rs\n--- a/apps/weixin/src/main.rs\n+++ b/apps/weixin/src/main.rs\n@@ -213,3 +213,3 @@\n     let mut parts = text.splitn(2, char::is_whitespace);\n     let first = parts.next().unwrap_or_default();\n-    if matches!(first, \"codex\" | \"claude\" | \"hermes\") {\n+    if matches!(first, \"auto\" | \"codex\" | \"claude\" | \"hermes\") {\n"
+    }
+  }
+}
