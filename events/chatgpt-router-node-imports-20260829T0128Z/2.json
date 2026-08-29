@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 1: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmp8yqd0296.patch']\nstderr:\nerror: patch failed: apps/node/src/main.rs:26\nerror: apps/node/src/main.rs: patch does not apply\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-router-node-imports-20260829T0128Z",
+  "occurred_at": "2026-08-29T01:27:37Z",
+  "recorded_at": "2026-08-29T01:27:38Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-e670d7ec445546ba"
+}
