@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-node-skill-api-20260829T0224Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:24:00Z",
+  "idempotency_key": "chatgpt-router-node-skill-api-20260829T0224Z",
+  "payload": {
+    "execution_id": "chatgpt-router-node-skill-api-20260829T0224Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -466,3 +466,25 @@\n }\n \n+async fn list_skills(State(state): State<Arc<AppState>>) -> Result<Json<Value>, ApiError> {\n+    let snapshot = state.skills.snapshot(None).await;\n+    serde_json::to_value(snapshot)\n+        .map(Json)\n+        .map_err(ApiError::internal)\n+}\n+\n+async fn get_skill(\n+    State(state): State<Arc<AppState>>,\n+    Path(name): Path<String>,\n+) -> Result<Json<Value>, ApiError> {\n+    let skill = state\n+        .skills\n+        .get(&name, None)\n+        .await\n+        .map_err(ApiError::internal)?\n+        .ok_or_else(|| ApiError::not_found(format!(\"skill {name:?} not found\")))?;\n+    serde_json::to_value(skill)\n+        .map(Json)\n+        .map_err(ApiError::internal)\n+}\n+\n async fn submit_agent(\n"
+    }
+  }
+}
