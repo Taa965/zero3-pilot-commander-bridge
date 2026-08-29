@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-router-node-skill-api-20260829T0224Z",
+      "progress": 100.0,
+      "stage": "file.patch",
+      "state": "succeeded",
+      "task_id": "pilot-task-a7adda79366948d7",
+      "updated_at": "2026-08-29T02:15:07Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-router-skills-build2-20260829T0222Z",
       "progress": 100.0,
       "stage": "test.build",
@@ -441,18 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-4bcdbd3ccc40434f",
       "updated_at": "2026-08-29T00:46:13Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-weixin-binded-clippy-20260829T0045Z",
-      "progress": 100.0,
-      "stage": "test.clippy",
-      "state": "succeeded",
-      "task_id": "pilot-task-dc2fb8f3eba34879",
-      "updated_at": "2026-08-29T00:45:15Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:14:28Z"
+  "updated_at": "2026-08-29T02:15:07Z"
 }
