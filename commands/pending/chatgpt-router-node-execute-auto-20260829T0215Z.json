@@ -1,0 +1,16 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "protocol_version": "1.0",
+  "execution_id": "chatgpt-router-node-execute-auto-20260829T0215Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T02:15:00Z",
+  "idempotency_key": "chatgpt-router-node-execute-auto-20260829T0215Z",
+  "payload": {
+    "execution_id": "chatgpt-router-node-execute-auto-20260829T0215Z",
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/apps/node/src/main.rs b/apps/node/src/main.rs\n--- a/apps/node/src/main.rs\n+++ b/apps/node/src/main.rs\n@@ -262,11 +262,1 @@\n-                let result = state\n-                    .agents\n-                    .dispatch(\n-                        &request.backend,\n-                        SubagentTask {\n-                            goal: request.goal,\n-                            context: request.context,\n-                        },\n-                    )\n-                    .await?;\n-                Ok(serde_json::to_value(result)?)\n+                execute_agent_request(&state, request).await\n"
+    }
+  }
+}
