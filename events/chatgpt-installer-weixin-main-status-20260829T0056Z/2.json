@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "## main...origin/main\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-installer-weixin-main-status-20260829T0056Z",
+  "occurred_at": "2026-08-29T00:55:53Z",
+  "recorded_at": "2026-08-29T00:55:53Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-4e435079ed194bdf"
+}

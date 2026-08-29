@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-installer-weixin-prod-health-20260829T0056Z",
+  "occurred_at": "2026-08-29T00:55:53Z",
+  "recorded_at": "2026-08-29T00:55:53Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-5c69dc3340844738"
+}

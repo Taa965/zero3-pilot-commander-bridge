@@ -3,6 +3,24 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-installer-weixin-main-status-20260829T0056Z",
+      "progress": 100.0,
+      "stage": "repo.status",
+      "state": "succeeded",
+      "task_id": "pilot-task-4e435079ed194bdf",
+      "updated_at": "2026-08-29T00:55:53Z"
+    },
+    {
+      "event_sequence": 3,
+      "execution_id": "chatgpt-installer-weixin-prod-health-20260829T0056Z",
+      "progress": 100.0,
+      "stage": "deploy.health",
+      "state": "succeeded",
+      "task_id": "pilot-task-5c69dc3340844738",
+      "updated_at": "2026-08-29T00:55:53Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-installer-weixin-return-main-20260829T0055Z",
       "progress": 100.0,
       "stage": "repo.checkout",
@@ -432,27 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-668598b760a542de",
       "updated_at": "2026-08-28T20:24:06Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-final-clippy-20260828T2023Z",
-      "progress": 100.0,
-      "stage": "test.clippy",
-      "state": "succeeded",
-      "task_id": "pilot-task-0c0b110282d34d40",
-      "updated_at": "2026-08-28T20:23:08Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-final-fmt-20260828T2022Z",
-      "progress": 100.0,
-      "stage": "test.fmt",
-      "state": "succeeded",
-      "task_id": "pilot-task-9b15f35a813e45ac",
-      "updated_at": "2026-08-28T20:22:28Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T00:54:56Z"
+  "updated_at": "2026-08-29T00:55:53Z"
 }
