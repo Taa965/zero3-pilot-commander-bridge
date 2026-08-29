@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-router-wip-push-20260829T0218Z",
+  "occurred_at": "2026-08-29T02:11:52Z",
+  "recorded_at": "2026-08-29T02:12:09Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-b73044461ede4476"
+}
