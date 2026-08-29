@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=nowarn",
+        "/opt/zero3-pilot-dev/tmp9um6ygtu.patch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-skills-rec-branch-20260829T0248Z",
+  "occurred_at": "2026-08-29T02:26:54Z",
+  "recorded_at": "2026-08-29T02:26:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-921cb3bd91a64871"
+}
