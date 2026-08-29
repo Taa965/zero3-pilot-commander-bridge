@@ -1,0 +1,26 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "-c",
+        "user.name=Zero3 Pilot Dev Executor",
+        "-c",
+        "user.email=zero3-pilot-dev-executor@localhost",
+        "commit",
+        "-m",
+        "feat: add Windows installer and Weixin ClawBot channel"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[pilot-dev-installer-weixin-20260829 11278a3] feat: add Windows installer and Weixin ClawBot channel\n 3 files changed, 451 insertions(+), 27 deletions(-)\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-installer-weixin-commit-20260829T0034Z",
+  "occurred_at": "2026-08-29T00:34:17Z",
+  "recorded_at": "2026-08-29T00:34:17Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-3f538a7e26f84b15"
+}
