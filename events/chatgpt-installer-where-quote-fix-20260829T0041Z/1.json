@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "capability": "file.patch"
+    }
+  },
+  "event_sequence": 1,
+  "event_type": "task.started",
+  "execution_id": "chatgpt-installer-where-quote-fix-20260829T0041Z",
+  "occurred_at": "2026-08-29T00:41:07Z",
+  "recorded_at": "2026-08-29T00:41:07Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-f3ef95398549452f"
+}

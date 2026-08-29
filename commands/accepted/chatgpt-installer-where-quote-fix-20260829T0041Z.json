@@ -1,0 +1,14 @@
+{
+  "accepted_at": "2026-08-29T00:41:07Z",
+  "command": "execution.submit",
+  "commander_id": "chatgpt-web-session",
+  "commander_response": {
+    "execution_id": "chatgpt-installer-where-quote-fix-20260829T0041Z",
+    "schema": "zero3.execution-acceptance/1.0",
+    "task_id": "pilot-task-f3ef95398549452f"
+  },
+  "correlation": "task_id",
+  "execution_id": "chatgpt-installer-where-quote-fix-20260829T0041Z",
+  "schema": "zero3.commander.command-accepted/1.0",
+  "task_id": "pilot-task-f3ef95398549452f"
+}
