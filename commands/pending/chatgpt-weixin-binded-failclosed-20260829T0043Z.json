@@ -1,0 +1,14 @@
+{
+  "schema": "zero3.commander.command.execution-submit/1.0",
+  "command": "execution.submit",
+  "execution_id": "chatgpt-weixin-binded-failclosed-20260829T0043Z",
+  "commander_id": "chatgpt-web-session",
+  "issued_at": "2026-08-29T00:43:00Z",
+  "payload": {
+    "capability": "file.patch",
+    "args": {
+      "diff": "diff --git a/crates/zero3-providers/src/weixin_clawbot.rs b/crates/zero3-providers/src/weixin_clawbot.rs\n--- a/crates/zero3-providers/src/weixin_clawbot.rs\n+++ b/crates/zero3-providers/src/weixin_clawbot.rs\n@@ -291,8 +291,14 @@\n             )),\n             \"binded_redirect\" => {\n+                let has_credentials = self.credentials.lock().await.is_some();\n                 self.login_sessions.lock().await.remove(session_key);\n+                if !has_credentials {\n+                    return Err(anyhow!(\n+                        \"Weixin reports this bot is already bound, but local credentials are missing; reconnect after clearing the existing Weixin binding\"\n+                    ));\n+                }\n                 Ok(login_poll(\n                     WeixinLoginState::AlreadyConnected,\n                     true,\n                     \"此微信 ClawBot 已绑定\",\n                 ))\n             }\n"
+    },
+    "execution_id": "chatgpt-weixin-binded-failclosed-20260829T0043Z"
+  }
+}
