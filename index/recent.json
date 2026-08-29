@@ -3,6 +3,24 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-router-node-status-skills-20260829T0228Z",
+      "progress": 100.0,
+      "stage": "file.patch",
+      "state": "succeeded",
+      "task_id": "pilot-task-26af3b46155c4375",
+      "updated_at": "2026-08-29T02:17:26Z"
+    },
+    {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-router-weixin-parse-auto-20260829T0229Z",
+      "progress": 0.0,
+      "stage": "file.patch",
+      "state": "failed",
+      "task_id": "pilot-task-30be27c595ff482a",
+      "updated_at": "2026-08-29T02:17:26Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-router-weixin-default-auto-20260829T0227Z",
       "progress": 100.0,
       "stage": "file.patch",
@@ -432,27 +450,9 @@
       "state": "succeeded",
       "task_id": "pilot-task-3c0904ae227c4cae",
       "updated_at": "2026-08-29T00:54:56Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-weixin-binded-push-20260829T0049Z",
-      "progress": 100.0,
-      "stage": "git.push_branch",
-      "state": "succeeded",
-      "task_id": "pilot-task-5ad1e1e12f0a4a7c",
-      "updated_at": "2026-08-29T00:49:26Z"
-    },
-    {
-      "event_sequence": 3,
-      "execution_id": "chatgpt-weixin-binded-commit-20260829T0048Z",
-      "progress": 100.0,
-      "stage": "git.commit",
-      "state": "succeeded",
-      "task_id": "pilot-task-e74f194f65504577",
-      "updated_at": "2026-08-29T00:48:28Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:17:04Z"
+  "updated_at": "2026-08-29T02:17:26Z"
 }

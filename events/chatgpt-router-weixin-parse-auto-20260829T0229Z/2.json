@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 1: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmp5dfmex90.patch']\nstderr:\nerror: patch failed: apps/weixin/src/main.rs:213\nerror: apps/weixin/src/main.rs: patch does not apply\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-router-weixin-parse-auto-20260829T0229Z",
+  "occurred_at": "2026-08-29T02:17:26Z",
+  "recorded_at": "2026-08-29T02:17:26Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-30be27c595ff482a"
+}
