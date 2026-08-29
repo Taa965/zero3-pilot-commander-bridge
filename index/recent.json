@@ -3,6 +3,15 @@
   "executions": [
     {
       "event_sequence": 3,
+      "execution_id": "chatgpt-skills-rec-constructors-20260829T0245Z",
+      "progress": 100.0,
+      "stage": "file.patch",
+      "state": "succeeded",
+      "task_id": "pilot-task-97693b39a48b4108",
+      "updated_at": "2026-08-29T02:25:15Z"
+    },
+    {
+      "event_sequence": 3,
       "execution_id": "chatgpt-skills-rec-field2-20260829T0244Z",
       "progress": 100.0,
       "stage": "file.patch",
@@ -441,18 +450,9 @@
       "state": "failed",
       "task_id": "pilot-task-d84d3850ce7548d5",
       "updated_at": "2026-08-29T01:30:50Z"
-    },
-    {
-      "event_sequence": 2,
-      "execution_id": "chatgpt-router-node-import-router-20260829T0131Z",
-      "progress": 0.0,
-      "stage": "file.patch",
-      "state": "failed",
-      "task_id": "pilot-task-b4315ae1c7d5421b",
-      "updated_at": "2026-08-29T01:30:11Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:24:35Z"
+  "updated_at": "2026-08-29T02:25:15Z"
 }
