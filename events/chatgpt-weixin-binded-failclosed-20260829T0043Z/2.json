@@ -1,0 +1,22 @@
+{
+  "detail": {
+    "payload": {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=nowarn",
+        "/opt/zero3-pilot-dev/tmp9o1ybw0z.patch"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.output",
+  "execution_id": "chatgpt-weixin-binded-failclosed-20260829T0043Z",
+  "occurred_at": "2026-08-29T00:43:54Z",
+  "recorded_at": "2026-08-29T00:43:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-00bc94ee1ea843e9"
+}

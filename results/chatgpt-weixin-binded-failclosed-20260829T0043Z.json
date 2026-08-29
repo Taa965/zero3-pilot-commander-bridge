@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-08-29T00:43:54Z",
+  "event_sequence": 3,
+  "execution_id": "chatgpt-weixin-binded-failclosed-20260829T0043Z",
+  "recorded_at": "2026-08-29T00:43:54Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "succeeded",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-29T00:43:54Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.patch"
+        }
+      },
+      {
+        "created_at": "2026-08-29T00:43:54Z",
+        "event_sequence": 2,
+        "event_type": "task.output",
+        "payload": {
+          "command": [
+            "git",
+            "apply",
+            "--whitespace=nowarn",
+            "/opt/zero3-pilot-dev/tmp9o1ybw0z.patch"
+          ],
+          "returncode": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      {
+        "created_at": "2026-08-29T00:43:54Z",
+        "event_sequence": 3,
+        "event_type": "task.succeeded",
+        "payload": {
+          "returncode": 0
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 1.0,
+        "stage": "file.patch"
+      }
+    ]
+  },
+  "task_id": "pilot-task-00bc94ee1ea843e9",
+  "terminal": true
+}

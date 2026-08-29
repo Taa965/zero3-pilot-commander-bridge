@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "returncode": 0
+    }
+  },
+  "event_sequence": 3,
+  "event_type": "task.succeeded",
+  "execution_id": "chatgpt-weixin-binded-failclosed-20260829T0043Z",
+  "occurred_at": "2026-08-29T00:43:54Z",
+  "recorded_at": "2026-08-29T00:43:54Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-00bc94ee1ea843e9"
+}
