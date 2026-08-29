@@ -1,0 +1,14 @@
+{
+  "detail": {
+    "payload": {
+      "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmptm3w8jo6.patch']\nstderr:\nerror: corrupt patch at line 37\n"
+    }
+  },
+  "event_sequence": 2,
+  "event_type": "task.failed",
+  "execution_id": "chatgpt-skills-recursive-provider-20260829T0240Z",
+  "occurred_at": "2026-08-29T02:23:15Z",
+  "recorded_at": "2026-08-29T02:23:15Z",
+  "schema": "zero3.commander.event/2.0",
+  "task_id": "pilot-task-bd826bbeded34a48"
+}

@@ -2,6 +2,15 @@
   "description": "Most recent execution references, newest first, capped at 50. Holds references, never full execution payloads.",
   "executions": [
     {
+      "event_sequence": 2,
+      "execution_id": "chatgpt-skills-recursive-provider-20260829T0240Z",
+      "progress": 0.0,
+      "stage": "file.patch",
+      "state": "failed",
+      "task_id": "pilot-task-bd826bbeded34a48",
+      "updated_at": "2026-08-29T02:23:15Z"
+    },
+    {
       "event_sequence": 3,
       "execution_id": "chatgpt-router-clippy1-20260829T0235Z",
       "progress": 100.0,
@@ -441,18 +450,9 @@
       "state": "failed",
       "task_id": "pilot-task-e670d7ec445546ba",
       "updated_at": "2026-08-29T01:27:38Z"
-    },
-    {
-      "event_sequence": 2,
-      "execution_id": "chatgpt-router-node-contracts-20260829T0127Z",
-      "progress": 0.0,
-      "stage": "file.patch",
-      "state": "failed",
-      "task_id": "pilot-task-3b69df6635c64c96",
-      "updated_at": "2026-08-29T01:26:58Z"
     }
   ],
   "limit": 50,
   "schema": "zero3.commander.index.recent/1.0",
-  "updated_at": "2026-08-29T02:21:05Z"
+  "updated_at": "2026-08-29T02:23:15Z"
 }

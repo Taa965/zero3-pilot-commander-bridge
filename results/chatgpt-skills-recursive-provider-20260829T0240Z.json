@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-29T02:23:15Z",
+  "event_sequence": 2,
+  "execution_id": "chatgpt-skills-recursive-provider-20260829T0240Z",
+  "recorded_at": "2026-08-29T02:23:15Z",
+  "schema": "zero3.commander.result/2.0",
+  "state": "failed",
+  "summary": {
+    "events": [
+      {
+        "created_at": "2026-08-29T02:23:15Z",
+        "event_sequence": 1,
+        "event_type": "task.started",
+        "payload": {
+          "capability": "file.patch"
+        }
+      },
+      {
+        "created_at": "2026-08-29T02:23:15Z",
+        "event_sequence": 2,
+        "event_type": "task.failed",
+        "payload": {
+          "reason": "command failed with exit 128: ['git', 'apply', '--whitespace=nowarn', '/opt/zero3-pilot-dev/tmptm3w8jo6.patch']\nstderr:\nerror: corrupt patch at line 37\n"
+        }
+      }
+    ],
+    "executions": [
+      {
+        "attempt_generation": 1,
+        "progress": 0.0,
+        "stage": "file.patch"
+      }
+    ]
+  },
+  "task_id": "pilot-task-bd826bbeded34a48",
+  "terminal": true
+}
