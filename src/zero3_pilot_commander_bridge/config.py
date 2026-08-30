@@ -1,11 +1,11 @@
-"""Runtime configuration, sourced entirely from the environment.
+"""Runtime configuration for the transport-only Commander Bridge.
 
-Nothing about a deployment is committed to this repository: no IP addresses, no
-hostnames, no tokens, no secrets, no home directories, no cloud credentials.
+The H5 Zero3 Pilot control plane is the default transport adapter. The former
+Pilot Dev Executor Commander API remains available only as an explicit legacy
+rollback path while the H5 cutover is completed.
 
-The token is referenced by *path* and read on demand rather than held on the
-config object, so it cannot leak through a ``repr``, a log line, a traceback,
-or a crash dump of long-lived state.
+Deployment-specific values still come only from the environment. Credentials
+are referenced by file path and read on demand.
 """
 
 from __future__ import annotations
@@ -15,11 +15,23 @@ from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlparse
 
-__all__ = ["ConfigError", "CommanderConfig"]
+__all__ = [
+    "ConfigError",
+    "CommanderConfig",
+    "H5_ADAPTER",
+    "LEGACY_COMMANDER_ADAPTER",
+]
 
 DEFAULT_COMMANDER_ID = "github-bridge"
 DEFAULT_TIMEOUT_SECONDS = 30.0
-API_PREFIX = "/api/commander/v1"
+H5_ADAPTER = "h5"
+LEGACY_COMMANDER_ADAPTER = "legacy-commander"
+DEFAULT_ADAPTER = H5_ADAPTER
+
+H5_CONTROL_API_PREFIX = "/api/control/v1"
+LEGACY_COMMANDER_API_PREFIX = "/api/commander/v1"
+# Compatibility alias for callers/tests that still import the old constant.
+API_PREFIX = LEGACY_COMMANDER_API_PREFIX
 
 
 class ConfigError(Exception):
@@ -28,13 +40,14 @@ class ConfigError(Exception):
 
 @dataclass(frozen=True)
 class CommanderConfig:
-    """Connection settings for the Zero3 Commander Gateway."""
+    """Connection settings for the Zero3 Pilot control transport."""
 
     base_url: str
     token_file: Path
     commander_id: str = DEFAULT_COMMANDER_ID
     ca_bundle: Path | None = None
     timeout: float = DEFAULT_TIMEOUT_SECONDS
+    adapter: str = DEFAULT_ADAPTER
 
     @classmethod
     def from_env(cls, env: dict[str, str] | None = None) -> CommanderConfig:
@@ -46,14 +59,16 @@ class CommanderConfig:
             raise ConfigError("ZERO3_COMMANDER_BASE_URL is not set")
 
         parsed = urlparse(base_url)
-        # HTTPS is mandatory. The commander token is a bearer credential; over
-        # plain HTTP it is readable by anything on the path.
         if parsed.scheme != "https":
             raise ConfigError(
                 f"ZERO3_COMMANDER_BASE_URL must use https, got {parsed.scheme or 'no scheme'!r}"
             )
         if not parsed.netloc:
             raise ConfigError("ZERO3_COMMANDER_BASE_URL has no host")
+        if parsed.username is not None or parsed.password is not None:
+            raise ConfigError("ZERO3_COMMANDER_BASE_URL must not contain inline credentials")
+        if parsed.query or parsed.fragment:
+            raise ConfigError("ZERO3_COMMANDER_BASE_URL must not contain query or fragment components")
 
         raw_token_file = (source.get("ZERO3_COMMANDER_TOKEN_FILE") or "").strip()
         if not raw_token_file:
@@ -76,23 +91,35 @@ class CommanderConfig:
         if not commander_id:
             raise ConfigError("ZERO3_COMMANDER_ID must not be empty")
 
+        adapter = (source.get("ZERO3_COMMANDER_ADAPTER") or DEFAULT_ADAPTER).strip().lower()
+        if adapter not in {H5_ADAPTER, LEGACY_COMMANDER_ADAPTER}:
+            raise ConfigError(
+                "ZERO3_COMMANDER_ADAPTER must be 'h5' or 'legacy-commander'"
+            )
+
         return cls(
             base_url=base_url,
             token_file=Path(raw_token_file),
             commander_id=commander_id,
             ca_bundle=ca_bundle,
             timeout=timeout,
+            adapter=adapter,
         )
 
     def url_for(self, path: str) -> str:
-        """Build an absolute Commander Gateway URL."""
-        return f"{self.base_url}{API_PREFIX}/{path.lstrip('/')}"
+        """Build a legacy Pilot Dev Executor Commander API URL."""
+        return f"{self.base_url}{LEGACY_COMMANDER_API_PREFIX}/{path.lstrip('/')}"
+
+    def control_url_for(self, path: str) -> str:
+        """Build an H5 control-plane URL."""
+        return f"{self.base_url}{H5_CONTROL_API_PREFIX}/{path.lstrip('/')}"
+
+    def root_url_for(self, path: str) -> str:
+        """Build a URL rooted directly below the configured service origin."""
+        return f"{self.base_url}/{path.lstrip('/')}"
 
     def read_token(self) -> str:
-        """Read the machine token from disk.
-
-        Errors intentionally name the path and never the contents.
-        """
+        """Read the machine token from disk without retaining it on this object."""
         try:
             token = self.token_file.read_text(encoding="utf-8").strip()
         except FileNotFoundError as exc:

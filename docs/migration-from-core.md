@@ -1,146 +1,83 @@
-# Migration from Zero3 Core
+# Migration history and H5 cutover
 
-**Status: plan only. Nothing in this document has been executed.**
+This file records two different migrations. Keeping them separate prevents an old Zero3 Core cleanup plan from being mistaken for the current Zero3 Pilot control-plane contract.
 
-Stage 1 created this standalone repository. Zero3 Core
-(`Taa965/zero-three-self-media-management-system`) was **not modified**: no
-files deleted, no workflows changed, no history rewritten, no gateway, runtime,
-Central, production server, DNS, or secret touched.
+## Current migration: Pilot Dev Executor -> Zero3 Pilot H5
 
-Each removal below happens later, in its own reviewed pull request against Zero3
-Core, only after the replacement path here is proven in production.
+Current target path:
+
+```text
+External Agent
+-> GitHub mailbox
+-> zero3-pilot-commander-bridge
+-> Zero3 Pilot H5 /api/control/v1/tasks
+-> Windows Zero3 Remote Host
+-> Zero3CodexAppServer / Codex
+```
+
+The Bridge implementation defaults to the `h5` transport adapter. The former Pilot Dev Executor `/api/commander/v1` adapter is retained only as an explicit rollback path:
+
+```text
+ZERO3_COMMANDER_ADAPTER=legacy-commander
+```
+
+### Cutover sequence
+
+1. **Implementation/review.** Land the H5 adapter in this repository without changing `Taa965/zero3-pilot` and without giving the Bridge execution authority.
+2. **Deploy H5.** Configure the Zero3 Pilot `apps/web` control plane and its `ZERO3_CONTROL_TOKEN_FILE` on the target environment.
+3. **Configure Bridge.** Point `ZERO3_COMMANDER_BASE_URL` at H5, leave `ZERO3_COMMANDER_ADAPTER=h5`, and configure the matching client token file outside the repository.
+4. **Pair Remote Host.** Verify the Windows Remote Host is registered/paired and can use H5 `/api/host/v1/*` lease/fencing routes. The Bridge never calls those routes.
+5. **End-to-end proof.** Submit a real `zero3.pilot.remote-task.v1` through the GitHub mailbox and verify H5 admission, host lease, Codex execution, monotonic event/state mirror, and immutable terminal result.
+6. **Soak.** Keep the legacy adapter available but unused for a bounded observation period.
+7. **Retire legacy.** Remove the old Pilot Dev Executor adapter only after the H5 path is proven and rollback is no longer required.
+
+Do not interpret a healthy root `/health` response as full cutover proof. Production readiness also depends on control-token configuration, Remote Host pairing, and an end-to-end RemoteTask execution.
+
+## Rollback during current cutover
+
+Before legacy retirement, rollback is explicit adapter selection:
+
+```text
+ZERO3_COMMANDER_ADAPTER=legacy-commander
+```
+
+Rollback changes transport routing only. It does not grant the Bridge Agent, Scheduler, lease, fencing, shell, Git, filesystem, or Codex authority.
 
 ---
 
-## Sequencing
+## Historical migration: legacy Zero3 Core GitHub bridge -> standalone repository
 
-Migration is only safe in this order. Skipping a step risks losing in-flight
-executions.
+The remainder of the original plan concerned an older repository and an older in-Core GitHub bridge. It is historical context, not the current Zero3 Pilot H5 contract.
 
-1. **Stage 1 (done).** Standalone repository exists, tests green, no Core changes.
-2. **Stage 2.** Configure `ZERO3_COMMANDER_BASE_URL`, `ZERO3_COMMANDER_TOKEN_FILE`,
-   and `ZERO3_COMMANDER_ID` for this bridge. Verify `health()` against the real
-   Commander Gateway.
-3. **Stage 3.** Run both bridges in parallel, new one read-only, and compare
-   mirrors. The legacy bridge stays authoritative.
-4. **Stage 4.** Cut submission over to this repository. Legacy workflows are
-   disabled but not yet deleted, so rollback is one toggle.
-5. **Stage 5.** Drain: confirm no execution in the legacy `.zero3-bridge/running/`
-   is still non-terminal.
-6. **Stage 6.** Delete legacy components from Core in the PRs listed below.
+That migration established the standalone transport repository and the following invariants, which still apply:
 
-Rollback for stages 2 through 5 is re-enabling the legacy workflows. After stage
-6 rollback means reverting the deletion PR.
+- GitHub command ingress is durable and actively synchronized.
+- A file existing is not the same as a valid verdict or result.
+- State/event/result writes are atomic and validated.
+- Event sequence is monotonic and valid terminal results are immutable.
+- Deployment addresses and credentials remain outside the repository.
+- TLS verification cannot be disabled.
+- Business/runtime validation stays outside the transport repository.
 
----
+Historical in-Core paths such as `.zero3-bridge/**`, `.zero3-command-bus/**`, old GitHub workflows, and the former `app/cloud/v43_commander_api.py` belonged to that earlier system. They must not be used as documentation for the current `Taa965/zero3-pilot` H5 API.
 
-## To migrate out of Zero3 Core, later
+For the current contract, use:
 
-### Runtime mailbox directories
+- `docs/architecture.md`
+- `docs/protocol-boundary.md`
+- `bridge/capabilities.json`
+- the Zero3 Pilot H5 remote-control documentation in `Taa965/zero3-pilot`
 
-```text
-.zero3-bridge/**
-```
+## Current deletion gate
 
-Comprising `inbox/`, `outbox/`, `running/`, `poll/`, and `diagnostics/`.
+The legacy Pilot Dev Executor adapter may be removed only when all of these are true:
 
-These become, respectively, `commands/pending/`, `results/`, `state/` plus
-`events/`, the reconciliation fallback, and out-of-band operator tooling.
+- [ ] H5 `apps/web` is deployed on the intended environment.
+- [ ] H5 control authentication is configured and verified.
+- [ ] Windows Remote Host pairing is healthy.
+- [ ] A GitHub-mailbox -> Bridge -> H5 -> Remote Host -> Codex execution succeeds end to end.
+- [ ] State/event/result mirrors are verified for monotonicity and terminal immutability on the real path.
+- [ ] The rollback window/soak period is complete.
+- [ ] No production process still depends on `/api/commander/v1`.
 
-**Do not delete before stage 5.** These directories contain the only record of
-in-flight executions during the transition. Archive them with the deletion PR
-rather than dropping them outright.
-
-```text
-.zero3-command-bus/**
-```
-
-The older `commands/` and `results/` command bus. Superseded by the four-way
-command / state / event / result split.
-
-### Workflows
-
-```text
-.github/workflows/zero3-github-bridge-submit.yml
-.github/workflows/zero3-github-bridge-results.yml
-.github/workflows/zero3-github-command-bus.yml
-```
-
-`zero3-github-bridge-results.yml` is the specific source of the reliability bug
-this repository was built to fix. At line 60 it reads:
-
-```bash
-[[ ! -e "$out" ]] || continue
-```
-
-which treats *a file existing* as *a valid result*, so a zero-byte or partially
-written `*.result.json` was accepted as authoritative and never retried. The
-replacement path validates parse, schema, `execution_id`, `task_id`,
-`terminal`, and terminal-state legality, and writes only through
-`atomic_io`.
-
-`zero3-github-bridge-submit.yml` additionally hardcodes a public production IP
-in its `env:` block. The replacement reads `ZERO3_COMMANDER_BASE_URL` from the
-environment; no address is committed to this repository.
-
-### Documentation
-
-```text
-docs/Zero3-GitHub-Bridge-v1.md
-```
-
-Superseded by `docs/architecture.md` and `docs/protocol-boundary.md` here.
-Replace the Core copy with a short pointer to this repository rather than a
-silent deletion, so operators following an old link are not stranded.
-
----
-
-## Stays in Zero3 Core, never migrates
-
-These are business and execution authority. They are **not** transport:
-
-```text
-app/cloud/v43_commander_api.py
-Central
-Scheduler
-Worker
-Runtime v3
-PlacementScheduler
-ComputeStrategy
-Production UI
-```
-
-`app/cloud/v43_commander_api.py` is the Commander Gateway itself. It is the
-server side of the contract this repository consumes. It must remain in Core.
-This repository is one of its external clients.
-
----
-
-## Suggested rename inside Core, not part of any migration
-
-```text
-app/services/execution_package_bridge.py  ->  app/services/execution_package_ingestor.py
-```
-
-Despite the name, this module is not transport. It imports `app.cloud.models`,
-`app.cloud.v43_m13_video_api`, and `app.services.execution_contract_v43`, and it
-freezes and verifies execution contracts. That is Zero3 Core execution package
-**ingest**, and it belongs in Core permanently. Only the name is misleading: it
-invites the assumption that it is part of the GitHub bridge and therefore a
-migration candidate. It is not.
-
-**This rename was deliberately not performed.** It touches Core, and Stage 1
-changes nothing in Core. It should be a separate, isolated PR whose only content
-is the rename plus import updates, so it never mixes with a behavioural change.
-
----
-
-## Deletion checklist for the future Core PR
-
-- [ ] Stage 5 drain confirmed: no non-terminal execution left in `.zero3-bridge/running/`
-- [ ] Legacy mailbox contents archived
-- [ ] New bridge has served production submissions for an agreed soak period
-- [ ] `bridge/health.json` reporting healthy ingress and egress
-- [ ] Secrets used only by the legacy workflows identified and rotated or removed
-- [ ] Core documentation points at this repository
-- [ ] Deletion PR contains deletions only, no behavioural change
+Until those gates are satisfied, the H5 implementation is reviewable and deployable for controlled verification, but legacy removal is intentionally deferred.

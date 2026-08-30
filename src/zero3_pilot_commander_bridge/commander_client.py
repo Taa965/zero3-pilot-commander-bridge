@@ -1,25 +1,20 @@
-"""HTTPS client for the Zero3 Commander Gateway.
+"""HTTPS transport client for Zero3 Pilot remote control.
 
-This is the *only* module permitted to reach Zero3, and it reaches it only over
-HTTPS at ``/api/commander/v1``. There is no database connection, no SSH, no
-shared filesystem, and no import of Zero3 Core Python modules anywhere in this
-repository.
+H5 is the default adapter:
 
-Stage 1 implements the three operations the gateway actually exposes today:
+===================  ===============================================
+``health``           ``GET  /health``
+``execution.submit`` ``POST /api/control/v1/tasks``
+``execution.status`` ``GET  /api/control/v1/tasks/{task_id}``
+===================  ===============================================
 
-===================  ====================================================
-``health``           ``GET  /api/commander/v1/health``
-``execution.submit`` ``POST /api/commander/v1/execution-packages``
-``execution.status`` ``GET  /api/commander/v1/execution-packages/tasks/{id}``
-===================  ====================================================
+The former Pilot Dev Executor ``/api/commander/v1`` adapter is retained only as
+an explicit ``legacy-commander`` rollback path.  Neither adapter grants this
+repository execution authority: payloads are relayed as transport documents,
+and task execution remains on the Zero3 Pilot Remote Host/Codex runtime.
 
-Capabilities not backed by a real endpoint stay disabled in
-``bridge/capabilities.json`` rather than being stubbed out here.
-
-TLS verification is unconditional. There is no switch to disable it and no
-``curl -k`` equivalent. A private CA is supported by pointing
-``ZERO3_COMMANDER_CA_BUNDLE`` at a bundle, which is the correct way to trust a
-non-public issuer without weakening verification.
+TLS verification is unconditional.  A private CA is supported through
+``ZERO3_COMMANDER_CA_BUNDLE``; verification cannot be disabled.
 """
 
 from __future__ import annotations
@@ -30,21 +25,30 @@ import urllib.error
 import urllib.request
 from typing import Any
 
-from .config import CommanderConfig, ConfigError
+from .config import (
+    H5_ADAPTER,
+    LEGACY_COMMANDER_ADAPTER,
+    CommanderConfig,
+    ConfigError,
+)
 from .http_semantics import is_permanent_rejection
 
 __all__ = ["CommanderError", "CommanderHTTPError", "CommanderClient"]
 
+H5_TERMINAL_STATES = frozenset(
+    {"succeeded", "failed", "cancelled", "blocked", "outcome_unknown", "quarantined"}
+)
+NORMALIZED_STATUS_SCHEMA = "zero3.execution-status/1.0"
+
 
 class CommanderError(Exception):
-    """The Commander Gateway could not be reached or gave an unusable answer."""
+    """The configured transport endpoint could not provide a usable answer."""
 
 
 class CommanderHTTPError(CommanderError):
-    """The gateway answered with a non-success status."""
+    """The transport endpoint answered with a non-success status."""
 
     def __init__(self, status: int, body: str, url: str) -> None:
-        # The body may echo request detail, so keep it bounded in the message.
         super().__init__(f"commander returned HTTP {status} for {url}: {body[:512]}")
         self.status = status
         self.body = body
@@ -52,17 +56,12 @@ class CommanderHTTPError(CommanderError):
 
     @property
     def rejected(self) -> bool:
-        """Whether this status is an authoritative refusal of this command.
-
-        Authentication failures, throttling, route/protocol mismatches, and
-        infrastructure failures are not command verdicts. They must leave a
-        pending command retryable.
-        """
+        """Whether this status is an authoritative refusal of this command."""
         return is_permanent_rejection(self.status)
 
 
 class CommanderClient:
-    """A thin, auditable HTTPS client. Standard library only."""
+    """A thin, auditable HTTPS client with H5 as the default adapter."""
 
     def __init__(self, config: CommanderConfig) -> None:
         self._config = config
@@ -72,29 +71,22 @@ class CommanderClient:
     def _build_ssl_context(config: CommanderConfig) -> ssl.SSLContext:
         cafile = str(config.ca_bundle) if config.ca_bundle else None
         context = ssl.create_default_context(cafile=cafile)
-        # Explicit rather than implied, so a future edit that weakens these is
-        # visible in review.
         context.check_hostname = True
         context.verify_mode = ssl.CERT_REQUIRED
         return context
 
     def __repr__(self) -> str:
-        # No token is held on this object; the path is safe to show.
         return (
             f"CommanderClient(base_url={self._config.base_url!r}, "
-            f"commander_id={self._config.commander_id!r})"
+            f"commander_id={self._config.commander_id!r}, "
+            f"adapter={self._config.adapter!r})"
         )
 
-    def _request(
-        self, method: str, path: str, payload: dict[str, Any] | None = None
+    def _request_url(
+        self, method: str, url: str, payload: dict[str, Any] | None = None
     ) -> dict[str, Any]:
-        url = self._config.url_for(path)
         body = None
 
-        # Token reads happen on every request so rotation takes effect without
-        # restarting the service. Convert configuration/permission failures to
-        # CommanderError so a single bad credential read cannot escape the
-        # transport boundary and abort an entire ingest batch.
         try:
             token = self._config.read_token()
         except ConfigError as exc:
@@ -122,9 +114,6 @@ class CommanderClient:
             detail = exc.read().decode("utf-8", errors="replace")
             raise CommanderHTTPError(exc.code, detail, url) from exc
         except urllib.error.URLError as exc:
-            # Covers DNS, connection, and TLS verification failures. A TLS
-            # failure is a hard error: it is never downgraded or retried
-            # without verification.
             raise CommanderError(f"cannot reach commander at {url}: {exc.reason}") from exc
         except TimeoutError as exc:
             raise CommanderError(
@@ -149,25 +138,104 @@ class CommanderClient:
             )
         return document
 
-    def health(self) -> dict[str, Any]:
-        """Ask the gateway for its health.
+    def _request(
+        self, method: str, path: str, payload: dict[str, Any] | None = None
+    ) -> dict[str, Any]:
+        """Legacy Commander API request helper kept for rollback compatibility."""
+        return self._request_url(method, self._config.url_for(path), payload)
 
-        Central health arrives here as a gateway *observation*. The bridge never
-        queries PostgreSQL or any Zero3 database to form its own opinion.
-        """
-        return self._request("GET", "health")
+    def health(self) -> dict[str, Any]:
+        """Ask the selected transport endpoint for health."""
+        if self._config.adapter == LEGACY_COMMANDER_ADAPTER:
+            return self._request("GET", "health")
+
+        document = self._request_url("GET", self._config.root_url_for("health"))
+        normalized = dict(document)
+        normalized["ok"] = str(document.get("status") or "").lower() == "ok"
+        normalized["adapter"] = H5_ADAPTER
+        return normalized
 
     def submit_execution(self, package: dict[str, Any]) -> dict[str, Any]:
-        """Hand one execution package to Zero3.
-
-        The package is relayed verbatim. The bridge does not inspect, enrich,
-        rewrite, or domain-validate it; Zero3 Core owns that judgement and
-        answers 4xx when it declines.
-        """
-        return self._request("POST", "execution-packages", payload=package)
+        """Relay one transport payload without domain inspection or rewriting."""
+        if self._config.adapter == LEGACY_COMMANDER_ADAPTER:
+            return self._request("POST", "execution-packages", payload=package)
+        return self._request_url(
+            "POST",
+            self._config.control_url_for("tasks"),
+            payload=package,
+        )
 
     def execution_status(self, task_id: str) -> dict[str, Any]:
-        """Fetch a transport-safe task snapshot."""
+        """Fetch and normalize a transport-safe task snapshot."""
         if not task_id or "/" in task_id or "\\" in task_id:
             raise CommanderError(f"malformed task_id: {task_id!r}")
-        return self._request("GET", f"execution-packages/tasks/{task_id}")
+
+        if self._config.adapter == LEGACY_COMMANDER_ADAPTER:
+            return self._request("GET", f"execution-packages/tasks/{task_id}")
+
+        record = self._request_url(
+            "GET", self._config.control_url_for(f"tasks/{task_id}")
+        )
+        return self._normalize_h5_task_record(record, expected_task_id=task_id)
+
+    @staticmethod
+    def _normalize_h5_task_record(
+        record: dict[str, Any], *, expected_task_id: str
+    ) -> dict[str, Any]:
+        """Project an H5 ``TaskRecord`` into the bridge's stable status shape.
+
+        This is protocol projection only.  H5 remains authoritative for task
+        admission, persistence, leases, fencing and terminal state.
+        """
+        if not isinstance(record, dict):
+            raise CommanderError("H5 task response is not an object")
+
+        task = record.get("task")
+        if not isinstance(task, dict):
+            raise CommanderError("H5 task response carries no task object")
+
+        returned_task_id = task.get("task_id")
+        if not isinstance(returned_task_id, str) or not returned_task_id:
+            raise CommanderError("H5 task response carries no task_id")
+        if returned_task_id != expected_task_id:
+            raise CommanderError(
+                f"H5 task_id {returned_task_id!r} does not match expected {expected_task_id!r}"
+            )
+
+        state = record.get("state")
+        if not isinstance(state, str) or not state.strip():
+            raise CommanderError("H5 task response carries no state")
+        state = state.strip()
+
+        events = record.get("events")
+        if events is None:
+            events = []
+        if not isinstance(events, list):
+            raise CommanderError("H5 task response carries malformed events")
+
+        summary = dict(task)
+        summary["events"] = events
+        summary["control_plane"] = {
+            key: record[key]
+            for key in (
+                "sticky_node_id",
+                "fencing_token",
+                "active_lease",
+                "last_event_sequence",
+                "created_at",
+                "updated_at",
+            )
+            if key in record
+        }
+        terminal_record = record.get("terminal")
+        if isinstance(terminal_record, dict):
+            summary["terminal_record"] = terminal_record
+
+        return {
+            "schema": NORMALIZED_STATUS_SCHEMA,
+            "task_id": returned_task_id,
+            "execution_id": task.get("execution_id"),
+            "state": state,
+            "terminal": state in H5_TERMINAL_STATES,
+            "task": summary,
+        }

@@ -2,25 +2,56 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "zero3.commander.command.execution-submit/1.0",
   "title": "Zero3 Commander execution.submit command envelope",
-  "description": "Transport envelope only. The bridge validates the envelope and never inspects the meaning of payload.",
+  "description": "Transport envelope only. The bridge validates the envelope and never inspects task meaning.",
   "type": "object",
-  "required": ["schema", "command", "execution_id", "commander_id", "issued_at", "payload"],
+  "required": [
+    "schema",
+    "command",
+    "execution_id",
+    "commander_id",
+    "issued_at",
+    "payload"
+  ],
   "additionalProperties": false,
   "properties": {
-    "schema": { "const": "zero3.commander.command.execution-submit/1.0" },
-    "command": { "const": "execution.submit" },
-    "protocol_version": { "type": "string", "pattern": "^1[.][0-9x]+$" },
-    "execution_id": { "$ref": "#/$defs/identifier" },
-    "commander_id": { "$ref": "#/$defs/identifier" },
-    "issued_at": { "type": "string", "format": "date-time" },
-    "idempotency_key": { "$ref": "#/$defs/identifier" },
-    "content_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "schema": {
+      "const": "zero3.commander.command.execution-submit/1.0"
+    },
+    "command": {
+      "const": "execution.submit"
+    },
+    "protocol_version": {
+      "type": "string",
+      "pattern": "^1[.][0-9x]+$"
+    },
+    "execution_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "commander_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "idempotency_key": {
+      "$ref": "#/$defs/identifier"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
     "payload": {
       "type": "object",
-      "description": "Opaque Zero3 execution package. The bridge MUST NOT assert anything about its contents: no storyboard, scene, or beat counts, no script content, no skill or worker selection. Zero3 Core is the domain validator."
+      "description": "Opaque transport payload. With the default H5 adapter it is relayed verbatim to POST /api/control/v1/tasks, where Zero3 Pilot validates the zero3.pilot.remote-task.v1 contract. The bridge MUST NOT infer objective, repository policy, worker selection, or execution semantics."
     }
   },
   "$defs": {
-    "identifier": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" }
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    }
   }
 }

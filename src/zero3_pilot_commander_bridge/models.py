@@ -32,8 +32,10 @@ __all__ = [
 
 BRIDGE_VERSION = "0.1.0"
 
+# H5 RemoteTaskState::Blocked is a genuine terminal outcome and must survive
+# transport projection rather than being rewritten to failed.
 TERMINAL_STATES = frozenset(
-    {"succeeded", "failed", "cancelled", "outcome_unknown", "quarantined"}
+    {"succeeded", "failed", "cancelled", "blocked", "outcome_unknown", "quarantined"}
 )
 
 STATE_SCHEMA = "zero3.commander.state/2.0"
