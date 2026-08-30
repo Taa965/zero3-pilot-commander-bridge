@@ -11,14 +11,24 @@
     "task.resume": false
   },
   "endpoints": {
-    "health": "GET /api/commander/v1/health",
-    "execution.submit": "POST /api/commander/v1/execution-packages",
-    "execution.status": "GET /api/commander/v1/execution-packages/tasks/{task_id}"
+    "health": "GET /health",
+    "execution.submit": "POST /api/control/v1/tasks",
+    "execution.status": "GET /api/control/v1/tasks/{task_id}"
   },
   "limits": {
     "max_command_bytes": 4194304,
+    "h5_max_task_bytes": 2097152,
     "recent_index_size": 50,
-    "terminal_states": ["succeeded", "failed", "cancelled", "outcome_unknown", "quarantined"]
+    "terminal_states": [
+      "succeeded",
+      "failed",
+      "cancelled",
+      "blocked",
+      "outcome_unknown",
+      "quarantined"
+    ],
+    "transport_adapter_default": "h5",
+    "legacy_adapter": "legacy-commander"
   },
-  "updated_at": "2026-08-28T00:00:00Z"
+  "updated_at": "2026-08-30T12:25:00Z"
 }

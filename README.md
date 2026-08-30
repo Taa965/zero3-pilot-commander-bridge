@@ -3,23 +3,17 @@
 Transport and control middleware between external AI commanders
 (GPT web sessions, Codex, Claude, Hermes) and **Zero3 Pilot development**.
 
-This is a 1:1 port of `Taa965/zero3-commander-bridge`'s transport pattern
-(GitHub command mailbox, atomic mirrors, transport-only validation) onto a
-completely independent target: **Zero3 Pilot development commands**
-(`repo.*`/`file.*`/`git.*`/`test.*`/`ci.*`/`deploy.*`) instead of Zero3's
-video-production execution packages. The wire protocol (envelope schemas,
-mailbox layout, Commander Protocol HTTP shape) is unchanged; only what's on
-the other end of the HTTPS call is new.
+This repository keeps the established transport pattern — GitHub command
+mailbox, atomic mirrors, transport-only validation, bounded Git sync — while
+routing new work through the durable Zero3 Pilot H5 control plane.
 
 > **`Taa965/zero3-pilot` governs "what Zero3 Pilot is".**
 >
-> **This repository governs "how the outside controls Zero3 Pilot development".**
+> **This repository governs "how outside intent reaches Zero3 Pilot".**
 
-This repository is fully isolated from `Taa965/zero3-commander-bridge` and
-from `Taa965/zero-three-self-media-management-system` — separate repo,
-separate service account, separate systemd unit, separate deploy key,
-separate config/token, separate working tree. See
-`docs/architecture.md` for the isolation table.
+This repository is isolated from the Zero3 Pilot core repository: separate
+repo, service account, systemd unit, deploy key, config/token, and working tree.
+See `docs/architecture.md` for the authority boundary.
 
 ---
 
@@ -31,60 +25,55 @@ External Agent (ChatGPT web session, Codex, Claude, Hermes)
       v
 GitHub / Zero3 Pilot Commander Bridge      <-- this repository
       |
-      | HTTPS Pilot Commander Protocol
+      | HTTPS control transport
       v
-Zero3 Pilot Dev Executor                   <-- new, purpose-built for dev commands
+Zero3 Pilot H5 apps/web                    <-- admission + durable task state
+      |
+      | /api/host/v1/* lease/fencing protocol
+      v
+Windows Zero3 Remote Host
       |
       v
-/opt/zero3-pilot-dev (git worktree)
-      |
-      v
-Taa965/zero3-pilot  ->  existing strict CI (test -> build -> deploy)
+Zero3CodexAppServer / pinned Codex         <-- execution authority
 ```
 
-Every arrow crossing from this repository outward is an **HTTPS call to
-`/api/commander/...`** (the exact same endpoint shape
-`Taa965/zero3-commander-bridge` uses against Zero3's real Gateway — see
-`docs/architecture.md`). There is no direct database access, no shared
-filesystem with the executor's process, and no SSH control path from this
-service itself.
+The Bridge does not call `/api/host/v1/*`. It reaches H5 only through
+`/health` and `/api/control/v1/tasks...`. There is no direct database access,
+no shared filesystem with the Remote Host, and no SSH control path from this
+service.
 
 ---
 
-## The Pilot Dev Executor is the only execution authority
+## H5/Remote Host is the execution boundary
 
-The Bridge does **not** own repository state, branch policy, test
-execution, or deploy authority. Those belong to the Zero3 Pilot Dev
-Executor, which enforces a fixed capability allow-list and a fixed target
-(`Taa965/zero3-pilot`, working tree `/opt/zero3-pilot-dev`). The bridge
-only transports commands and mirrors observations — exactly the same
-transport/domain boundary `zero3-commander-bridge` enforces (see
-`docs/protocol-boundary.md`).
+The Bridge does **not** own repository state, branch policy, test execution,
+deploy authority, leases, fencing, or Codex turns. H5 owns durable remote-task
+admission/control-plane state; the Windows Remote Host/Codex runtime owns
+development execution.
 
-If this repository and the Executor disagree, **the Executor is right and
-the mirror is stale.** GitHub is a durable command mailbox, state/event/
-result mirror, and audit transport — never the system of record.
+The Bridge only transports commands and mirrors observations. If a GitHub
+mirror disagrees with H5/Remote Host state, the mirror is stale. GitHub is a
+durable command mailbox, state/event/result mirror, and audit transport —
+never the system of record.
+
+The former Pilot Dev Executor adapter remains available only as
+`ZERO3_COMMANDER_ADAPTER=legacy-commander` for bounded rollback during cutover.
+It is legacy and must not receive new capabilities.
 
 ---
 
 ## Hard isolation boundary
 
-The bridge must never import Zero3 Core Python modules. Forbidden executable
-code includes:
+The bridge must never import Zero3 product/runtime Python modules or gain
+execution privileges. `tests/test_no_core_imports.py` enforces this boundary
+together with gates for committed credentials, hardcoded deployment addresses,
+disabled TLS verification, and business-domain assertions in the transport
+layer.
 
-```python
-from app.cloud import ...
-from app.runtime import ...
-from app.services import ...
-```
-
-`tests/test_no_core_imports.py` enforces this boundary together with gates for
-committed credentials, hardcoded deployment addresses, disabled TLS
-verification, and business-domain assertions in the transport layer.
-
-The two projects keep separate repositories, permissions, deployment
-lifecycles, versions, and failure domains. They may run on the same host while
-remaining separate services.
+The Bridge and Zero3 Pilot keep separate repositories, permissions, deployment
+lifecycles, versions, and failure domains. A total outage of this repository
+must degrade the system to "no new external mailbox commands accepted", never
+to "Zero3 Pilot executes incorrectly".
 
 ---
 
@@ -93,24 +82,24 @@ remaining separate services.
 | Path | Writer | Meaning |
 |---|---|---|
 | `commands/pending/<execution_id>.json` | External agent | A request; nothing decided yet. |
-| `commands/accepted/<execution_id>.json` | Bridge | Commander Gateway accepted ownership. |
+| `commands/accepted/<execution_id>.json` | Bridge | H5/control endpoint accepted ownership. |
 | `commands/rejected/<execution_id>.json` | Bridge | Authoritative refusal of this envelope. |
 | `state/<execution_id>.json` | Bridge | Latest observed state, monotonic by sequence. |
-| `events/<execution_id>/<event_sequence>.json` | Bridge | Immutable event mirror when a native event source is available. |
+| `events/<execution_id>/<event_sequence>.json` | Bridge | Immutable event mirror. |
 | `results/<execution_id>.json` | Bridge | Validated terminal outcome. |
 | `index/active.json` | Bridge | Non-terminal execution references. |
 | `index/recent.json` | Bridge | Most recent 50 execution references. |
 | `bridge/health.json` | Bridge | Observed transport health. |
-| `bridge/capabilities.json` | Bridge | Capabilities backed by real Commander endpoints. |
+| `bridge/capabilities.json` | Bridge | Capabilities backed by real endpoints. |
 
-Terminal states match Zero3 Core exactly: `succeeded`, `failed`, `cancelled`,
-`outcome_unknown`, `quarantined`.
+Terminal states are `succeeded`, `failed`, `cancelled`, `blocked`,
+`outcome_unknown`, and `quarantined`. `blocked` is a genuine H5 terminal state
+and is never rewritten to `failed`.
 
 ### A file existing is not a verdict or result
 
-The legacy in-Core bridge trusted file presence, including zero-byte and
-partial files. This bridge trusts protocol documents only when they parse and
-validate against the expected schema and correlation identifiers.
+The bridge trusts protocol documents only when they parse and validate against
+the expected schema and correlation identifiers.
 
 Writes use temp file -> flush -> `fsync` -> read-back -> validate -> atomic
 rename. Parseable-but-schema-invalid state, event, result, and verdict files are
@@ -130,9 +119,11 @@ The bridge may validate:
 - terminal-state legality
 - sequence monotonicity
 
-It must never validate storyboard/scene/beat counts, script contents, Author
-Skill choice, Production Package meaning, Worker placement, or other business
-rules. Those belong to Zero3 Core.
+The `execution.submit` payload remains opaque to the Bridge. With the default
+H5 adapter it is relayed verbatim to `POST /api/control/v1/tasks`, where H5
+validates the `zero3.pilot.remote-task.v1` contract. The Bridge must not infer
+task objective, repository policy, worker selection, execution strategy, or
+other domain/runtime meaning.
 
 ---
 
@@ -142,11 +133,15 @@ All deployment-specific values come from the environment:
 
 | Variable | Meaning |
 |---|---|
-| `ZERO3_COMMANDER_BASE_URL` | Commander Gateway base URL; HTTPS required. |
-| `ZERO3_COMMANDER_TOKEN_FILE` | File containing the machine credential. |
-| `ZERO3_COMMANDER_ID` | Authenticated commander identity header. |
+| `ZERO3_COMMANDER_BASE_URL` | Zero3 Pilot `apps/web` origin; HTTPS required. |
+| `ZERO3_COMMANDER_ADAPTER` | `h5` (default) or explicit rollback `legacy-commander`. |
+| `ZERO3_COMMANDER_TOKEN_FILE` | File containing the client machine credential. |
+| `ZERO3_COMMANDER_ID` | Transport audit identity; required by the legacy adapter. |
 | `ZERO3_COMMANDER_CA_BUNDLE` | Optional private-CA bundle. |
 | `ZERO3_COMMANDER_TIMEOUT` | Optional request timeout in seconds. |
+
+For H5, the client token must match the server-side control-plane secret
+configured by `ZERO3_CONTROL_TOKEN_FILE`.
 
 TLS hostname and certificate verification are always enabled. There is no
 `verify=False`, `CERT_NONE`, or `curl -k` equivalent.
@@ -169,9 +164,9 @@ Subcommands:
 
 | Command | Purpose |
 |---|---|
-| `health` | real Commander health request |
-| `ingest` | one pass: GitHub pending commands -> Zero3 |
-| `publish` | one pass: accepted Zero3 work -> state/result mirror |
+| `health` | real selected-transport health request |
+| `ingest` | one pass: GitHub pending commands -> H5 |
+| `publish` | one pass: accepted H5 work -> state/event/result mirror |
 | `run` | long-running ingress + publication loop |
 | `reconcile` | slow drift-repair fallback |
 | `audit` | report unusable state mirrors without mutation |
@@ -195,20 +190,29 @@ audit mirror rather than a synthetic heartbeat log.
 
 ---
 
-## Current event-delivery limitation
+## H5 observation model
 
-Commander Gateway v1.5 currently exposes health, execution submit, and task
-status, but **does not expose an outbound event stream/webhook/SSE endpoint**.
-Therefore the first production runtime observes accepted executions through the
-status endpoint at a short bounded interval and mirrors state/results.
+H5 exposes:
 
-This is transitional transport behavior, not a claim that polling is the ideal
-architecture. `.github/workflows/bridge-reconcile.yml` remains a much slower
-fallback for drift repair, not the primary production path.
+```text
+POST /api/control/v1/tasks
+GET  /api/control/v1/tasks
+GET  /api/control/v1/tasks/{task_id}
+GET  /api/control/v1/nodes
+```
 
-When Zero3 Core exposes a generic Commander event stream, the subscriber can
-feed the existing immutable `events/`, `state/`, and `results/` contracts
-without moving scheduler or business authority into this repository.
+The Bridge uses only task admission and per-task observation. H5 returns a
+durable `TaskRecord` containing state, accepted events, lease/fencing metadata,
+and terminal outcome. `commander_client.py` projects that wire record into the
+Bridge's stable `zero3.execution-status/1.0` observation shape.
+
+That projection is deliberately one-way and transport-only: the Bridge does
+not acquire leases, renew leases, generate fencing tokens, register nodes, or
+write host events/outcomes.
+
+The runtime polls the per-task control endpoint at a short bounded interval and
+mirrors state/events/results. `.github/workflows/bridge-reconcile.yml` remains
+a much slower fallback for drift repair, not the primary production path.
 
 ---
 
@@ -226,28 +230,41 @@ timeouts, and infrastructure failures remain pending/retryable. In particular,
 401/403/404/405/410/429 and 5xx must never destroy a valid pending command.
 
 A 2xx response that cannot be strongly correlated is recorded as **accepted but
-uncorrelated**. Zero3 may already own the execution, so blindly resubmitting
-would risk duplicate production work.
+uncorrelated**. H5 may already own the task, so blindly resubmitting would risk
+duplicate execution.
 
 ---
 
 ## Current capabilities
 
-| Command | Status | Gateway endpoint |
+Default H5 adapter:
+
+| Command | Status | Endpoint |
 |---|---|---|
-| `execution.submit` | enabled | `POST /api/commander/v1/execution-packages` |
-| `execution.status` | enabled | `GET /api/commander/v1/execution-packages/tasks/{task_id}` |
-| `task.cancel` | disabled | no endpoint yet |
-| `task.retry` | disabled | no endpoint yet |
-| `task.pause` | disabled | no endpoint yet |
-| `task.resume` | disabled | no endpoint yet |
+| `execution.submit` | enabled | `POST /api/control/v1/tasks` |
+| `execution.status` | enabled | `GET /api/control/v1/tasks/{task_id}` |
+| `task.cancel` | disabled | no control endpoint yet |
+| `task.retry` | disabled | no control endpoint yet |
+| `task.pause` | disabled | no control endpoint yet |
+| `task.resume` | disabled | no control endpoint yet |
+
+Legacy rollback adapter:
+
+```text
+GET  /api/commander/v1/health
+POST /api/commander/v1/execution-packages
+GET  /api/commander/v1/execution-packages/tasks/{task_id}
+```
+
+The legacy adapter is not the default and is scheduled for removal only after
+H5 deployment, pairing, and end-to-end verification.
 
 ---
 
 ## Development and tests
 
 The package supports Python 3.10+ and does not require a Python interpreter
-owned by Zero3 Core.
+owned by Zero3 Pilot.
 
 ```bash
 python -m venv .venv
@@ -258,12 +275,12 @@ pytest -q
 ```
 
 A production package install also includes the JSON Schemas under the venv's
-`share/zero3-pilot-commander-bridge/schemas` path; schema validation does not depend
-on an editable source checkout.
+`share/zero3-pilot-commander-bridge/schemas` path; schema validation does not
+depend on an editable source checkout.
 
-GitHub Actions is useful when account quota is available, but successful local
-or server-side test evidence is required before production deployment; an
-Actions job that fails before executing steps is not test evidence.
+GitHub Actions is useful when account/runner capacity is available, but
+successful test evidence is required before production deployment; a job that
+has not acquired a runner is not test evidence.
 
 ---
 
@@ -292,8 +309,8 @@ zero3-pilot-bridge.service             long-running Bridge process
   an already-running Bridge)
 
 The systemd service can write only the Bridge Git checkout. It can read its
-configuration and repo-scoped Deploy Key, but does not receive Core source,
-database, Scheduler, Worker, or sudo authority.
+configuration and repo-scoped Deploy Key, but does not receive Zero3 Pilot
+source execution, database, Remote Host, Codex, or sudo authority.
 
 ---
 
@@ -307,22 +324,23 @@ database, Scheduler, Worker, or sudo authority.
 - state sequence and non-terminal progress never regress
 - parseable-but-invalid mirrors are repairable
 - valid conflicting terminal results are never overwritten
+- H5 `blocked` remains terminal `blocked`
 - reconciliation refuses stale work items
 - GitHub command commits and Bridge mirror commits survive push races
 - quiet observations do not generate continuous Git churn
+- Bridge never calls `/api/host/v1/*`
 
 ---
 
 ## Documentation
 
-- `docs/architecture.md` — components and data flow
+- `docs/architecture.md` — H5/Remote Host authority and transport flow
 - `docs/protocol-boundary.md` — transport/domain boundary
 - `docs/migration-from-core.md` — legacy in-Core Bridge migration
 
 ## Status
 
-`bridge-v2-production-runtime` is the production-runtime development branch and
-PR #1 is intentionally kept in review until local tests, clean-package tests,
-and the real AWS service/canary evidence are complete. The legacy in-Core
-Bridge is not removed by this repository and remains a separate later migration
-step.
+H5 adapter implementation is reviewable independently. Production cutover and
+removal of the legacy Pilot Dev Executor adapter remain gated on H5 deployment,
+pairing, Remote Host end-to-end verification, and the repository CI/deployment
+gates.

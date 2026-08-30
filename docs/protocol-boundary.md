@@ -2,105 +2,105 @@
 
 The single rule:
 
-> The bridge validates **transport**. Zero3 Core validates **meaning**.
+> The Bridge validates **transport**. Zero3 Pilot H5 and the Remote Host/Codex runtime validate and execute **meaning**.
 
-A transport layer that starts understanding video production has stopped being a
-transport layer. It becomes a second, unversioned, silently drifting copy of the
-domain rules, and it will eventually reject work that Zero3 would have accepted.
+A transport layer that starts understanding development or production meaning has stopped being a transport layer. It becomes a second, silently drifting copy of control/runtime rules and will eventually disagree with Zero3 Pilot.
 
-## The bridge MAY validate
+## The Bridge MAY validate
 
 | Check | Why it is transport |
 |---|---|
 | JSON parses | Otherwise there is no message at all. |
-| Matches the JSON Schema in `schemas/` | Envelope shape is the wire contract. |
+| Mailbox envelope matches the JSON Schema in `schemas/` | Envelope shape is this repository's wire contract. |
 | `execution_id` and `task_id` are well formed and consistent | Routing and correlation. |
-| Payload size within limit | Resource protection. |
-| `schema` / protocol version is supported | Compatibility negotiation. |
-| Content hash or signature matches | Integrity and authenticity. |
-| Terminal state is one of the five legal values | Lifecycle correctness. |
+| Mailbox payload size is within the Bridge limit | Resource protection. |
+| Envelope schema/protocol version is supported | Compatibility negotiation. |
+| Content hash matches | Integrity. |
+| Mirrored terminal state is legal | Lifecycle projection. |
 | `event_sequence` is monotonic | Ordering correctness. |
 
-## The bridge MUST NOT validate
+The mailbox envelope may be larger than the H5 admission body limit. H5 is authoritative for `zero3.pilot.remote-task.v1` admission and may return HTTP 413; the Bridge records that stable refusal rather than reinterpreting the task.
 
-These are all **forbidden** in this repository:
+## The Bridge MUST NOT validate or decide
 
-- storyboard count, for example `storyboard == 17`
-- scene count, for example `scenes == 17`
-- visual beat count, for example `beats == 107`
-- script or narration content
-- Author Skill selection or binding
-- Production Package contents
-- Worker selection or capability matching
-- shot lists, pacing, durations, aspect ratios
-- whether a creative review was "good enough"
+These are forbidden in this repository:
 
-Any of these appearing here is an architectural regression, regardless of how
-convenient it seems at the time.
+- task objective or whether the requested change is sensible;
+- repository policy, branch strategy, or acceptance criteria semantics;
+- Agent, worker, Scheduler, or Codex selection;
+- shell, Git, filesystem, test, build, or deployment actions;
+- Remote Host lease acquisition/renewal;
+- fencing-token generation or node registration;
+- production/business-domain rules such as storyboard, scene, beat, skill, pacing, duration, or creative-review rules.
 
-### Why the counts are the canonical example
+Any of these appearing as Bridge decision logic is an architectural regression.
 
-The previous GitHub workflows hardcoded assertions like `storyboard == 17` and
-`beats == 107`. Those numbers are properties of one production template at one
-moment. Encoding them in the transport meant every domain change required a
-synchronized edit in a repository that has no idea what a beat is, and a
-mismatch failed as a confusing transport error instead of a clear domain error.
+## Where validation and execution belong
 
-## Where domain validation belongs
+With the default adapter, `execution.submit` keeps the existing GitHub mailbox envelope but its `payload` is opaque to the Bridge. The Bridge sends that object verbatim to:
 
-Zero3 Core, behind the Commander Gateway. When the gateway rejects a package it
-returns a reason, and the bridge records it verbatim:
+```text
+POST /api/control/v1/tasks
+```
+
+Zero3 Pilot H5 validates `zero3.pilot.remote-task.v1`, owns durable admission/idempotency, and stores control-plane state. The Windows Remote Host then uses the separate `/api/host/v1/*` lease/fencing protocol and delegates development execution to the pinned Codex runtime.
+
+The Bridge never calls `/api/host/v1/*` and never manufactures a lease, fencing token, execution event, or terminal outcome on behalf of a host.
+
+When H5 refuses admission with a stable command-level HTTP status, the Bridge records the refusal under:
 
 ```text
 commands/rejected/<execution_id>.json
 ```
 
-The bridge does not interpret, translate, or second-guess the reason. It relays it.
+The Bridge does not translate a task into a different RemoteTask to make it pass validation.
 
 ## Authority table
 
 | Concern | Owner |
 |---|---|
-| Task Authority | Zero3 Central |
-| Worker Authority | Zero3 Central |
-| Scheduler Authority | Zero3 Central |
-| Execution Lease | Zero3 Central |
-| Fencing Token | Zero3 Central |
-| Execution Contract Authority | Zero3 Central |
-| Skill Binding Authority | Zero3 Central |
-| Artifact Authority | Zero3 Central |
-| Envelope shape | Commander Bridge |
-| Delivery durability | Commander Bridge |
-| Mirror freshness | Commander Bridge |
-| Audit trail transport | Commander Bridge |
+| RemoteTask admission/idempotency | Zero3 Pilot H5 |
+| Durable task/control-plane state | Zero3 Pilot H5 |
+| Lease and fencing state | Zero3 Pilot H5 + Remote Host protocol |
+| Host execution | Windows Zero3 Remote Host |
+| Codex development execution | Zero3CodexAppServer / pinned Codex |
+| Mailbox envelope shape | Commander Bridge |
+| GitHub delivery durability | Commander Bridge |
+| State/event/result mirror freshness | Commander Bridge |
+| Audit transport | Commander Bridge |
 
 ## Result validity
 
-A result file is valid only when **all** of the following hold. Existence is not
-one of them.
+A result file is valid only when all of the following hold. Existence is not one of them.
 
 1. The file parses as JSON.
 2. It validates against `schemas/result.schema.json`.
 3. `execution_id` matches the expected execution.
 4. `task_id` matches the task recorded at acceptance.
 5. `terminal` is `true`.
-6. `state` is one of `succeeded`, `failed`, `cancelled`, `outcome_unknown`,
-   `quarantined`.
+6. `state` is one of `succeeded`, `failed`, `cancelled`, `blocked`, `outcome_unknown`, or `quarantined`.
 
-`outcome_unknown` is a legitimate, honest terminal state. It means Zero3 could
-not determine the outcome. The bridge must never convert it into `failed` or
-`succeeded`, and must never quietly drop it.
+`blocked` and `outcome_unknown` are honest terminal states. The Bridge must preserve them instead of rewriting them to `failed` or `succeeded`.
 
 ## Transport communication rule
 
-The bridge reaches Zero3 only through:
+Default path:
 
 ```text
-HTTPS
--> Zero3 Commander Gateway
--> /api/commander/...
+External Agent
+-> GitHub mailbox
+-> Commander Bridge
+-> HTTPS Zero3 Pilot H5 /api/control/v1/tasks
+-> Windows Remote Host
+-> Zero3CodexAppServer / Codex
 ```
 
-No direct database access, no SSH, no shared filesystem, no Python import of
-Core modules. TLS verification stays enabled; a private CA is configured with
-`ZERO3_COMMANDER_CA_BUNDLE`, never by disabling verification.
+The former Pilot Dev Executor `/api/commander/v1` adapter is available only when explicitly selected with:
+
+```text
+ZERO3_COMMANDER_ADAPTER=legacy-commander
+```
+
+It is a bounded rollback adapter and must not receive new capabilities.
+
+No direct database access, no SSH control path, no shared filesystem with the Remote Host, and no Python import of Zero3 Pilot runtime modules are allowed. TLS verification stays enabled; a private CA is configured with `ZERO3_COMMANDER_CA_BUNDLE`, never by disabling verification.
