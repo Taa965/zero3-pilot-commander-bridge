@@ -1,7 +1,0 @@
-{"ts": "2026-09-01T03:50:26+08:00", "action": "claim", "id": "wv-test-001", "type": "shell"}
-{"ts": "2026-09-01T03:50:26+08:00", "action": "executed", "id": "wv-test-001", "status": "error", "exit_code": null, "duration_s": 0.0}
-{"ts": "2026-09-01T03:51:02+08:00", "action": "pull_fail", "stage": "rebase", "err": "\n[stderr]\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them.\n"}
-{"ts": "2026-09-01T03:51:44+08:00", "action": "claim", "id": "wv-test-002", "type": "shell"}
-{"ts": "2026-09-01T03:51:50+08:00", "action": "executed", "id": "wv-test-002", "status": "fail", "exit_code": 127, "duration_s": 5.6}
-{"ts": "2026-09-01T03:52:33+08:00", "action": "claim", "id": "wv-test-003", "type": "shell"}
-{"ts": "2026-09-01T03:52:38+08:00", "action": "executed", "id": "wv-test-003", "status": "ok", "exit_code": 0, "duration_s": 5.1}
