@@ -1,0 +1,2 @@
+{"ts": "2026-09-01T03:50:26+08:00", "action": "claim", "id": "wv-test-001", "type": "shell"}
+{"ts": "2026-09-01T03:50:26+08:00", "action": "executed", "id": "wv-test-001", "status": "error", "exit_code": null, "duration_s": 0.0}
