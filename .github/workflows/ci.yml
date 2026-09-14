@@ -16,7 +16,7 @@ concurrency:
 jobs:
   test:
     name: Compile, test, package, and gate Bridge
-    runs-on: [self-hosted, Linux, X64, zero3-bridge, aws]
+    runs-on: ${{ fromJSON(github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork && '["ubuntu-latest"]' || '["self-hosted","Linux","X64","aws","isolated"]') }}
     timeout-minutes: 20
 
     steps:
