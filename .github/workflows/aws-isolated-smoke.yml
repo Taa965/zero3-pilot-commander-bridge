@@ -31,7 +31,8 @@ jobs:
           test -n "$RUNNER_NAME"
           test -f "$GITHUB_EVENT_PATH"
           test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git cat-file -e "$GITHUB_SHA^{commit}"
           git show --check --format= HEAD
-          git fsck --no-dangling
+          test -z "$(git status --porcelain --untracked-files=no)"
           printf 'repository=%s\nrevision=%s\nrunner=%s\n' \
             "$GITHUB_REPOSITORY" "$GITHUB_SHA" "$RUNNER_NAME"
